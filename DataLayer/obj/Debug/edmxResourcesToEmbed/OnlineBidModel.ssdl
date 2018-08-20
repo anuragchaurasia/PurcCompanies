@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BiddingManagementModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BiddingManagementModelStoreContainer">
+    <EntitySet Name="Product" EntityType="BiddingManagementModel.Store.Product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductBid" EntityType="BiddingManagementModel.Store.ProductBid" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="BiddingManagementModel.Store.Users" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="500" />
+    <Property Name="ProductBasePrice" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PostedOn" Type="nvarchar" MaxLength="250" />
+    <Property Name="ProductImage" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ProductBid">
+    <Key>
+      <PropertyRef Name="ProductBidID" />
+    </Key>
+    <Property Name="ProductBidID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="BidderID" Type="int" />
+    <Property Name="BiddingTime" Type="nvarchar" MaxLength="250" />
+    <Property Name="BiddingTitle" Type="nvarchar(max)" />
+    <Property Name="BiddingDescription" Type="nvarchar(max)" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsAccepted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="Username" Type="nvarchar" MaxLength="300" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+</Schema>

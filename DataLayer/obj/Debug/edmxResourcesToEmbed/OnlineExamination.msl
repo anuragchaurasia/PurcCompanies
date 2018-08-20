@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExamSystemModelStoreContainer" CdmEntityContainer="ExamSystemEntities">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ExamSystemModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questionnaires">
+      <EntityTypeMapping TypeName="ExamSystemModel.Questionnaire">
+        <MappingFragment StoreEntitySet="Questionnaire">
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="QuestionnaireID" ColumnName="QuestionnaireID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="ExamSystemModel.Answer">
+        <MappingFragment StoreEntitySet="Answer">
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Reward" ColumnName="Reward" />
+          <ScalarProperty Name="CorrectAnswer" ColumnName="CorrectAnswer" />
+          <ScalarProperty Name="AnswerFour" ColumnName="AnswerFour" />
+          <ScalarProperty Name="AnswerThree" ColumnName="AnswerThree" />
+          <ScalarProperty Name="AnswerTwo" ColumnName="AnswerTwo" />
+          <ScalarProperty Name="AnswerOne" ColumnName="AnswerOne" />
+          <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="ExamSystemModel.Question">
+        <MappingFragment StoreEntitySet="Question">
+          <ScalarProperty Name="QuestionnaireID" ColumnName="QuestionnaireID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+          <ScalarProperty Name="Question1" ColumnName="Question" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="ExamSystemModel.Result">
+        <MappingFragment StoreEntitySet="Results">
+          <ScalarProperty Name="SubmissionTime" ColumnName="SubmissionTime" />
+          <ScalarProperty Name="InCorrectAnswer" ColumnName="InCorrectAnswer" />
+          <ScalarProperty Name="CorrectAnswer" ColumnName="CorrectAnswer" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="QuestionnaireID" ColumnName="QuestionnaireID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="ResultID" ColumnName="ResultID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExamSystemModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ExamSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="ExamSystemModel.User" />
+    <EntitySet Name="Questionnaires" EntityType="ExamSystemModel.Questionnaire" />
+    <EntitySet Name="Answers" EntityType="ExamSystemModel.Answer" />
+    <EntitySet Name="Questions" EntityType="ExamSystemModel.Question" />
+    <EntitySet Name="Results" EntityType="ExamSystemModel.Result" />
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Email" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Phone" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Username" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UserType" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Questionnaire">
+    <Key>
+      <PropertyRef Name="QuestionnaireID" />
+    </Key>
+    <Property Type="Int32" Name="QuestionnaireID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedOn" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Subject" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="AnswerID" />
+    </Key>
+    <Property Type="Int32" Name="AnswerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="AnswerOne" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AnswerTwo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AnswerThree" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AnswerFour" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CorrectAnswer" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Reward" />
+    <Property Type="Int32" Name="QuestionID" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Type="Int32" Name="QuestionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Question1" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Createdon" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="QuestionnaireID" />
+  </EntityType>
+  <EntityType Name="Result">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Type="Int32" Name="ResultID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Username" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="QuestionnaireID" />
+    <Property Type="Int32" Name="Score" />
+    <Property Type="Int32" Name="Total" />
+    <Property Type="Int32" Name="CorrectAnswer" />
+    <Property Type="Int32" Name="InCorrectAnswer" />
+    <Property Type="String" Name="SubmissionTime" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

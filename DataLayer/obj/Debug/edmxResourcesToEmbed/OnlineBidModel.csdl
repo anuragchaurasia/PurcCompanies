@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BiddingManagementModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Products" EntityType="BiddingManagementModel.Product" />
+    <EntitySet Name="ProductBids" EntityType="BiddingManagementModel.ProductBid" />
+    <EntitySet Name="Users" EntityType="BiddingManagementModel.User" />
+  </EntityContainer>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ProductBasePrice" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PostedOn" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="ProductImage" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProductBid">
+    <Key>
+      <PropertyRef Name="ProductBidID" />
+    </Key>
+    <Property Name="ProductBidID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="BidderID" Type="Int32" />
+    <Property Name="BiddingTime" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="BiddingTitle" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="BiddingDescription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="Price" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsAccepted" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="Username" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UserType" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

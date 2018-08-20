@@ -1,0 +1,68 @@
+E:\Live Projects\DocComm\Store Comm Services\StoreCommunication\DataLayer\bin\Debug\DataLayer.dll.config
+E:\Live Projects\DocComm\Store Comm Services\StoreCommunication\DataLayer\bin\Debug\DataLayer.dll
+E:\Live Projects\DocComm\Store Comm Services\StoreCommunication\DataLayer\bin\Debug\DataLayer.pdb
+E:\Live Projects\DocComm\Store Comm Services\StoreCommunication\DataLayer\bin\Debug\EntityFramework.dll
+E:\Live Projects\DocComm\Store Comm Services\StoreCommunication\DataLayer\bin\Debug\EntityFramework.xml
+E:\Live Projects\DocComm\Store Comm Services\StoreCommunication\DataLayer\obj\Debug\DataLayer.dll
+E:\Live Projects\DocComm\Store Comm Services\StoreCommunication\DataLayer\obj\Debug\DataLayer.pdb
+E:\Live Projects\DocComm\Store Comm Services\StoreCommunication\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+E:\Student Jobs\DotNet\StoreCommunication\DataLayer\bin\Debug\DataLayer.dll.config
+E:\Student Jobs\DotNet\StoreCommunication\DataLayer\bin\Debug\DataLayer.dll
+E:\Student Jobs\DotNet\StoreCommunication\DataLayer\bin\Debug\DataLayer.pdb
+E:\Student Jobs\DotNet\StoreCommunication\DataLayer\bin\Debug\EntityFramework.dll
+E:\Student Jobs\DotNet\StoreCommunication\DataLayer\bin\Debug\EntityLayer.dll
+E:\Student Jobs\DotNet\StoreCommunication\DataLayer\bin\Debug\EntityLayer.pdb
+E:\Student Jobs\DotNet\StoreCommunication\DataLayer\bin\Debug\EntityFramework.xml
+E:\Student Jobs\DotNet\StoreCommunication\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+E:\Student Jobs\DotNet\StoreCommunication\DataLayer\obj\Debug\DataLayer.dll
+E:\Student Jobs\DotNet\StoreCommunication\DataLayer\obj\Debug\DataLayer.pdb
+E:\Student Jobs\DotNet\Bidding Management\OnlineBidding\DataLayer\bin\Debug\DataLayer.dll.config
+E:\Student Jobs\DotNet\Bidding Management\OnlineBidding\DataLayer\bin\Debug\DataLayer.dll
+E:\Student Jobs\DotNet\Bidding Management\OnlineBidding\DataLayer\bin\Debug\DataLayer.pdb
+E:\Student Jobs\DotNet\Bidding Management\OnlineBidding\DataLayer\bin\Debug\EntityFramework.dll
+E:\Student Jobs\DotNet\Bidding Management\OnlineBidding\DataLayer\bin\Debug\EntityLayer.dll
+E:\Student Jobs\DotNet\Bidding Management\OnlineBidding\DataLayer\bin\Debug\EntityLayer.pdb
+E:\Student Jobs\DotNet\Bidding Management\OnlineBidding\DataLayer\bin\Debug\EntityFramework.xml
+E:\Student Jobs\DotNet\Bidding Management\OnlineBidding\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+E:\Student Jobs\DotNet\Bidding Management\OnlineBidding\DataLayer\obj\Debug\DataLayer.dll
+E:\Student Jobs\DotNet\Bidding Management\OnlineBidding\DataLayer\obj\Debug\DataLayer.pdb
+E:\Student Jobs\DotNet\Exam Management\OnlineBidding\DataLayer\obj\Debug\DataLayer.dll
+E:\Student Jobs\DotNet\Exam Management\OnlineBidding\DataLayer\obj\Debug\DataLayer.pdb
+E:\Student Jobs\DotNet\Exam Management\OnlineBidding\DataLayer\bin\Debug\DataLayer.dll.config
+E:\Student Jobs\DotNet\Exam Management\OnlineBidding\DataLayer\bin\Debug\DataLayer.dll
+E:\Student Jobs\DotNet\Exam Management\OnlineBidding\DataLayer\bin\Debug\DataLayer.pdb
+E:\Student Jobs\DotNet\Exam Management\OnlineBidding\DataLayer\bin\Debug\EntityFramework.dll
+E:\Student Jobs\DotNet\Exam Management\OnlineBidding\DataLayer\bin\Debug\EntityLayer.dll
+E:\Student Jobs\DotNet\Exam Management\OnlineBidding\DataLayer\bin\Debug\EntityLayer.pdb
+E:\Student Jobs\DotNet\Exam Management\OnlineBidding\DataLayer\bin\Debug\EntityFramework.xml
+E:\Student Jobs\DotNet\Exam Management\OnlineBidding\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+E:\Student Jobs\DotNet\Student Discussion Portal\OnlineExamination\DataLayer\bin\Debug\DataLayer.dll.config
+E:\Student Jobs\DotNet\Student Discussion Portal\OnlineExamination\DataLayer\bin\Debug\DataLayer.dll
+E:\Student Jobs\DotNet\Student Discussion Portal\OnlineExamination\DataLayer\bin\Debug\DataLayer.pdb
+E:\Student Jobs\DotNet\Student Discussion Portal\OnlineExamination\DataLayer\bin\Debug\EntityFramework.dll
+E:\Student Jobs\DotNet\Student Discussion Portal\OnlineExamination\DataLayer\bin\Debug\EntityLayer.dll
+E:\Student Jobs\DotNet\Student Discussion Portal\OnlineExamination\DataLayer\bin\Debug\EntityLayer.pdb
+E:\Student Jobs\DotNet\Student Discussion Portal\OnlineExamination\DataLayer\bin\Debug\EntityFramework.xml
+E:\Student Jobs\DotNet\Student Discussion Portal\OnlineExamination\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+E:\Student Jobs\DotNet\Student Discussion Portal\OnlineExamination\DataLayer\obj\Debug\DataLayer.dll
+E:\Student Jobs\DotNet\Student Discussion Portal\OnlineExamination\DataLayer\obj\Debug\DataLayer.pdb
+E:\Live Projects\Quantreum Private ICO Web\PrivateICOWeb\DataLayer\bin\Debug\DataLayer.dll.config
+E:\Live Projects\Quantreum Private ICO Web\PrivateICOWeb\DataLayer\bin\Debug\DataLayer.dll
+E:\Live Projects\Quantreum Private ICO Web\PrivateICOWeb\DataLayer\bin\Debug\DataLayer.pdb
+E:\Live Projects\Quantreum Private ICO Web\PrivateICOWeb\DataLayer\bin\Debug\EntityFramework.dll
+E:\Live Projects\Quantreum Private ICO Web\PrivateICOWeb\DataLayer\bin\Debug\EntityLayer.dll
+E:\Live Projects\Quantreum Private ICO Web\PrivateICOWeb\DataLayer\bin\Debug\EntityLayer.pdb
+E:\Live Projects\Quantreum Private ICO Web\PrivateICOWeb\DataLayer\bin\Debug\EntityFramework.xml
+E:\Live Projects\Quantreum Private ICO Web\PrivateICOWeb\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+E:\Live Projects\Quantreum Private ICO Web\PrivateICOWeb\DataLayer\obj\Debug\DataLayer.dll
+E:\Live Projects\Quantreum Private ICO Web\PrivateICOWeb\DataLayer\obj\Debug\DataLayer.pdb
+E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\bin\Debug\DataLayer.dll.config
+E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\bin\Debug\DataLayer.dll
+E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\bin\Debug\DataLayer.pdb
+E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\bin\Debug\EntityFramework.dll
+E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\bin\Debug\EntityLayer.dll
+E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\bin\Debug\EntityLayer.pdb
+E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\bin\Debug\EntityFramework.xml
+E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\obj\Debug\DataLayer.dll
+E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\obj\Debug\DataLayer.pdb

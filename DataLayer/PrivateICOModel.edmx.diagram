@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="069ca358afe04fceb00dec24b5b5dbf4" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="QuantreumModel.Transaction" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantreumModel.UserData" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantreumModel.DailySalesRecord" Width="1.5" PointX="7" PointY="0.75" />
+        <EntityTypeShape EntityType="QuantreumModel.ComplianceUser" Width="1.75" PointX="5" PointY="0.75" />
+        <EntityTypeShape EntityType="QuantreumModel.Lead" Width="1.5" PointX="2.875" PointY="4" />
+        <EntityTypeShape EntityType="QuantreumModel.Sale" Width="1.5" PointX="8.875" PointY="0.75" />
+        <EntityTypeShape EntityType="QuantreumModel.CandidateData" Width="1.5" PointX="11" PointY="0.75" />
+        <EntityTypeShape EntityType="QuantreumModel.Setting" Width="1.5" PointX="13" PointY="0.75" />
+        <EntityTypeShape EntityType="QuantreumModel.LeadDoc" Width="1.5" PointX="13" PointY="2.375" />
+        <EntityTypeShape EntityType="QuantreumModel.DailyLead" Width="1.5" PointX="4.2141726502283348" PointY="23.264623444184952" />
+        <EntityTypeShape EntityType="QuantreumModel.LeadNote" Width="1.5" PointX="11.501576944953566" PointY="22.563766191976036" />
+        <EntityTypeShape EntityType="QuantreumModel.AuthenticationToken" Width="1.5" PointX="4.9820144479079245" PointY="26.775754046987629" />
+        <EntityTypeShape EntityType="QuantreumModel.DocumentMaster" Width="1.5" PointX="8.3006942012816172" PointY="19.998523795976549" />
+        <EntityTypeShape EntityType="QuantreumModel.MasterICODetail" Width="1.5" PointX="1.3694391685395684" PointY="17.989838146599865" />
+        <EntityTypeShape EntityType="QuantreumModel.UserDocument" Width="1.5" PointX="5.7328694750242253" PointY="4.9610722982143391" />
+        <EntityTypeShape EntityType="QuantreumModel.UserRole" Width="1.5" PointX="4.1124557406233881" PointY="16.518017567935409" />
+        <EntityTypeShape EntityType="QuantreumModel.User" Width="1.5" PointX="6.3796900018955061" PointY="3.0223800554044451" />
+        <AssociationConnector Association="QuantreumModel.FK_AuthenticationToken_Users" />
+        <AssociationConnector Association="QuantreumModel.FK_Users_UserRoles" />
+        <EntityTypeShape EntityType="QuantreumModel.LoginAnalytic" Width="1.5" PointX="10.037061329016956" PointY="7.1679111305474823" />
+        <EntityTypeShape EntityType="QuantreumModel.DocumentAnalytic" Width="1.5" PointX="1.4935098148386505" PointY="9.9678136007710432" />
+        <EntityTypeShape EntityType="QuantreumModel.MCSale" Width="1.5" PointX="7.4826325995301053" PointY="2.5564101201279135" />
+        <EntityTypeShape EntityType="QuantreumModel.MCSaleTemp" Width="1.5" PointX="0.16548996612685266" PointY="14.239592886641432" />
+        <EntityTypeShape EntityType="QuantreumModel.MCServiceSale" Width="1.5" PointX="5.019881751863231" PointY="31.6512888221309" />
+        <EntityTypeShape EntityType="QuantreumModel.MCServiceSaleTemp" Width="1.5" PointX="7.0808214168440644" PointY="20.160198861807679" />
+        <EntityTypeShape EntityType="QuantreumModel.DriverInterviewProfile" Width="1.5" PointX="0.5289824402560398" PointY="7.8338208682061268" />
+        <EntityTypeShape EntityType="QuantreumModel.DriverService" Width="1.5" PointX="9.120177915841424" PointY="16.377466760751542" />
+        <EntityTypeShape EntityType="QuantreumModel.DriverVehicleCargo" Width="1.5" PointX="7.6299019454186325" PointY="1.3871730572484309" />
+        <EntityTypeShape EntityType="QuantreumModel.OrderForm" Width="1.5" PointX="1.331841242188514" PointY="5.8793279406984" />
+        <EntityTypeShape EntityType="QuantreumModel.ProfileCard" Width="1.5" PointX="5.4364617361856915" PointY="25.153453212768515" />
+        <EntityTypeShape EntityType="QuantreumModel.DriverVehicle" Width="1.5" PointX="1.2654409451714908" PointY="21.732445309745355" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExamSystemModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ExamSystemModelStoreContainer">
+    <EntitySet Name="Answer" EntityType="ExamSystemModel.Store.Answer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Question" EntityType="ExamSystemModel.Store.Question" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Questionnaire" EntityType="ExamSystemModel.Store.Questionnaire" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Results" EntityType="ExamSystemModel.Store.Results" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="ExamSystemModel.Store.Users" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="AnswerID" />
+    </Key>
+    <Property Name="AnswerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AnswerOne" Type="nvarchar(max)" />
+    <Property Name="AnswerTwo" Type="nvarchar(max)" />
+    <Property Name="AnswerThree" Type="nvarchar(max)" />
+    <Property Name="AnswerFour" Type="nvarchar(max)" />
+    <Property Name="CorrectAnswer" Type="nvarchar(max)" />
+    <Property Name="Reward" Type="int" />
+    <Property Name="QuestionID" Type="int" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Question" Type="nvarchar(max)" />
+    <Property Name="Createdon" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="500" />
+    <Property Name="QuestionnaireID" Type="int" />
+  </EntityType>
+  <EntityType Name="Questionnaire">
+    <Key>
+      <PropertyRef Name="QuestionnaireID" />
+    </Key>
+    <Property Name="QuestionnaireID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedOn" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Results">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Name="ResultID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuestionnaireID" Type="int" />
+    <Property Name="Score" Type="int" />
+    <Property Name="Total" Type="int" />
+    <Property Name="CorrectAnswer" Type="int" />
+    <Property Name="InCorrectAnswer" Type="int" />
+    <Property Name="SubmissionTime" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="500" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="Phone" Type="varchar" MaxLength="500" />
+    <Property Name="Address" Type="varchar" MaxLength="5000" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="Username" Type="nvarchar" MaxLength="500" />
+    <Property Name="UserType" Type="nvarchar(max)" />
+  </EntityType>
+</Schema>

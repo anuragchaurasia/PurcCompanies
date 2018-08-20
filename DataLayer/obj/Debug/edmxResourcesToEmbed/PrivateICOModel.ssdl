@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuantreumModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="QuantreumModelStoreContainer">
+    <EntitySet Name="AuthenticationTokens" EntityType="QuantreumModel.Store.AuthenticationTokens" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CandidateDatas" EntityType="QuantreumModel.Store.CandidateDatas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ComplianceUsers" EntityType="QuantreumModel.Store.ComplianceUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DailyLead" EntityType="QuantreumModel.Store.DailyLead" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DailySalesRecords" EntityType="QuantreumModel.Store.DailySalesRecords" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocumentAnalytics" EntityType="QuantreumModel.Store.DocumentAnalytics" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocumentMasters" EntityType="QuantreumModel.Store.DocumentMasters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DriverInterviewProfile" EntityType="QuantreumModel.Store.DriverInterviewProfile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DriverServices" EntityType="QuantreumModel.Store.DriverServices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DriverVehicle" EntityType="QuantreumModel.Store.DriverVehicle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DriverVehicleCargo" EntityType="QuantreumModel.Store.DriverVehicleCargo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LeadDoc" EntityType="QuantreumModel.Store.LeadDoc" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LeadNote" EntityType="QuantreumModel.Store.LeadNote" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Leads" EntityType="QuantreumModel.Store.Leads" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoginAnalytics" EntityType="QuantreumModel.Store.LoginAnalytics" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MCSale" EntityType="QuantreumModel.Store.MCSale" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MCSaleTemp" EntityType="QuantreumModel.Store.MCSaleTemp" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MCServiceSale" EntityType="QuantreumModel.Store.MCServiceSale" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MCServiceSaleTemp" EntityType="QuantreumModel.Store.MCServiceSaleTemp" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderForm" EntityType="QuantreumModel.Store.OrderForm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProfileCard" EntityType="QuantreumModel.Store.ProfileCard" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sales" EntityType="QuantreumModel.Store.Sales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Setting" EntityType="QuantreumModel.Store.Setting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Transactions" EntityType="QuantreumModel.Store.Transactions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserDatas" EntityType="QuantreumModel.Store.UserDatas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserDocuments" EntityType="QuantreumModel.Store.UserDocuments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRoles" EntityType="QuantreumModel.Store.UserRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="QuantreumModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AuthenticationToken_Users" Association="QuantreumModel.Store.FK_AuthenticationToken_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AuthenticationTokens" EntitySet="AuthenticationTokens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_UserRoles" Association="QuantreumModel.Store.FK_Users_UserRoles">
+      <End Role="UserRoles" EntitySet="UserRoles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AuthenticationTokens">
+    <Key>
+      <PropertyRef Name="TokenID" />
+    </Key>
+    <Property Name="TokenID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="FkUserID" Type="int" />
+    <Property Name="Token" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="CandidateDatas">
+    <Key>
+      <PropertyRef Name="CanadidateID" />
+    </Key>
+    <Property Name="CanadidateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="150" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="150" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="150" />
+    <Property Name="StreetAddress" Type="nvarchar(max)" />
+    <Property Name="Apartment" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="DateAvailable" Type="nvarchar" MaxLength="50" />
+    <Property Name="SocialSecurityNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DesiredIncome" Type="nvarchar" MaxLength="50" />
+    <Property Name="PositionAppliedFor" Type="nvarchar" MaxLength="150" />
+    <Property Name="UsCitiZen" Type="bit" />
+    <Property Name="AuthorizedForWork" Type="bit" />
+    <Property Name="WorkedHere" Type="bit" />
+    <Property Name="IfYesWhen" Type="nvarchar(max)" />
+    <Property Name="Convicted" Type="bit" />
+    <Property Name="IfYesExplain" Type="nvarchar(max)" />
+    <Property Name="HighSchool" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="SchoolFrom1" Type="nvarchar" MaxLength="50" />
+    <Property Name="SchoolTo1" Type="nvarchar" MaxLength="50" />
+    <Property Name="DidYouGraduated1" Type="bit" />
+    <Property Name="Diploma" Type="nvarchar(max)" />
+    <Property Name="College" Type="nvarchar(max)" />
+    <Property Name="SchoolAddress" Type="nvarchar(max)" />
+    <Property Name="SchoolFrom2" Type="nvarchar" MaxLength="50" />
+    <Property Name="SchoolTo2" Type="nvarchar" MaxLength="50" />
+    <Property Name="DidYouGraduated2" Type="bit" />
+    <Property Name="Deegre1" Type="nvarchar(max)" />
+    <Property Name="Other" Type="nvarchar(max)" />
+    <Property Name="DeegreAddress" Type="nvarchar(max)" />
+    <Property Name="SchoolFrom3" Type="nvarchar" MaxLength="50" />
+    <Property Name="SchoolTo3" Type="nvarchar" MaxLength="50" />
+    <Property Name="DidYouGraduated3" Type="bit" />
+    <Property Name="Deegre2" Type="nvarchar(max)" />
+    <Property Name="RefFullName1" Type="nvarchar" MaxLength="500" />
+    <Property Name="RefRelationShip1" Type="nvarchar" MaxLength="500" />
+    <Property Name="RefCompany1" Type="nvarchar(max)" />
+    <Property Name="RefPhone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="RefAddress1" Type="nvarchar(max)" />
+    <Property Name="RefFullName2" Type="nvarchar(max)" />
+    <Property Name="RefRelationShip2" Type="nvarchar" MaxLength="500" />
+    <Property Name="RefCompany2" Type="nvarchar(max)" />
+    <Property Name="RefPhone2" Type="nvarchar" MaxLength="50" />
+    <Property Name="RefAddress2" Type="nvarchar(max)" />
+    <Property Name="RefFullName3" Type="nvarchar(max)" />
+    <Property Name="RefRelationShip3" Type="nvarchar" MaxLength="500" />
+    <Property Name="RefCompany3" Type="nvarchar(max)" />
+    <Property Name="RefPhone3" Type="nvarchar" MaxLength="50" />
+    <Property Name="RefAddress3" Type="nvarchar(max)" />
+    <Property Name="CompanyName1" Type="nvarchar" MaxLength="500" />
+    <Property Name="CompanyPhone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyAddress1" Type="nvarchar(max)" />
+    <Property Name="CompanySupervisor1" Type="nvarchar" MaxLength="500" />
+    <Property Name="JobTitle1" Type="nvarchar" MaxLength="500" />
+    <Property Name="StartingSalary1" Type="nvarchar" MaxLength="150" />
+    <Property Name="EndingSalary1" Type="nvarchar" MaxLength="150" />
+    <Property Name="Responsibilities1" Type="nvarchar(max)" />
+    <Property Name="CompanyFrom1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyTo1" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReasonForLeaving1" Type="nvarchar(max)" />
+    <Property Name="CanContactSV1" Type="bit" />
+    <Property Name="CompanyName2" Type="nvarchar" MaxLength="500" />
+    <Property Name="CompanyPhone2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyAddress2" Type="nvarchar(max)" />
+    <Property Name="CompanySupervisor2" Type="nvarchar(max)" />
+    <Property Name="JobTitle2" Type="nvarchar" MaxLength="500" />
+    <Property Name="StartingSalary2" Type="nvarchar" MaxLength="150" />
+    <Property Name="EndingSalary2" Type="nvarchar" MaxLength="150" />
+    <Property Name="Responsibilities2" Type="nvarchar(max)" />
+    <Property Name="CompanyFrom2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyTo2" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReasonForLeaving2" Type="nvarchar(max)" />
+    <Property Name="CanContactSV2" Type="bit" />
+    <Property Name="CompanyName3" Type="nvarchar" MaxLength="500" />
+    <Property Name="CompanyPhone3" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyAddress3" Type="nvarchar(max)" />
+    <Property Name="CompanySupervisor3" Type="nvarchar(max)" />
+    <Property Name="JobTitle3" Type="nvarchar" MaxLength="500" />
+    <Property Name="StartingSalary3" Type="nvarchar" MaxLength="50" />
+    <Property Name="EndingSalary3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Responsibilities3" Type="nvarchar(max)" />
+    <Property Name="CompanyFrom3" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyTo3" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReasonForLeaving3" Type="nvarchar(max)" />
+    <Property Name="CanContactSV3" Type="bit" />
+    <Property Name="MilitaryBranch" Type="nvarchar" MaxLength="500" />
+    <Property Name="MilitaryFrom" Type="nvarchar" MaxLength="50" />
+    <Property Name="MilitaryTo" Type="nvarchar" MaxLength="50" />
+    <Property Name="RankAtDischarge" Type="nvarchar" MaxLength="500" />
+    <Property Name="TypeOFDischarge" Type="nvarchar" MaxLength="500" />
+    <Property Name="Explanation" Type="nvarchar(max)" />
+    <Property Name="SignatureName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="ResumeDetails" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ComplianceUsers">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsContractor" Type="bit" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreationTime" Type="nvarchar" MaxLength="150" />
+    <Property Name="IsArchive" Type="bit" />
+  </EntityType>
+  <EntityType Name="DailyLead">
+    <Key>
+      <PropertyRef Name="DailyLeadID" />
+    </Key>
+    <Property Name="DailyLeadID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DOTNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="LegalName" Type="nvarchar(max)" />
+    <Property Name="PhysicalAddress" Type="nvarchar(max)" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="MailingAddress" Type="nvarchar(max)" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeZone" Type="nvarchar" MaxLength="50" />
+    <Property Name="OperatingStatus" Type="nvarchar" MaxLength="500" />
+    <Property Name="Interstate" Type="nvarchar" MaxLength="500" />
+    <Property Name="AuthForHire" Type="nvarchar" MaxLength="50" />
+    <Property Name="PowerUnits" Type="nvarchar" MaxLength="50" />
+    <Property Name="Drivers" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateFiled" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="LeadDocID" Type="int" />
+    <Property Name="SavedOn" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="DailySalesRecords">
+    <Key>
+      <PropertyRef Name="DailySalesRecordID" />
+    </Key>
+    <Property Name="DailySalesRecordID" Type="int" Nullable="false" />
+    <Property Name="DaySales" Type="nvarchar" MaxLength="50" />
+    <Property Name="Refunds" Type="nvarchar" MaxLength="50" />
+    <Property Name="NetSales" Type="nvarchar" MaxLength="50" />
+    <Property Name="MonthlySales" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tier1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tier2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tier3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tier4" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Bonus" Type="nvarchar" MaxLength="50" />
+    <Property Name="MonthlyDrawsTaken" Type="nvarchar" MaxLength="50" />
+    <Property Name="QBTotalPay" Type="nvarchar" MaxLength="50" />
+    <Property Name="CashBonus" Type="nvarchar" MaxLength="50" />
+    <Property Name="MonthlyOfficeRent" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActualPayoutTotal" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DocumentAnalytics">
+    <Key>
+      <PropertyRef Name="AnalyticsID" />
+    </Key>
+    <Property Name="AnalyticsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Username" Type="nvarchar" MaxLength="500" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Platform" Type="nvarchar" MaxLength="500" />
+    <Property Name="OS" Type="nvarchar" MaxLength="500" />
+    <Property Name="Browser" Type="nvarchar" MaxLength="500" />
+    <Property Name="DocumentName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DocumentMasters">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+    </Key>
+    <Property Name="DocumentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentName" Type="varchar(max)" />
+    <Property Name="Description" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="DriverInterviewProfile">
+    <Key>
+      <PropertyRef Name="DriverInterviewID" />
+    </Key>
+    <Property Name="DriverInterviewID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="LegalName" Type="nvarchar" MaxLength="500" />
+    <Property Name="USDOT" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="DriverName" Type="nvarchar(max)" />
+    <Property Name="Supervisor" Type="nvarchar(max)" />
+    <Property Name="LicenseNo" Type="nvarchar(max)" />
+    <Property Name="ExpirationDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Class" Type="nvarchar(max)" />
+    <Property Name="StatusIssued" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+    <Property Name="SSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="EIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="OrderFormID" Type="int" />
+    <Property Name="CDLNonCDL" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsSubmitted" Type="bit" />
+  </EntityType>
+  <EntityType Name="DriverServices">
+    <Key>
+      <PropertyRef Name="DriverServiceID" />
+    </Key>
+    <Property Name="DriverServiceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DriverInterviewProfileID" Type="int" />
+    <Property Name="ServiceID" Type="int" />
+  </EntityType>
+  <EntityType Name="DriverVehicle">
+    <Key>
+      <PropertyRef Name="DriverVehicleInfo" />
+    </Key>
+    <Property Name="DriverVehicleInfo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderFormID" Type="int" />
+    <Property Name="Year" Type="nvarchar" MaxLength="50" />
+    <Property Name="Make" Type="nvarchar" MaxLength="500" />
+    <Property Name="Model" Type="nvarchar" MaxLength="500" />
+    <Property Name="GVW" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="DriverVehicleCargo">
+    <Key>
+      <PropertyRef Name="VehicleCargoID" />
+    </Key>
+    <Property Name="VehicleCargoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DriverVehicleID" Type="int" />
+    <Property Name="CargoCarriedName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="LeadDoc">
+    <Key>
+      <PropertyRef Name="LeadDocID" />
+    </Key>
+    <Property Name="LeadDocID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentName" Type="nvarchar(max)" />
+    <Property Name="DocumentPath" Type="nvarchar(max)" />
+    <Property Name="UploadedBy" Type="nvarchar" MaxLength="500" />
+    <Property Name="UploadedFor" Type="int" />
+    <Property Name="UploadDate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LeadNote">
+    <Key>
+      <PropertyRef Name="LeadNoteID" />
+    </Key>
+    <Property Name="LeadNoteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="Timeline" Type="nvarchar(max)" />
+    <Property Name="LeadID" Type="int" />
+    <Property Name="NoteLeftAt" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Leads">
+    <Key>
+      <PropertyRef Name="LeadID" />
+    </Key>
+    <Property Name="LeadID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DOTNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="BusinessName" Type="nvarchar(max)" />
+    <Property Name="ComplianceAgent" Type="nvarchar(max)" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="500" />
+    <Property Name="PhoneNoForContact" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="ServiceDiscussed" Type="nvarchar(max)" />
+    <Property Name="SalesPersonID" Type="int" />
+  </EntityType>
+  <EntityType Name="LoginAnalytics">
+    <Key>
+      <PropertyRef Name="AnalyticsID" />
+    </Key>
+    <Property Name="AnalyticsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Username" Type="nvarchar" MaxLength="500" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Platform" Type="nvarchar" MaxLength="500" />
+    <Property Name="OS" Type="nvarchar" MaxLength="500" />
+    <Property Name="Browser" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="MCSale">
+    <Key>
+      <PropertyRef Name="MCID" />
+    </Key>
+    <Property Name="MCID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DotNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="MCNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameOnCard" Type="nvarchar" MaxLength="500" />
+    <Property Name="AddressOnCard" Type="nvarchar(max)" />
+    <Property Name="PhysicalAddress" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="SoldAt" Type="nvarchar(max)" />
+    <Property Name="SalesPersonID" Type="int" />
+    <Property Name="CardNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardType" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpirationDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CVC" Type="nvarchar" MaxLength="10" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="MCSaleNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="LegalName" Type="nvarchar" MaxLength="500" />
+    <Property Name="DBA" Type="nvarchar" MaxLength="500" />
+    <Property Name="DotPin" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MCSaleTemp">
+    <Key>
+      <PropertyRef Name="MCID" />
+    </Key>
+    <Property Name="MCID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DotNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="MCNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameOnCard" Type="nvarchar" MaxLength="500" />
+    <Property Name="AddressOnCard" Type="nvarchar(max)" />
+    <Property Name="PhysicalAddress" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="SavedAt" Type="nvarchar" MaxLength="500" />
+    <Property Name="SalesPersonID" Type="int" />
+    <Property Name="CardNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardType" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpirationDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CVC" Type="nvarchar" MaxLength="10" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="MCSaleNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="LegalName" Type="nvarchar" MaxLength="500" />
+    <Property Name="DBA" Type="nvarchar" MaxLength="500" />
+    <Property Name="DotPin" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MCServiceSale">
+    <Key>
+      <PropertyRef Name="MCServiceID" />
+    </Key>
+    <Property Name="MCServiceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MCSaleID" Type="int" />
+    <Property Name="ServiceID" Type="int" />
+  </EntityType>
+  <EntityType Name="MCServiceSaleTemp">
+    <Key>
+      <PropertyRef Name="MCServiceID" />
+    </Key>
+    <Property Name="MCServiceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MCSaleID" Type="int" />
+    <Property Name="ServiceID" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderForm">
+    <Key>
+      <PropertyRef Name="OrderFormID" />
+    </Key>
+    <Property Name="OrderFormID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="USDot" Type="nvarchar" MaxLength="50" />
+    <Property Name="CA" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameOnCard" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="DBA" Type="nvarchar" MaxLength="50" />
+    <Property Name="LegalName" Type="nvarchar(max)" />
+    <Property Name="PhysicalAddress" Type="nvarchar(max)" />
+    <Property Name="BillingAddress" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="DateTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="DriverPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="ComplianceSupervisor" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyType" Type="nvarchar(max)" />
+    <Property Name="IsSubmitted" Type="bit" />
+    <Property Name="SaleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ComplianceUserID" Type="int" />
+    <Property Name="DOTPinNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProfileCard">
+    <Key>
+      <PropertyRef Name="ProfileCardInfo" />
+    </Key>
+    <Property Name="ProfileCardInfo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderFormID" Type="int" />
+    <Property Name="CardType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CorDC" Type="nvarchar" MaxLength="50" />
+    <Property Name="Expiration" Type="nvarchar" MaxLength="50" />
+    <Property Name="CVC" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsSubmitted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Sales">
+    <Key>
+      <PropertyRef Name="SaleID" />
+    </Key>
+    <Property Name="SaleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DailySaleAmount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Refunds" Type="nvarchar" MaxLength="50" />
+    <Property Name="NetSales" Type="nvarchar" MaxLength="50" />
+    <Property Name="MonthlySales" Type="nvarchar" MaxLength="50" />
+    <Property Name="CashBonus" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrawTakenInMonth" Type="nvarchar" MaxLength="50" />
+    <Property Name="DailyBonus" Type="nvarchar" MaxLength="50" />
+    <Property Name="MonthlyOfficeRent" Type="nvarchar" MaxLength="50" />
+    <Property Name="QBTotalPay" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesPersonID" Type="int" />
+    <Property Name="EntryDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CommisionInUSD" Type="nvarchar" MaxLength="50" />
+    <Property Name="CommisionPercentage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="SettingID" />
+    </Key>
+    <Property Name="SettingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MaxTarget" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdminEmails" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="TransactionCurrency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cryptoamount" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoOfCoins" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransactionTime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserDatas">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="250" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="250" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="1000" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoOfCoins" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreationTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferrerEmail" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="UserDocuments">
+    <Key>
+      <PropertyRef Name="UserDocID" />
+    </Key>
+    <Property Name="UserDocID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DocID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="UploadPath" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="UserRoleTypeID" />
+    </Key>
+    <Property Name="UserRoleTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserRoleName" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Zipcode" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="UserRoleID" Type="int" />
+    <Property Name="PushToken" Type="varchar(max)" />
+    <Property Name="DeviceType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_AuthenticationToken_Users">
+    <End Role="Users" Type="QuantreumModel.Store.Users" Multiplicity="0..1" />
+    <End Role="AuthenticationTokens" Type="QuantreumModel.Store.AuthenticationTokens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="AuthenticationTokens">
+        <PropertyRef Name="FkUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_UserRoles">
+    <End Role="UserRoles" Type="QuantreumModel.Store.UserRoles" Multiplicity="0..1" />
+    <End Role="Users" Type="QuantreumModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRoles">
+        <PropertyRef Name="UserRoleTypeID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="UserRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

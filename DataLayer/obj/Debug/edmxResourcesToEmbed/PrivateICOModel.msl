@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QuantreumModelStoreContainer" CdmEntityContainer="QuantumEntities">
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="IsTypeOf(QuantreumModel.Transaction)">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TransactionCurrency" ColumnName="TransactionCurrency" />
+          <ScalarProperty Name="Cryptoamount" ColumnName="Cryptoamount" />
+          <ScalarProperty Name="NoOfCoins" ColumnName="NoOfCoins" />
+          <ScalarProperty Name="TransactionTime" ColumnName="TransactionTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDatas">
+      <EntityTypeMapping TypeName="IsTypeOf(QuantreumModel.UserData)">
+        <MappingFragment StoreEntitySet="UserDatas">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="NoOfCoins" ColumnName="NoOfCoins" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="ReferrerEmail" ColumnName="ReferrerEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailySalesRecords">
+      <EntityTypeMapping TypeName="IsTypeOf(QuantreumModel.DailySalesRecord)">
+        <MappingFragment StoreEntitySet="DailySalesRecords">
+          <ScalarProperty Name="DailySalesRecordID" ColumnName="DailySalesRecordID" />
+          <ScalarProperty Name="DaySales" ColumnName="DaySales" />
+          <ScalarProperty Name="Refunds" ColumnName="Refunds" />
+          <ScalarProperty Name="NetSales" ColumnName="NetSales" />
+          <ScalarProperty Name="MonthlySales" ColumnName="MonthlySales" />
+          <ScalarProperty Name="Tier1" ColumnName="Tier1" />
+          <ScalarProperty Name="Tier2" ColumnName="Tier2" />
+          <ScalarProperty Name="Tier3" ColumnName="Tier3" />
+          <ScalarProperty Name="Tier4" ColumnName="Tier4" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+          <ScalarProperty Name="MonthlyDrawsTaken" ColumnName="MonthlyDrawsTaken" />
+          <ScalarProperty Name="QBTotalPay" ColumnName="QBTotalPay" />
+          <ScalarProperty Name="CashBonus" ColumnName="CashBonus" />
+          <ScalarProperty Name="MonthlyOfficeRent" ColumnName="MonthlyOfficeRent" />
+          <ScalarProperty Name="ActualPayoutTotal" ColumnName="ActualPayoutTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComplianceUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(QuantreumModel.ComplianceUser)">
+        <MappingFragment StoreEntitySet="ComplianceUsers">
+          <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsContractor" ColumnName="IsContractor" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leads">
+      <EntityTypeMapping TypeName="IsTypeOf(QuantreumModel.Lead)">
+        <MappingFragment StoreEntitySet="Leads">
+          <ScalarProperty Name="LeadID" ColumnName="LeadID" />
+          <ScalarProperty Name="DOTNo" ColumnName="DOTNo" />
+          <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+          <ScalarProperty Name="ComplianceAgent" ColumnName="ComplianceAgent" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="PhoneNoForContact" ColumnName="PhoneNoForContact" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ServiceDiscussed" ColumnName="ServiceDiscussed" />
+          <ScalarProperty Name="SalesPersonID" ColumnName="SalesPersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="IsTypeOf(QuantreumModel.Sale)">
+        <MappingFragment StoreEntitySet="Sales">
+          <ScalarProperty Name="CommisionPercentage" ColumnName="CommisionPercentage" />
+          <ScalarProperty Name="CommisionInUSD" ColumnName="CommisionInUSD" />
+          <ScalarProperty Name="SaleID" ColumnName="SaleID" />
+          <ScalarProperty Name="DailySaleAmount" ColumnName="DailySaleAmount" />
+          <ScalarProperty Name="Refunds" ColumnName="Refunds" />
+          <ScalarProperty Name="NetSales" ColumnName="NetSales" />
+          <ScalarProperty Name="MonthlySales" ColumnName="MonthlySales" />
+          <ScalarProperty Name="CashBonus" ColumnName="CashBonus" />
+          <ScalarProperty Name="DrawTakenInMonth" ColumnName="DrawTakenInMonth" />
+          <ScalarProperty Name="DailyBonus" ColumnName="DailyBonus" />
+          <ScalarProperty Name="MonthlyOfficeRent" ColumnName="MonthlyOfficeRent" />
+          <ScalarProperty Name="QBTotalPay" ColumnName="QBTotalPay" />
+          <ScalarProperty Name="SalesPersonID" ColumnName="SalesPersonID" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CandidateDatas">
+      <EntityTypeMapping TypeName="QuantreumModel.CandidateData">
+        <MappingFragment StoreEntitySet="CandidateDatas">
+          <ScalarProperty Name="ResumeDetails" ColumnName="ResumeDetails" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SignatureName" ColumnName="SignatureName" />
+          <ScalarProperty Name="Explanation" ColumnName="Explanation" />
+          <ScalarProperty Name="TypeOFDischarge" ColumnName="TypeOFDischarge" />
+          <ScalarProperty Name="RankAtDischarge" ColumnName="RankAtDischarge" />
+          <ScalarProperty Name="MilitaryTo" ColumnName="MilitaryTo" />
+          <ScalarProperty Name="MilitaryFrom" ColumnName="MilitaryFrom" />
+          <ScalarProperty Name="MilitaryBranch" ColumnName="MilitaryBranch" />
+          <ScalarProperty Name="CanContactSV3" ColumnName="CanContactSV3" />
+          <ScalarProperty Name="ReasonForLeaving3" ColumnName="ReasonForLeaving3" />
+          <ScalarProperty Name="CompanyTo3" ColumnName="CompanyTo3" />
+          <ScalarProperty Name="CompanyFrom3" ColumnName="CompanyFrom3" />
+          <ScalarProperty Name="Responsibilities3" ColumnName="Responsibilities3" />
+          <ScalarProperty Name="EndingSalary3" ColumnName="EndingSalary3" />
+          <ScalarProperty Name="StartingSalary3" ColumnName="StartingSalary3" />
+          <ScalarProperty Name="JobTitle3" ColumnName="JobTitle3" />
+          <ScalarProperty Name="CompanySupervisor3" ColumnName="CompanySupervisor3" />
+          <ScalarProperty Name="CompanyAddress3" ColumnName="CompanyAddress3" />
+          <ScalarProperty Name="CompanyPhone3" ColumnName="CompanyPhone3" />
+          <ScalarProperty Name="CompanyName3" ColumnName="CompanyName3" />
+          <ScalarProperty Name="CanContactSV2" ColumnName="CanContactSV2" />
+          <ScalarProperty Name="ReasonForLeaving2" ColumnName="ReasonForLeaving2" />
+          <ScalarProperty Name="CompanyTo2" ColumnName="CompanyTo2" />
+          <ScalarProperty Name="CompanyFrom2" ColumnName="CompanyFrom2" />
+          <ScalarProperty Name="Responsibilities2" ColumnName="Responsibilities2" />
+          <ScalarProperty Name="EndingSalary2" ColumnName="EndingSalary2" />
+          <ScalarProperty Name="StartingSalary2" ColumnName="StartingSalary2" />
+          <ScalarProperty Name="JobTitle2" ColumnName="JobTitle2" />
+          <ScalarProperty Name="CompanySupervisor2" ColumnName="CompanySupervisor2" />
+          <ScalarProperty Name="CompanyAddress2" ColumnName="CompanyAddress2" />
+          <ScalarProperty Name="CompanyPhone2" ColumnName="CompanyPhone2" />
+          <ScalarProperty Name="CompanyName2" ColumnName="CompanyName2" />
+          <ScalarProperty Name="CanContactSV1" ColumnName="CanContactSV1" />
+          <ScalarProperty Name="ReasonForLeaving1" ColumnName="ReasonForLeaving1" />
+          <ScalarProperty Name="CompanyTo1" ColumnName="CompanyTo1" />
+          <ScalarProperty Name="CompanyFrom1" ColumnName="CompanyFrom1" />
+          <ScalarProperty Name="Responsibilities1" ColumnName="Responsibilities1" />
+          <ScalarProperty Name="EndingSalary1" ColumnName="EndingSalary1" />
+          <ScalarProperty Name="StartingSalary1" ColumnName="StartingSalary1" />
+          <ScalarProperty Name="JobTitle1" ColumnName="JobTitle1" />
+          <ScalarProperty Name="CompanySupervisor1" ColumnName="CompanySupervisor1" />
+          <ScalarProperty Name="CompanyAddress1" ColumnName="CompanyAddress1" />
+          <ScalarProperty Name="CompanyPhone1" ColumnName="CompanyPhone1" />
+          <ScalarProperty Name="CompanyName1" ColumnName="CompanyName1" />
+          <ScalarProperty Name="RefAddress3" ColumnName="RefAddress3" />
+          <ScalarProperty Name="RefPhone3" ColumnName="RefPhone3" />
+          <ScalarProperty Name="RefCompany3" ColumnName="RefCompany3" />
+          <ScalarProperty Name="RefRelationShip3" ColumnName="RefRelationShip3" />
+          <ScalarProperty Name="RefFullName3" ColumnName="RefFullName3" />
+          <ScalarProperty Name="RefAddress2" ColumnName="RefAddress2" />
+          <ScalarProperty Name="RefPhone2" ColumnName="RefPhone2" />
+          <ScalarProperty Name="RefCompany2" ColumnName="RefCompany2" />
+          <ScalarProperty Name="RefRelationShip2" ColumnName="RefRelationShip2" />
+          <ScalarProperty Name="RefFullName2" ColumnName="RefFullName2" />
+          <ScalarProperty Name="RefAddress1" ColumnName="RefAddress1" />
+          <ScalarProperty Name="RefPhone1" ColumnName="RefPhone1" />
+          <ScalarProperty Name="RefCompany1" ColumnName="RefCompany1" />
+          <ScalarProperty Name="RefRelationShip1" ColumnName="RefRelationShip1" />
+          <ScalarProperty Name="RefFullName1" ColumnName="RefFullName1" />
+          <ScalarProperty Name="Deegre2" ColumnName="Deegre2" />
+          <ScalarProperty Name="DidYouGraduated3" ColumnName="DidYouGraduated3" />
+          <ScalarProperty Name="SchoolTo3" ColumnName="SchoolTo3" />
+          <ScalarProperty Name="SchoolFrom3" ColumnName="SchoolFrom3" />
+          <ScalarProperty Name="DeegreAddress" ColumnName="DeegreAddress" />
+          <ScalarProperty Name="Other" ColumnName="Other" />
+          <ScalarProperty Name="Deegre1" ColumnName="Deegre1" />
+          <ScalarProperty Name="DidYouGraduated2" ColumnName="DidYouGraduated2" />
+          <ScalarProperty Name="SchoolTo2" ColumnName="SchoolTo2" />
+          <ScalarProperty Name="SchoolFrom2" ColumnName="SchoolFrom2" />
+          <ScalarProperty Name="SchoolAddress" ColumnName="SchoolAddress" />
+          <ScalarProperty Name="College" ColumnName="College" />
+          <ScalarProperty Name="Diploma" ColumnName="Diploma" />
+          <ScalarProperty Name="DidYouGraduated1" ColumnName="DidYouGraduated1" />
+          <ScalarProperty Name="SchoolTo1" ColumnName="SchoolTo1" />
+          <ScalarProperty Name="SchoolFrom1" ColumnName="SchoolFrom1" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="HighSchool" ColumnName="HighSchool" />
+          <ScalarProperty Name="IfYesExplain" ColumnName="IfYesExplain" />
+          <ScalarProperty Name="Convicted" ColumnName="Convicted" />
+          <ScalarProperty Name="IfYesWhen" ColumnName="IfYesWhen" />
+          <ScalarProperty Name="WorkedHere" ColumnName="WorkedHere" />
+          <ScalarProperty Name="AuthorizedForWork" ColumnName="AuthorizedForWork" />
+          <ScalarProperty Name="UsCitiZen" ColumnName="UsCitiZen" />
+          <ScalarProperty Name="PositionAppliedFor" ColumnName="PositionAppliedFor" />
+          <ScalarProperty Name="DesiredIncome" ColumnName="DesiredIncome" />
+          <ScalarProperty Name="SocialSecurityNo" ColumnName="SocialSecurityNo" />
+          <ScalarProperty Name="DateAvailable" ColumnName="DateAvailable" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Apartment" ColumnName="Apartment" />
+          <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="CanadidateID" ColumnName="CanadidateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="QuantreumModel.Setting">
+        <MappingFragment StoreEntitySet="Setting">
+          <ScalarProperty Name="AdminEmails" ColumnName="AdminEmails" />
+          <ScalarProperty Name="MaxTarget" ColumnName="MaxTarget" />
+          <ScalarProperty Name="SettingID" ColumnName="SettingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadDocs">
+      <EntityTypeMapping TypeName="QuantreumModel.LeadDoc">
+        <MappingFragment StoreEntitySet="LeadDoc">
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+          <ScalarProperty Name="UploadedFor" ColumnName="UploadedFor" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="LeadDocID" ColumnName="LeadDocID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyLeads">
+      <EntityTypeMapping TypeName="QuantreumModel.DailyLead">
+        <MappingFragment StoreEntitySet="DailyLead">
+          <ScalarProperty Name="SavedOn" ColumnName="SavedOn" />
+          <ScalarProperty Name="LeadDocID" ColumnName="LeadDocID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateFiled" ColumnName="DateFiled" />
+          <ScalarProperty Name="Drivers" ColumnName="Drivers" />
+          <ScalarProperty Name="PowerUnits" ColumnName="PowerUnits" />
+          <ScalarProperty Name="AuthForHire" ColumnName="AuthForHire" />
+          <ScalarProperty Name="Interstate" ColumnName="Interstate" />
+          <ScalarProperty Name="OperatingStatus" ColumnName="OperatingStatus" />
+          <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MailingAddress" ColumnName="MailingAddress" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+          <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+          <ScalarProperty Name="DOTNumber" ColumnName="DOTNumber" />
+          <ScalarProperty Name="DailyLeadID" ColumnName="DailyLeadID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadNotes">
+      <EntityTypeMapping TypeName="QuantreumModel.LeadNote">
+        <MappingFragment StoreEntitySet="LeadNote">
+          <ScalarProperty Name="NoteLeftAt" ColumnName="NoteLeftAt" />
+          <ScalarProperty Name="LeadID" ColumnName="LeadID" />
+          <ScalarProperty Name="Timeline" ColumnName="Timeline" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="LeadNoteID" ColumnName="LeadNoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuthenticationTokens">
+      <EntityTypeMapping TypeName="QuantreumModel.AuthenticationToken">
+        <MappingFragment StoreEntitySet="AuthenticationTokens">
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="FkUserID" ColumnName="FkUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentMasters">
+      <EntityTypeMapping TypeName="QuantreumModel.DocumentMaster">
+        <MappingFragment StoreEntitySet="DocumentMasters">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDocuments">
+      <EntityTypeMapping TypeName="QuantreumModel.UserDocument">
+        <MappingFragment StoreEntitySet="UserDocuments">
+          <ScalarProperty Name="UploadPath" ColumnName="UploadPath" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="UserDocID" ColumnName="UserDocID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="QuantreumModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserRoleName" ColumnName="UserRoleName" />
+          <ScalarProperty Name="UserRoleTypeID" ColumnName="UserRoleTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="QuantreumModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+          <ScalarProperty Name="PushToken" ColumnName="PushToken" />
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginAnalytics">
+      <EntityTypeMapping TypeName="QuantreumModel.LoginAnalytic">
+        <MappingFragment StoreEntitySet="LoginAnalytics">
+          <ScalarProperty Name="Browser" ColumnName="Browser" />
+          <ScalarProperty Name="OS" ColumnName="OS" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="AnalyticsID" ColumnName="AnalyticsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentAnalytics">
+      <EntityTypeMapping TypeName="QuantreumModel.DocumentAnalytic">
+        <MappingFragment StoreEntitySet="DocumentAnalytics">
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="Browser" ColumnName="Browser" />
+          <ScalarProperty Name="OS" ColumnName="OS" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="AnalyticsID" ColumnName="AnalyticsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MCSales">
+      <EntityTypeMapping TypeName="QuantreumModel.MCSale">
+        <MappingFragment StoreEntitySet="MCSale">
+          <ScalarProperty Name="DotPin" ColumnName="DotPin" />
+          <ScalarProperty Name="DBA" ColumnName="DBA" />
+          <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+          <ScalarProperty Name="MCSaleNo" ColumnName="MCSaleNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="CVC" ColumnName="CVC" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="SalesPersonID" ColumnName="SalesPersonID" />
+          <ScalarProperty Name="SoldAt" ColumnName="SoldAt" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+          <ScalarProperty Name="AddressOnCard" ColumnName="AddressOnCard" />
+          <ScalarProperty Name="NameOnCard" ColumnName="NameOnCard" />
+          <ScalarProperty Name="MCNo" ColumnName="MCNo" />
+          <ScalarProperty Name="DotNo" ColumnName="DotNo" />
+          <ScalarProperty Name="MCID" ColumnName="MCID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MCSaleTemps">
+      <EntityTypeMapping TypeName="QuantreumModel.MCSaleTemp">
+        <MappingFragment StoreEntitySet="MCSaleTemp">
+          <ScalarProperty Name="DotPin" ColumnName="DotPin" />
+          <ScalarProperty Name="DBA" ColumnName="DBA" />
+          <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+          <ScalarProperty Name="MCSaleNo" ColumnName="MCSaleNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="CVC" ColumnName="CVC" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="SalesPersonID" ColumnName="SalesPersonID" />
+          <ScalarProperty Name="SavedAt" ColumnName="SavedAt" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+          <ScalarProperty Name="AddressOnCard" ColumnName="AddressOnCard" />
+          <ScalarProperty Name="NameOnCard" ColumnName="NameOnCard" />
+          <ScalarProperty Name="MCNo" ColumnName="MCNo" />
+          <ScalarProperty Name="DotNo" ColumnName="DotNo" />
+          <ScalarProperty Name="MCID" ColumnName="MCID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MCServiceSales">
+      <EntityTypeMapping TypeName="QuantreumModel.MCServiceSale">
+        <MappingFragment StoreEntitySet="MCServiceSale">
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="MCSaleID" ColumnName="MCSaleID" />
+          <ScalarProperty Name="MCServiceID" ColumnName="MCServiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MCServiceSaleTemps">
+      <EntityTypeMapping TypeName="QuantreumModel.MCServiceSaleTemp">
+        <MappingFragment StoreEntitySet="MCServiceSaleTemp">
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="MCSaleID" ColumnName="MCSaleID" />
+          <ScalarProperty Name="MCServiceID" ColumnName="MCServiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverInterviewProfiles">
+      <EntityTypeMapping TypeName="QuantreumModel.DriverInterviewProfile">
+        <MappingFragment StoreEntitySet="DriverInterviewProfile">
+          <ScalarProperty Name="IsSubmitted" ColumnName="IsSubmitted" />
+          <ScalarProperty Name="CDLNonCDL" ColumnName="CDLNonCDL" />
+          <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="EIN" ColumnName="EIN" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="StatusIssued" ColumnName="StatusIssued" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="LicenseNo" ColumnName="LicenseNo" />
+          <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+          <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="USDOT" ColumnName="USDOT" />
+          <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="DriverInterviewID" ColumnName="DriverInterviewID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverServices">
+      <EntityTypeMapping TypeName="QuantreumModel.DriverService">
+        <MappingFragment StoreEntitySet="DriverServices">
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="DriverInterviewProfileID" ColumnName="DriverInterviewProfileID" />
+          <ScalarProperty Name="DriverServiceID" ColumnName="DriverServiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverVehicleCargoes">
+      <EntityTypeMapping TypeName="QuantreumModel.DriverVehicleCargo">
+        <MappingFragment StoreEntitySet="DriverVehicleCargo">
+          <ScalarProperty Name="CargoCarriedName" ColumnName="CargoCarriedName" />
+          <ScalarProperty Name="DriverVehicleID" ColumnName="DriverVehicleID" />
+          <ScalarProperty Name="VehicleCargoID" ColumnName="VehicleCargoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderForms">
+      <EntityTypeMapping TypeName="QuantreumModel.OrderForm">
+        <MappingFragment StoreEntitySet="OrderForm">
+          <ScalarProperty Name="DOTPinNo" ColumnName="DOTPinNo" />
+          <ScalarProperty Name="ComplianceUserID" ColumnName="ComplianceUserID" />
+          <ScalarProperty Name="SaleID" ColumnName="SaleID" />
+          <ScalarProperty Name="IsSubmitted" ColumnName="IsSubmitted" />
+          <ScalarProperty Name="CompanyType" ColumnName="CompanyType" />
+          <ScalarProperty Name="ComplianceSupervisor" ColumnName="ComplianceSupervisor" />
+          <ScalarProperty Name="DriverPhone" ColumnName="DriverPhone" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
+          <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+          <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+          <ScalarProperty Name="DBA" ColumnName="DBA" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameOnCard" ColumnName="NameOnCard" />
+          <ScalarProperty Name="CA" ColumnName="CA" />
+          <ScalarProperty Name="USDot" ColumnName="USDot" />
+          <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfileCards">
+      <EntityTypeMapping TypeName="QuantreumModel.ProfileCard">
+        <MappingFragment StoreEntitySet="ProfileCard">
+          <ScalarProperty Name="IsSubmitted" ColumnName="IsSubmitted" />
+          <ScalarProperty Name="CVC" ColumnName="CVC" />
+          <ScalarProperty Name="Expiration" ColumnName="Expiration" />
+          <ScalarProperty Name="CorDC" ColumnName="CorDC" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />
+          <ScalarProperty Name="ProfileCardInfo" ColumnName="ProfileCardInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverVehicles">
+      <EntityTypeMapping TypeName="QuantreumModel.DriverVehicle">
+        <MappingFragment StoreEntitySet="DriverVehicle">
+          <ScalarProperty Name="GVW" ColumnName="GVW" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />
+          <ScalarProperty Name="DriverVehicleInfo" ColumnName="DriverVehicleInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

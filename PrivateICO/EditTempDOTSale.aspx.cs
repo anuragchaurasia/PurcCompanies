@@ -42,7 +42,7 @@ namespace PrivateICO
 
             txtCardNo.Text = usdotDriver.profileCard.CorDC;
             hidCardNo.Value = usdotDriver.profileCard.CorDC;
-
+            hdnCardType.Value = usdotDriver.profileCard.CardType;
             ulcardtype.Attributes["class"] = usdotDriver.profileCard.CardType;
 
 

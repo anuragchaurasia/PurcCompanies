@@ -36,7 +36,7 @@
                         <h3 class="box-title">USDOT Sale :
                             <asp:Label ID="lblPCSaleNo" runat="server" Text=""></asp:Label>,
                             <asp:Label ID="lblPCSalePersonName" runat="server" Text=""></asp:Label></h3>
-
+                        <asp:HiddenField ID="hidSaleNo" runat="server" />
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         </div>
@@ -866,18 +866,26 @@
                             $("#ctl00_ContentPlaceHolder1_txtMailingAddress").val(obj.MailingAddress);
                             $("#ctl00_ContentPlaceHolder1_txtDriverLegalName").val(obj.LegalName);
                             $("#ctl00_ContentPlaceHolder1_txtDriverUSDOT").val(obj.DOTNumber);
-                            $("#ctl00_ContentPlaceHolder1_lblPCSaleNo").html("PC" + obj.DOTNumber + randomIntFromInterval(10, 99));
+                            var saleNo = "PC" + obj.DOTNumber + randomIntFromInterval(10, 99);
+                            $("#ctl00_ContentPlaceHolder1_lblPCSaleNo").html(saleNo);
+                            $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(saleNo);
                         }
                         else {
                             $("#ctl00_ContentPlaceHolder1_txtLegalName").val("");
                             $("#ctl00_ContentPlaceHolder1_txtMailingAddress").val("");
                             $("#ctl00_ContentPlaceHolder1_txtDriverLegalName").val("");
                             $("#ctl00_ContentPlaceHolder1_txtDriverUSDOT").val("");
-                            $("#ctl00_ContentPlaceHolder1_lblPCSaleNo").html("PC" + $("#ctl00_ContentPlaceHolder1_txtUSDOT").val() + randomIntFromInterval(10, 99));
+                            var saleNo = "PC" + $("#ctl00_ContentPlaceHolder1_txtUSDOT").val() + randomIntFromInterval(10, 99);
+                            $("#ctl00_ContentPlaceHolder1_lblPCSaleNo").html(saleNo);
+                            $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(saleNo);
                         }
                     }
                 });
             });
+
+            if ($("#ctl00_ContentPlaceHolder1_txtUSDOT").val() != "") {
+                $("#ctl00_ContentPlaceHolder1_lblPCSaleNo").text("PC" + $("#ctl00_ContentPlaceHolder1_txtUSDOT").val() + randomIntFromInterval(10, 99));
+            }
         });
 
         function autoscroll() {
@@ -966,18 +974,26 @@
                             $("#ctl00_ContentPlaceHolder1_txtMailingAddress").val(obj.MailingAddress);
                             $("#ctl00_ContentPlaceHolder1_txtDriverLegalName").val(obj.LegalName);
                             $("#ctl00_ContentPlaceHolder1_txtDriverUSDOT").val(obj.DOTNumber);
-                            $("#ctl00_ContentPlaceHolder1_lblPCSaleNo").html("PC" + obj.DOTNumber + randomIntFromInterval(10, 99));
+                            var saleNo = "PC" + obj.DOTNumber + randomIntFromInterval(10, 99);
+                            $("#ctl00_ContentPlaceHolder1_lblPCSaleNo").html(saleNo);
+                            $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(saleNo);
                         }
                         else {
                             $("#ctl00_ContentPlaceHolder1_txtLegalName").val("");
                             $("#ctl00_ContentPlaceHolder1_txtMailingAddress").val("");
                             $("#ctl00_ContentPlaceHolder1_txtDriverLegalName").val("");
                             $("#ctl00_ContentPlaceHolder1_txtDriverUSDOT").val("");
-                            $("#ctl00_ContentPlaceHolder1_lblPCSaleNo").html("PC" + $("#ctl00_ContentPlaceHolder1_txtUSDOT").val() + randomIntFromInterval(10, 99));
+                            var saleNo = "PC" + $("#ctl00_ContentPlaceHolder1_txtUSDOT").val() + randomIntFromInterval(10, 99);
+                            $("#ctl00_ContentPlaceHolder1_lblPCSaleNo").html(saleNo);
+                            $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(saleNo);
                         }
                     }
                 });
             });
+
+            if ($("#ctl00_ContentPlaceHolder1_txtUSDOT").val() != "") {
+                $("#ctl00_ContentPlaceHolder1_lblPCSaleNo").text("PC" + $("#ctl00_ContentPlaceHolder1_txtUSDOT").val() + randomIntFromInterval(10, 99));
+            }
         }
 
         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(autoscroll);

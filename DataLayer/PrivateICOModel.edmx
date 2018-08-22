@@ -457,6 +457,9 @@
           <Property Name="SettingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="MaxTarget" Type="nvarchar" MaxLength="50" />
           <Property Name="AdminEmails" Type="nvarchar(max)" />
+          <Property Name="ProcessedEmails" Type="nvarchar(max)" />
+          <Property Name="VoidedEmails" Type="nvarchar(max)" />
+          <Property Name="RefundEmails" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Transactions">
           <Key>
@@ -795,6 +798,9 @@
           <Property Type="Int32" Name="SettingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="MaxTarget" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="AdminEmails" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProcessedEmails" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VoidedEmails" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RefundEmails" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="LeadDoc">
           <Key>
@@ -1311,6 +1317,9 @@
           <EntitySetMapping Name="Settings">
             <EntityTypeMapping TypeName="QuantreumModel.Setting">
               <MappingFragment StoreEntitySet="Setting">
+                <ScalarProperty Name="RefundEmails" ColumnName="RefundEmails" />
+                <ScalarProperty Name="VoidedEmails" ColumnName="VoidedEmails" />
+                <ScalarProperty Name="ProcessedEmails" ColumnName="ProcessedEmails" />
                 <ScalarProperty Name="AdminEmails" ColumnName="AdminEmails" />
                 <ScalarProperty Name="MaxTarget" ColumnName="MaxTarget" />
                 <ScalarProperty Name="SettingID" ColumnName="SettingID" />

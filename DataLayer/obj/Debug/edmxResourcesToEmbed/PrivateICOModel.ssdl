@@ -452,6 +452,9 @@
     <Property Name="SettingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="MaxTarget" Type="nvarchar" MaxLength="50" />
     <Property Name="AdminEmails" Type="nvarchar(max)" />
+    <Property Name="ProcessedEmails" Type="nvarchar(max)" />
+    <Property Name="VoidedEmails" Type="nvarchar(max)" />
+    <Property Name="RefundEmails" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Transactions">
     <Key>

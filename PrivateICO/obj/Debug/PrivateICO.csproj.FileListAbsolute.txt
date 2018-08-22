@@ -30,3 +30,34 @@ E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\PrivateICO\bin\N
 E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\PrivateICO\bin\EntityFramework.xml
 E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\PrivateICO\obj\Debug\PrivateICO.dll
 E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\PrivateICO\obj\Debug\PrivateICO.pdb
+E:\PurcCode\PurcCompanies\PrivateICO\obj\Debug\PrivateICO.csprojResolveAssemblyReference.cache
+E:\PurcCode\PurcCompanies\PrivateICO\obj\Debug\PrivateICO.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\PrivateICO.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\PrivateICO.pdb
+E:\PurcCode\PurcCompanies\PrivateICO\bin\crypto.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\DataLayer.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\EntityLayer.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\Flurl.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\netstandard.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\Newtonsoft.Json.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\RingCentral.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\System.IO.FileSystem.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\System.IO.FileSystem.Primitives.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\System.Reflection.TypeExtensions.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\System.Security.Cryptography.Algorithms.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\System.Security.Cryptography.Encoding.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\System.Security.Cryptography.Primitives.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\System.Security.Cryptography.X509Certificates.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\System.Threading.ThreadPool.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\EntityFramework.dll
+E:\PurcCode\PurcCompanies\PrivateICO\bin\DataLayer.pdb
+E:\PurcCode\PurcCompanies\PrivateICO\bin\EntityLayer.pdb
+E:\PurcCode\PurcCompanies\PrivateICO\bin\crypto.pdb
+E:\PurcCode\PurcCompanies\PrivateICO\bin\crypto.xml
+E:\PurcCode\PurcCompanies\PrivateICO\bin\CTCT.pdb
+E:\PurcCode\PurcCompanies\PrivateICO\bin\CTCT.xml
+E:\PurcCode\PurcCompanies\PrivateICO\bin\Flurl.xml
+E:\PurcCode\PurcCompanies\PrivateICO\bin\Newtonsoft.Json.xml
+E:\PurcCode\PurcCompanies\PrivateICO\bin\EntityFramework.xml
+E:\PurcCode\PurcCompanies\PrivateICO\obj\Debug\PrivateICO.pdb

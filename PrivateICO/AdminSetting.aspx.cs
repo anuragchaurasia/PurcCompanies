@@ -25,6 +25,9 @@ namespace PrivateICO
             SettingEntity setting = settingHelper.GetSettings();
             txtMonthlyTarget.Text = setting.MaxTarget;
             txtEmails.Text = setting.AdminEmails;
+            txtProcEmail.Text = setting.ProcessedEmails;
+            txtVoidedEmail.Text = setting.VoidedEmails;
+            txtRefundEmail.Text = setting.RefundEmails;
         }
 
         protected void btnUpdateSetting_Click(object sender, EventArgs e)
@@ -32,6 +35,9 @@ namespace PrivateICO
             SettingEntity setting = new SettingEntity();
             setting.MaxTarget = txtMonthlyTarget.Text;
             setting.AdminEmails = txtEmails.Text;
+            setting.ProcessedEmails = txtProcEmail.Text;
+            setting.VoidedEmails = txtVoidedEmail.Text;
+            setting.RefundEmails = txtRefundEmail.Text;
             bool isEdited = settingHelper.AddTarget(setting);
             if (isEdited)
             {

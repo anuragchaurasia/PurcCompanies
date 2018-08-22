@@ -66,3 +66,13 @@ E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\bin\De
 E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
 E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\obj\Debug\DataLayer.dll
 E:\Live Projects\Purcell Compliance\EmployeeSales\PrivateICOWeb\DataLayer\obj\Debug\DataLayer.pdb
+E:\PurcCode\PurcCompanies\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+E:\PurcCode\PurcCompanies\DataLayer\obj\Debug\DataLayer.dll
+E:\PurcCode\PurcCompanies\DataLayer\bin\Debug\DataLayer.dll.config
+E:\PurcCode\PurcCompanies\DataLayer\bin\Debug\DataLayer.dll
+E:\PurcCode\PurcCompanies\DataLayer\bin\Debug\DataLayer.pdb
+E:\PurcCode\PurcCompanies\DataLayer\bin\Debug\EntityFramework.dll
+E:\PurcCode\PurcCompanies\DataLayer\bin\Debug\EntityLayer.dll
+E:\PurcCode\PurcCompanies\DataLayer\bin\Debug\EntityLayer.pdb
+E:\PurcCode\PurcCompanies\DataLayer\bin\Debug\EntityFramework.xml
+E:\PurcCode\PurcCompanies\DataLayer\obj\Debug\DataLayer.pdb

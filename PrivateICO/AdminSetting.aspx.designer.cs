@@ -31,6 +31,33 @@ namespace PrivateICO {
         protected global::System.Web.UI.WebControls.TextBox txtEmails;
         
         /// <summary>
+        /// txtProcEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProcEmail;
+        
+        /// <summary>
+        /// txtVoidedEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVoidedEmail;
+        
+        /// <summary>
+        /// txtRefundEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRefundEmail;
+        
+        /// <summary>
         /// btnUpdateSetting control.
         /// </summary>
         /// <remarks>

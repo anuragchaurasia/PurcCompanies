@@ -211,6 +211,9 @@
     <EntitySetMapping Name="Settings">
       <EntityTypeMapping TypeName="QuantreumModel.Setting">
         <MappingFragment StoreEntitySet="Setting">
+          <ScalarProperty Name="RefundEmails" ColumnName="RefundEmails" />
+          <ScalarProperty Name="VoidedEmails" ColumnName="VoidedEmails" />
+          <ScalarProperty Name="ProcessedEmails" ColumnName="ProcessedEmails" />
           <ScalarProperty Name="AdminEmails" ColumnName="AdminEmails" />
           <ScalarProperty Name="MaxTarget" ColumnName="MaxTarget" />
           <ScalarProperty Name="SettingID" ColumnName="SettingID" />

@@ -245,6 +245,9 @@
     <Property Type="Int32" Name="SettingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="String" Name="MaxTarget" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="AdminEmails" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProcessedEmails" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VoidedEmails" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RefundEmails" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="LeadDoc">
     <Key>

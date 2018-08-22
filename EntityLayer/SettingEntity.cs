@@ -10,5 +10,8 @@ namespace EntityLayer
         public int SettingID { get; set; }
         public string MaxTarget { get; set; }
         public string AdminEmails { get; set; }
+        public string ProcessedEmails { get; set; }
+        public string VoidedEmails { get; set; }
+        public string RefundEmails { get; set; }
     }
 }

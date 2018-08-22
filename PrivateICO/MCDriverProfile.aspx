@@ -296,25 +296,39 @@
                     $("#ctl00_ContentPlaceHolder1_txtPhysicalAddress").val("");
             });
 
-            $("#ctl00_ContentPlaceHolder1_txtDOT").change(function () {
-                var usDOT = $("#ctl00_ContentPlaceHolder1_txtDOT").val();
-                if ($(usDOT != "")) {
-                    var usDOTNo = "PC" + usDOT + randomIntFromInterval(10, 99);
-                    $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
-                    $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
-                }
-                else {
-                    var usDOTNo = "PC" + randomIntFromInterval(10, 99);
-                    $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
-                    $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
-                }
-            });
-
             $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").change(function () {
                 $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val() + '&smtp=1&format=1', function (data) {
                     if (data.mx_found == false) {
                         var element = $("#ctl00_ContentPlaceHolder1_txtRecieptEmail")[0];
                         element.setCustomValidity("Not a valid email address.");
+                    }
+                });
+            });
+
+            $("#ctl00_ContentPlaceHolder1_txtDOT").change(function () {
+                $.ajax({
+                    url: 'MCDriverProfile.aspx/GetUSDOTDetails',
+                    type: "POST",
+                    data: '{usdotno: "' + $(this).val() + '" }',
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        if (data.d != "null") {
+                            var obj = JSON.parse(data.d); console.log(obj.Status);
+                            $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DOTNumber);
+                            $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
+                            $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.PhysicalAddress);
+                            var usDOTNo = "PC" + obj.DOTNumber + randomIntFromInterval(10, 99);
+                            $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
+                            $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+                        }
+                        else {
+                            $("#ctl00_ContentPlaceHolder1_txtLegalName").val("");
+                            $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val("");
+                            var usDOTNo = "PC" + randomIntFromInterval(10, 99);
+                            $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
+                            $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+                        }
                     }
                 });
             });
@@ -339,18 +353,36 @@
             });
 
             $("#ctl00_ContentPlaceHolder1_txtDOT").change(function () {
-                var usDOT = $("#ctl00_ContentPlaceHolder1_txtDOT").val();
-                if ($(usDOT != "")) {
-                    var usDOTNo = "PC" + usDOT + randomIntFromInterval(10, 99);
-                    $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
-                    $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
-                }
-                else {
-                    var usDOTNo = "PC" + randomIntFromInterval(10, 99);
-                    $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
-                    $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
-                }
+                $.ajax({
+                    url: 'MCDriverProfile.aspx/GetUSDOTDetails',
+                    type: "POST",
+                    data: '{usdotno: "' + $(this).val() + '" }',
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        if (data.d != "null") {
+                            var obj = JSON.parse(data.d); console.log(obj.Status);
+                            $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DOTNumber);
+                            $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
+                            $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.PhysicalAddress);
+                            var usDOTNo = "PC" + obj.DOTNumber + randomIntFromInterval(10, 99);
+                            $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
+                            $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+                        }
+                        else {
+                            $("#ctl00_ContentPlaceHolder1_txtLegalName").val("");
+                            $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val("");
+                            var usDOTNo = "PC" + randomIntFromInterval(10, 99);
+                            $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
+                            $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+                        }
+                    }
+                });
             });
+
+            if ($("#ctl00_ContentPlaceHolder1_txtDOT").val() != "") {
+                $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text("PC" + $("#ctl00_ContentPlaceHolder1_txtDOT").val() + randomIntFromInterval(10, 99));
+            }
 
             $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").change(function () {
                 $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val() + '&smtp=1&format=1', function (data) {
@@ -360,10 +392,6 @@
                     }
                 });
             });
-
-            if ($("#ctl00_ContentPlaceHolder1_txtDOT").val() != "") {
-                $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text("PC" + $("#ctl00_ContentPlaceHolder1_txtDOT").val() + randomIntFromInterval(10, 99));
-            }
         }
 
         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(autoscroll);

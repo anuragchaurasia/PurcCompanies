@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -204,6 +206,16 @@ namespace PrivateICO
                     BindPurchasedItems();
                 }
             }
+        }
+
+        [WebMethod(EnableSession = true)]
+        public static string GetUSDOTDetails(string usdotno)
+        {
+            string dropid = "";
+            DailyLeadsHelper leadHelper = new DailyLeadsHelper();
+            DailyLeadEntity LeadsData = leadHelper.GetLeadRecordsByDOTNo(usdotno);
+            var json = new JavaScriptSerializer().Serialize(LeadsData);
+            return json;
         }
 
     }

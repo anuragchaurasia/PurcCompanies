@@ -558,6 +558,15 @@
                                 <!-- /.form-group -->
                             </div>
 
+                             <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>VIN# ( Admin) </label>
+                                    <asp:TextBox runat="server" ID="txtDriverVIN" CssClass="form-control" placeholder="Enter VIN#"></asp:TextBox>
+                                </div>
+                                <!-- /.form-group -->
+                            </div>
+
                             <div class="col-md-12">
 
                                 <div class="form-group">

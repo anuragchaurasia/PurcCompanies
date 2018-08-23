@@ -33,5 +33,6 @@ namespace DataLayer
         public Nullable<int> OrderFormID { get; set; }
         public string CDLNonCDL { get; set; }
         public Nullable<bool> IsSubmitted { get; set; }
+        public string VIN { get; set; }
     }
 }

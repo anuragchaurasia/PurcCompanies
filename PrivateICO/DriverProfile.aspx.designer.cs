@@ -670,6 +670,15 @@ namespace PrivateICO {
         protected global::System.Web.UI.WebControls.TextBox txtDriverEIN;
         
         /// <summary>
+        /// txtDriverVIN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDriverVIN;
+        
+        /// <summary>
         /// txtNotesCommentsObservation control.
         /// </summary>
         /// <remarks>

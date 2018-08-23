@@ -107,6 +107,7 @@ namespace PrivateICO
             txtDOB.Text = "";
             txtDriverName.Text = "";
             txtDriverEIN.Text = "";
+            txtDriverVIN.Text = "";
             txtDriverEmailAddress.Text = "";
             txtExpirationDate.Text = "";
             txtDriverLegalName.Text = "";
@@ -629,6 +630,7 @@ namespace PrivateICO
                 driverInterviewProfile.DOB = txtDOB.Text;
                 driverInterviewProfile.DriverName = txtDriverName.Text;
                 driverInterviewProfile.EIN = txtDriverEIN.Text;
+                driverInterviewProfile.VIN = txtDriverVIN.Text;
                 driverInterviewProfile.Email = txtDriverEmailAddress.Text;
                 driverInterviewProfile.ExpirationDate = txtExpirationDate.Text;
                 driverInterviewProfile.LegalName = txtDriverLegalName.Text;
@@ -655,6 +657,7 @@ namespace PrivateICO
                 driverInterviewProfile.DOB = txtDOB.Text;
                 driverInterviewProfile.DriverName = txtDriverName.Text;
                 driverInterviewProfile.EIN = txtDriverEIN.Text;
+                driverInterviewProfile.VIN = txtDriverVIN.Text;
                 driverInterviewProfile.Email = txtDriverEmailAddress.Text;
                 driverInterviewProfile.ExpirationDate = txtExpirationDate.Text;
                 driverInterviewProfile.LegalName = txtDriverLegalName.Text;

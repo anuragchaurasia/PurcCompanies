@@ -30,5 +30,6 @@ namespace EntityLayer
         public List<DriverVehicleCargoEntity> DriverCargos { get; set; }
         public DriverVehicleEntity DriverVehicle { get; set; }
         public List<DriverVehicleEntity> listDriverVehicle { get; set; }
+        public string VIN { get; set; }
     }
 }

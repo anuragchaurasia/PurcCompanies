@@ -254,6 +254,7 @@
           <Property Name="DOB" Type="nvarchar" MaxLength="50" />
           <Property Name="SSN" Type="nvarchar" MaxLength="50" />
           <Property Name="EIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="VIN" Type="nvarchar" MaxLength="50" />
           <Property Name="Notes" Type="nvarchar(max)" />
           <Property Name="OrderFormID" Type="int" />
           <Property Name="CDLNonCDL" Type="nvarchar" MaxLength="500" />
@@ -1038,6 +1039,7 @@
           <Property Type="Int32" Name="OrderFormID" />
           <Property Type="String" Name="CDLNonCDL" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="IsSubmitted" />
+          <Property Type="String" Name="VIN" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DriverService">
           <Key>
@@ -1528,6 +1530,7 @@
           <EntitySetMapping Name="DriverInterviewProfiles">
             <EntityTypeMapping TypeName="QuantreumModel.DriverInterviewProfile">
               <MappingFragment StoreEntitySet="DriverInterviewProfile">
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
                 <ScalarProperty Name="IsSubmitted" ColumnName="IsSubmitted" />
                 <ScalarProperty Name="CDLNonCDL" ColumnName="CDLNonCDL" />
                 <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />

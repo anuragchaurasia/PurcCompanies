@@ -107,6 +107,7 @@ namespace PrivateICO
                     txtDriverSSN.Text = driverInterviewProfile.SSN;
                     hidSSNNo.Value = driverInterviewProfile.SSN;
                     txtDriverEIN.Text = driverInterviewProfile.EIN;
+                    txtDriverVIN.Text = driverInterviewProfile.VIN;
                     txtNotesCommentsObservation.Text = driverInterviewProfile.Notes;
                     hidCurrentDriverInterviewID.Value = driverInterviewProfile.DriverInterviewID.ToString();
                 }
@@ -283,6 +284,7 @@ namespace PrivateICO
             txtDOB.Text = "";
             txtDriverName.Text = "";
             txtDriverEIN.Text = "";
+            txtDriverVIN.Text = "";
             txtDriverEmailAddress.Text = "";
             txtExpirationDate.Text = "";
             txtDriverLegalName.Text = "";
@@ -388,6 +390,7 @@ namespace PrivateICO
                     txtDriverSSN.Text = driverInterviewProfile.SSN;
                     hidSSNNo.Value = driverInterviewProfile.SSN;
                     txtDriverEIN.Text = driverInterviewProfile.EIN;
+                    txtDriverVIN.Text = driverInterviewProfile.VIN;
                     txtNotesCommentsObservation.Text = driverInterviewProfile.Notes;
                 }
 
@@ -895,6 +898,7 @@ namespace PrivateICO
                 driverInterviewProfile.DOB = txtDOB.Text;
                 driverInterviewProfile.DriverName = txtDriverName.Text;
                 driverInterviewProfile.EIN = txtDriverEIN.Text;
+                driverInterviewProfile.VIN = txtDriverVIN.Text;
                 driverInterviewProfile.Email = txtDriverEmailAddress.Text;
                 driverInterviewProfile.ExpirationDate = txtExpirationDate.Text;
                 driverInterviewProfile.LegalName = txtDriverLegalName.Text;
@@ -921,6 +925,7 @@ namespace PrivateICO
                 driverInterviewProfile.DOB = txtDOB.Text;
                 driverInterviewProfile.DriverName = txtDriverName.Text;
                 driverInterviewProfile.EIN = txtDriverEIN.Text;
+                driverInterviewProfile.VIN = txtDriverVIN.Text;
                 driverInterviewProfile.Email = txtDriverEmailAddress.Text;
                 driverInterviewProfile.ExpirationDate = txtExpirationDate.Text;
                 driverInterviewProfile.LegalName = txtDriverLegalName.Text;
@@ -948,6 +953,7 @@ namespace PrivateICO
             txtDOB.Text = "";
             txtDriverName.Text = "";
             txtDriverEIN.Text = "";
+            txtDriverVIN.Text = "";
             txtDriverEmailAddress.Text = "";
             txtExpirationDate.Text = "";
             txtDriverLegalName.Text = "";
@@ -1231,6 +1237,7 @@ namespace PrivateICO
                 driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().DOB = txtDOB.Text;
                 driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().DriverName = txtDriverName.Text;
                 driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().EIN = txtDriverEIN.Text;
+                driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().VIN = txtDriverVIN.Text;
                 driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().Email = txtDriverEmailAddress.Text;
                 driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().ExpirationDate = txtExpirationDate.Text;
                 driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().LegalName = txtDriverLegalName.Text;

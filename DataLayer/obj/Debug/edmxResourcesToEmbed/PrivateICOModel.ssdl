@@ -249,6 +249,7 @@
     <Property Name="DOB" Type="nvarchar" MaxLength="50" />
     <Property Name="SSN" Type="nvarchar" MaxLength="50" />
     <Property Name="EIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="VIN" Type="nvarchar" MaxLength="50" />
     <Property Name="Notes" Type="nvarchar(max)" />
     <Property Name="OrderFormID" Type="int" />
     <Property Name="CDLNonCDL" Type="nvarchar" MaxLength="500" />

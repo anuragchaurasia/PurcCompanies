@@ -485,6 +485,7 @@
     <Property Type="Int32" Name="OrderFormID" />
     <Property Type="String" Name="CDLNonCDL" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Type="Boolean" Name="IsSubmitted" />
+    <Property Type="String" Name="VIN" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="DriverService">
     <Key>

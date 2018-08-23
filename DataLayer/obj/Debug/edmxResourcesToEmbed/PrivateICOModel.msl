@@ -422,6 +422,7 @@
     <EntitySetMapping Name="DriverInterviewProfiles">
       <EntityTypeMapping TypeName="QuantreumModel.DriverInterviewProfile">
         <MappingFragment StoreEntitySet="DriverInterviewProfile">
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
           <ScalarProperty Name="IsSubmitted" ColumnName="IsSubmitted" />
           <ScalarProperty Name="CDLNonCDL" ColumnName="CDLNonCDL" />
           <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />

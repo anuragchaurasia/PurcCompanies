@@ -4,18 +4,25 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ListView ID="lstUSDOTProfiles" runat="server" ItemPlaceholderID="groupPlaceHolder1" OnPagePropertiesChanging="lstUSDOTProfiles_PagePropertiesChanging" OnItemCommand="lstUSDOTProfiles_ItemCommand">
-        <LayoutTemplate>
-            <section class="content">
-                <div class="row">
-                    <div class="col-xs-12" style="width: 84%">
-                        <div class="box" style="margin-left: 220px;">
-                            <div class="box-header">
-                                <h3 class="box-title">USDOT Sale Submitted Profiles</h3>
-                                <div class="pull-right">
-                                    <%--<asp:Button runat="server" ID="btnAddUSDOTSale" Text="Add USDOT Sale Profile" CssClass="btn btn-block btn-success" OnClick="btnAddMCSale_Click" />--%>
-                                </div>
-                            </div>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12" style="width: 84%">
+                <div class="box" style="margin-left: 220px;">
+                    <div class="box-header">
+                        <h3 class="box-title">USDOT Sale Submitted Profiles</h3>
+                        <div class="pull-right">
+                            <asp:DropDownList ID="drpPageSize" runat="server" AutoPostBack="true" OnSelectedIndexChanged="drpPageSize_SelectedIndexChanged" CssClass="form-control">
+                                <asp:ListItem>10</asp:ListItem>
+                                <asp:ListItem>25</asp:ListItem>
+                                <asp:ListItem>50</asp:ListItem>
+                                <asp:ListItem>100</asp:ListItem>
+                            </asp:DropDownList>
+                            <%--<asp:Button runat="server" ID="btnAddUSDOTSale" Text="Add USDOT Sale Profile" CssClass="btn btn-block btn-success" OnClick="btnAddMCSale_Click" />--%>
+                        </div>
+                    </div>
+                    <asp:ListView ID="lstUSDOTProfiles" runat="server" ItemPlaceholderID="groupPlaceHolder1" OnPagePropertiesChanging="lstUSDOTProfiles_PagePropertiesChanging" OnItemCommand="lstUSDOTProfiles_ItemCommand">
+                        <LayoutTemplate>
+
                             <!-- /.box-header -->
                             <div class="box-body">
                                 <table id="example2" class="table table-bordered table-hover">
@@ -54,27 +61,28 @@
 
                             </div>
                             <!-- /.box-body -->
-                        </div>
-                    </div>
+
+                        </LayoutTemplate>
+                        <ItemTemplate>
+                            <tr>
+                                <td><%# Eval("USDot") %></td>
+                                <td><%# Eval("CA") %></td>
+                                <td><%# Eval("NameOnCard") %></td>
+                                <td><%# Eval("BillingAddress") %></td>
+                                <td><%# Eval("PhysicalAddress") %></td>
+                                <td><%# Eval("Email") %></td>
+                                <td><%# Eval("SubmittedBy") %></td>
+                                <td><%# Eval("DateTime") %></td>
+                                <td>
+                                    <asp:LinkButton runat="server" ID="lnkEditDetails" CssClass="fa fa-fw fa-edit" CommandArgument='<%# Eval("OrderFormID") %>' ToolTip="Edit Sale" CommandName="EditSale"></asp:LinkButton>
+                                    &nbsp;<asp:LinkButton runat="server" ID="lnkDeleteSale" CssClass="fa fa-fw fa-trash" OnClientClick="javascript:return confirm('Are you sure you want to delete this Sale ?');" CommandArgument='<%# Eval("OrderFormID") %>' ToolTip="Delete Sale" CommandName="DeleteSale"></asp:LinkButton>
+                                </td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:ListView>
                 </div>
-            </section>
-        </LayoutTemplate>
-        <ItemTemplate>
-            <tr>
-                <td><%# Eval("USDot") %></td>
-                <td><%# Eval("CA") %></td>
-                <td><%# Eval("NameOnCard") %></td>
-                <td><%# Eval("BillingAddress") %></td>
-                <td><%# Eval("PhysicalAddress") %></td>
-                <td><%# Eval("Email") %></td>
-                <td><%# Eval("SubmittedBy") %></td>
-                <td><%# Eval("DateTime") %></td>
-                <td>
-                    <asp:LinkButton runat="server" ID="lnkEditDetails" CssClass="fa fa-fw fa-edit" CommandArgument='<%# Eval("OrderFormID") %>' ToolTip="Edit Sale" CommandName="EditSale"></asp:LinkButton>
-                &nbsp;<asp:LinkButton runat="server" ID="lnkDeleteSale" CssClass="fa fa-fw fa-trash" OnClientClick="javascript:return confirm('Are you sure you want to delete this Sale ?');" CommandArgument='<%# Eval("OrderFormID") %>' ToolTip="Delete Sale" CommandName="DeleteSale"></asp:LinkButton>
-                </td>
-            </tr>
-        </ItemTemplate>
-    </asp:ListView>
+            </div>
+        </div>
+    </section>
 </asp:Content>
 

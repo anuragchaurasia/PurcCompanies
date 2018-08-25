@@ -211,11 +211,17 @@ namespace PrivateICO
         [WebMethod(EnableSession = true)]
         public static string GetUSDOTDetails(string usdotno)
         {
-            string dropid = "";
-            DailyLeadsHelper leadHelper = new DailyLeadsHelper();
-            DailyLeadEntity LeadsData = leadHelper.GetLeadRecordsByDOTNo(usdotno);
-            var json = new JavaScriptSerializer().Serialize(LeadsData);
-            return json;
+            MCSaleHelper mcSaleHelper = new MCSaleHelper();
+            MCSaleEntity mcSale = mcSaleHelper.GetMCSaleUSDotNo(usdotno);
+            if (mcSale==null)
+            {
+                DailyLeadsHelper leadHelper = new DailyLeadsHelper();
+                DailyLeadEntity LeadsData = leadHelper.GetLeadRecordsByDOTNo(usdotno);
+                var json = new JavaScriptSerializer().Serialize(LeadsData);
+                return json;
+            }
+            var jsonSale = new JavaScriptSerializer().Serialize(mcSale);
+            return jsonSale;
         }
 
     }

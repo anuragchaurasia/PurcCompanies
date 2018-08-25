@@ -318,12 +318,33 @@
                     success: function (data) {
                         if (data.d != "null") {
                             var obj = JSON.parse(data.d); console.log(obj.Status);
-                            $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DOTNumber);
-                            $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
-                            $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.PhysicalAddress);
-                            var usDOTNo = "PC" + obj.DOTNumber + randomIntFromInterval(10, 99);
-                            $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
-                            $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+                            if (obj.Status != undefined) {
+                                $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DOTNumber);
+                                $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
+                                $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.PhysicalAddress);
+                                var usDOTNo = "PC" + obj.DOTNumber + randomIntFromInterval(10, 99);
+                                $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
+                                $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+                            }
+                            else {
+                                $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DotNo);
+                                $("#ctl00_ContentPlaceHolder1_txtDOTPin").val(obj.DotPin);
+                                $("#ctl00_ContentPlaceHolder1_txtMC").val(obj.MCNo);
+                                $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
+                                $("#ctl00_ContentPlaceHolder1_txtDBA").val(obj.LegalName);
+                                $("#ctl00_ContentPlaceHolder1_txtCardNo").val(obj.CardNo);
+                                $("#ctl00_ContentPlaceHolder1_txtNameOnCard").val(obj.NameOnCard);
+                                $("#ctl00_ContentPlaceHolder1_txtExpirationDate").val(obj.ExpirationDate);
+                                $("#ctl00_ContentPlaceHolder1_txtCVC").val(obj.CVC);
+                                $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val(obj.Email);
+                                $("#ctl00_ContentPlaceHolder1_txtPhoneNo").val(obj.PhoneNo);
+                                $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.AddressOnCard);
+                                $("#ctl00_ContentPlaceHolder1_txtPhysicalAddress").val(obj.PhysicalAddress);
+                                $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', obj.CardType);
+                                var usDOTNo = "PC" + obj.DotNo + randomIntFromInterval(10, 99);
+                                $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(obj.MCSaleNo);
+                                $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(obj.MCSaleNo);
+                            }
                         }
                         else {
                             $("#ctl00_ContentPlaceHolder1_txtLegalName").val("");
@@ -365,12 +386,33 @@
                     success: function (data) {
                         if (data.d != "null") {
                             var obj = JSON.parse(data.d); console.log(obj.Status);
-                            $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DOTNumber);
-                            $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
-                            $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.PhysicalAddress);
-                            var usDOTNo = "PC" + obj.DOTNumber + randomIntFromInterval(10, 99);
-                            $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
-                            $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+                            if (obj.Status != undefined) {
+                                $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DOTNumber);
+                                $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
+                                $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.PhysicalAddress);
+                                var usDOTNo = "PC" + obj.DOTNumber + randomIntFromInterval(10, 99);
+                                $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
+                                $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+                            }
+                            else {
+                                $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DotNo);
+                                $("#ctl00_ContentPlaceHolder1_txtDOTPin").val(obj.DotPin);
+                                $("#ctl00_ContentPlaceHolder1_txtMC").val(obj.MCNo);
+                                $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
+                                $("#ctl00_ContentPlaceHolder1_txtDBA").val(obj.LegalName);
+                                $("#ctl00_ContentPlaceHolder1_txtCardNo").val(obj.CardNo);
+                                $("#ctl00_ContentPlaceHolder1_txtNameOnCard").val(obj.NameOnCard);
+                                $("#ctl00_ContentPlaceHolder1_txtExpirationDate").val(obj.ExpirationDate);
+                                $("#ctl00_ContentPlaceHolder1_txtCVC").val(obj.CVC);
+                                $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val(obj.Email);
+                                $("#ctl00_ContentPlaceHolder1_txtPhoneNo").val(obj.PhoneNo);
+                                $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.AddressOnCard);
+                                $("#ctl00_ContentPlaceHolder1_txtPhysicalAddress").val(obj.PhysicalAddress);
+                                $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', obj.CardType);
+                                var usDOTNo = "PC" + obj.DotNo + randomIntFromInterval(10, 99);
+                                $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(obj.MCSaleNo);
+                                $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(obj.MCSaleNo);
+                            }
                         }
                         else {
                             $("#ctl00_ContentPlaceHolder1_txtLegalName").val("");

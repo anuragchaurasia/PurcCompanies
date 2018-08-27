@@ -3,18 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-
     <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css" />
-    <!-- bootstrap datepicker -->
     <link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css" />
-    <!-- iCheck for checkboxes and radio inputs -->
     <link rel="stylesheet" href="../../plugins/iCheck/all.css" />
-    <!-- Bootstrap Color Picker -->
     <link rel="stylesheet" href="../../plugins/colorpicker/bootstrap-colorpicker.min.css" />
-    <!-- Bootstrap time Picker -->
     <link rel="stylesheet" href="../../plugins/timepicker/bootstrap-timepicker.min.css" />
-    <!-- Select2 -->
     <link rel="stylesheet" href="/plugins/select2/select2.min.css" />
     <div>
         <div class="content-wrapper">
@@ -36,10 +29,12 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">MC Sale:
                             <asp:Label ID="lblMCSaleNo" runat="server" Text=""></asp:Label>,
-                            <asp:Label ID="lblMCSalePersonName" runat="server" Text=""></asp:Label></h3>
+                            <asp:Label ID="lblMCSalePersonName" runat="server" Text=""></asp:Label>
+                        </h3>
                         <asp:HiddenField ID="hidSaleNo" runat="server" />
                         <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <asp:Label ID="lblUpSaleStatus" runat="server" Text=""></asp:Label>
+                            <asp:HiddenField ID="hidUpSaleStatus" runat="server" />
                         </div>
                     </div>
                     <!-- /.box-header -->
@@ -105,6 +100,7 @@
                                     </ul>
                                 </div>
                                 <asp:HiddenField ID="hdnCardType" runat="server" />
+                                <asp:HiddenField ID="hidCardNo" runat="server" />
                             </div>
 
 
@@ -321,44 +317,111 @@
                             if (obj.Status != undefined) {
                                 $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DOTNumber);
                                 $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
-                                $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.PhysicalAddress);
+                                $("#ctl00_ContentPlaceHolder1_txtPhysicalAddress").val(obj.PhysicalAddress);
                                 var usDOTNo = "PC" + obj.DOTNumber + randomIntFromInterval(10, 99);
                                 $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
                                 $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+
+                                $("#ctl00_ContentPlaceHolder1_txtDOTPin").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtMC").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtDBA").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtCardNo").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtNameOnCard").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtExpirationDate").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtCVC").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtPhoneNo").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val('');
+                                $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', 'card_logos');
+                                $('#ctl00_ContentPlaceHolder1_hidCardNo').val('');
+                                $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("Not an Upsale");
+                                $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("Not an Upsale");
                             }
                             else {
                                 $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DotNo);
                                 $("#ctl00_ContentPlaceHolder1_txtDOTPin").val(obj.DotPin);
                                 $("#ctl00_ContentPlaceHolder1_txtMC").val(obj.MCNo);
                                 $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
-                                $("#ctl00_ContentPlaceHolder1_txtDBA").val(obj.LegalName);
+                                $("#ctl00_ContentPlaceHolder1_txtDBA").val(obj.DBA);
                                 $("#ctl00_ContentPlaceHolder1_txtCardNo").val(obj.CardNo);
+                                $('#ctl00_ContentPlaceHolder1_hidCardNo').val($("#ctl00_ContentPlaceHolder1_txtCardNo").val());
+                                var str = $("#ctl00_ContentPlaceHolder1_txtCardNo").val();
+                                str = str.replace(/\d(?=\d{4})/g, "*");
+                                $("#ctl00_ContentPlaceHolder1_txtCardNo").val(str);
+                                $('#ctl00_ContentPlaceHolder1_hdnCardType').val($("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class'));
                                 $("#ctl00_ContentPlaceHolder1_txtNameOnCard").val(obj.NameOnCard);
                                 $("#ctl00_ContentPlaceHolder1_txtExpirationDate").val(obj.ExpirationDate);
                                 $("#ctl00_ContentPlaceHolder1_txtCVC").val(obj.CVC);
                                 $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val(obj.Email);
                                 $("#ctl00_ContentPlaceHolder1_txtPhoneNo").val(obj.PhoneNo);
-                                $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.AddressOnCard);
+                                //$("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.AddressOnCard);
                                 $("#ctl00_ContentPlaceHolder1_txtPhysicalAddress").val(obj.PhysicalAddress);
                                 $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', obj.CardType);
-                                var usDOTNo = "PC" + obj.DotNo + randomIntFromInterval(10, 99);
+                                //var usDOTNo = "PC" + obj.DotNo + randomIntFromInterval(10, 99);
                                 $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(obj.MCSaleNo);
                                 $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(obj.MCSaleNo);
+                                $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("Upsale");
+                                $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("Upsale");
                             }
                         }
                         else {
-                            $("#ctl00_ContentPlaceHolder1_txtLegalName").val("");
-                            $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val("");
-                            var usDOTNo = "PC" + randomIntFromInterval(10, 99);
+                            $("#ctl00_ContentPlaceHolder1_txtDOTPin").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtMC").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtLegalName").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtDBA").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtCardNo").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtNameOnCard").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtExpirationDate").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtCVC").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtPhoneNo").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtPhysicalAddress").val('');
+                            $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', 'card_logos');
+                            $('#ctl00_ContentPlaceHolder1_hidCardNo').val('');
+                            var usDOTNo = "PC" + $("#ctl00_ContentPlaceHolder1_txtDOT").val() + randomIntFromInterval(10, 99);
                             $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
                             $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+                            $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("");
+                            $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("");
                         }
                     }
                 });
             });
 
-            if ($("#ctl00_ContentPlaceHolder1_txtDOT").val() != "") {
-                $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text("PC" + $("#ctl00_ContentPlaceHolder1_txtDOT").val() + randomIntFromInterval(10, 99));
+            $("#ctl00_ContentPlaceHolder1_txtCardNo").click(function () {
+                var str = $("#ctl00_ContentPlaceHolder1_txtCardNo").val();
+                str = str.replace(/\d(?=\d{16})/g, "*");
+                $("#ctl00_ContentPlaceHolder1_txtCardNo").val($('#ctl00_ContentPlaceHolder1_hidCardNo').val());
+            });
+
+            $("#ctl00_ContentPlaceHolder1_txtCardNo").change(function () {
+                $('#ctl00_ContentPlaceHolder1_hidCardNo').val($("#ctl00_ContentPlaceHolder1_txtCardNo").val());
+                var str = $("#ctl00_ContentPlaceHolder1_txtCardNo").val();
+                str = str.replace(/\d(?=\d{4})/g, "*");
+                $("#ctl00_ContentPlaceHolder1_txtCardNo").val(str);
+                $('#ctl00_ContentPlaceHolder1_hdnCardType').val($("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class'));
+            });
+
+            if ($("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val() != "") {
+                $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text($("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val());
+            }
+
+            if ($("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val() != "Upsale") {
+                if ($("#ctl00_ContentPlaceHolder1_txtDOT").val() != "") {
+                    $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text("PC" + $("#ctl00_ContentPlaceHolder1_txtDOT").val() + randomIntFromInterval(10, 99));
+                }
+            }
+            else {
+                $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text($("#ctl00_ContentPlaceHolder1_hidSaleNo").val());
+            }
+
+            var str = $("#ctl00_ContentPlaceHolder1_txtCardNo").val();
+            str = str.replace(/\d(?=\d{4})/g, "*");
+            $("#ctl00_ContentPlaceHolder1_txtCardNo").val(str);
+
+            if ($('#ctl00_ContentPlaceHolder1_hdnCardType').val() != "") {
+                $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', $('#ctl00_ContentPlaceHolder1_hdnCardType').val());
             }
 
         });
@@ -376,6 +439,18 @@
                     $("#ctl00_ContentPlaceHolder1_txtPhysicalAddress").val("");
             });
 
+            $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").change(function () {
+                $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val() + '&smtp=1&format=1', function (data) {
+                    var element = $("#ctl00_ContentPlaceHolder1_txtRecieptEmail")[0];
+                    if (data.mx_found == false || data.mx_found == null) {
+                        element.setCustomValidity("Not a valid email address.");
+                    }
+                    else {
+                        element.setCustomValidity("");
+                    }
+                });
+            });
+
             $("#ctl00_ContentPlaceHolder1_txtDOT").change(function () {
                 $.ajax({
                     url: 'MCDriverProfile.aspx/GetUSDOTDetails',
@@ -389,57 +464,112 @@
                             if (obj.Status != undefined) {
                                 $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DOTNumber);
                                 $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
-                                $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.PhysicalAddress);
+                                $("#ctl00_ContentPlaceHolder1_txtPhysicalAddress").val(obj.PhysicalAddress);
                                 var usDOTNo = "PC" + obj.DOTNumber + randomIntFromInterval(10, 99);
                                 $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
                                 $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+
+                                $("#ctl00_ContentPlaceHolder1_txtDOTPin").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtMC").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtDBA").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtCardNo").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtNameOnCard").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtExpirationDate").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtCVC").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtPhoneNo").val('');
+                                $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val('');
+                                $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', 'card_logos');
+                                $('#ctl00_ContentPlaceHolder1_hidCardNo').val('');
+                                $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("Not an Upsale");
+                                $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("Not an Upsale");
                             }
                             else {
                                 $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DotNo);
                                 $("#ctl00_ContentPlaceHolder1_txtDOTPin").val(obj.DotPin);
                                 $("#ctl00_ContentPlaceHolder1_txtMC").val(obj.MCNo);
                                 $("#ctl00_ContentPlaceHolder1_txtLegalName").val(obj.LegalName);
-                                $("#ctl00_ContentPlaceHolder1_txtDBA").val(obj.LegalName);
+                                $("#ctl00_ContentPlaceHolder1_txtDBA").val(obj.DBA);
                                 $("#ctl00_ContentPlaceHolder1_txtCardNo").val(obj.CardNo);
+                                $('#ctl00_ContentPlaceHolder1_hidCardNo').val($("#ctl00_ContentPlaceHolder1_txtCardNo").val());
+                                var str = $("#ctl00_ContentPlaceHolder1_txtCardNo").val();
+                                str = str.replace(/\d(?=\d{4})/g, "*");
+                                $("#ctl00_ContentPlaceHolder1_txtCardNo").val(str);
+                                $('#ctl00_ContentPlaceHolder1_hdnCardType').val($("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class'));
                                 $("#ctl00_ContentPlaceHolder1_txtNameOnCard").val(obj.NameOnCard);
                                 $("#ctl00_ContentPlaceHolder1_txtExpirationDate").val(obj.ExpirationDate);
                                 $("#ctl00_ContentPlaceHolder1_txtCVC").val(obj.CVC);
                                 $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val(obj.Email);
                                 $("#ctl00_ContentPlaceHolder1_txtPhoneNo").val(obj.PhoneNo);
-                                $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.AddressOnCard);
+                                //$("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val(obj.AddressOnCard);
                                 $("#ctl00_ContentPlaceHolder1_txtPhysicalAddress").val(obj.PhysicalAddress);
                                 $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', obj.CardType);
-                                var usDOTNo = "PC" + obj.DotNo + randomIntFromInterval(10, 99);
+                                //var usDOTNo = "PC" + obj.DotNo + randomIntFromInterval(10, 99);
                                 $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(obj.MCSaleNo);
                                 $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(obj.MCSaleNo);
+                                $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("Upsale");
+                                $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("Upsale");
                             }
                         }
                         else {
-                            $("#ctl00_ContentPlaceHolder1_txtLegalName").val("");
-                            $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val("");
-                            var usDOTNo = "PC" + randomIntFromInterval(10, 99);
+                            $("#ctl00_ContentPlaceHolder1_txtDOTPin").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtMC").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtLegalName").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtDBA").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtCardNo").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtNameOnCard").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtExpirationDate").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtCVC").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtPhoneNo").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtAddressOnCard").val('');
+                            $("#ctl00_ContentPlaceHolder1_txtPhysicalAddress").val('');
+                            $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', 'card_logos');
+                            $('#ctl00_ContentPlaceHolder1_hidCardNo').val('');
+                            var usDOTNo = "PC" + $("#ctl00_ContentPlaceHolder1_txtDOT").val() + randomIntFromInterval(10, 99);
                             $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text(usDOTNo);
                             $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
+                            $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("");
+                            $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("");
                         }
                     }
                 });
             });
 
-            if ($("#ctl00_ContentPlaceHolder1_txtDOT").val() != "") {
-                $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text("PC" + $("#ctl00_ContentPlaceHolder1_txtDOT").val() + randomIntFromInterval(10, 99));
+            $("#ctl00_ContentPlaceHolder1_txtCardNo").click(function () {
+                var str = $("#ctl00_ContentPlaceHolder1_txtCardNo").val();
+                str = str.replace(/\d(?=\d{16})/g, "*");
+                $("#ctl00_ContentPlaceHolder1_txtCardNo").val($('#ctl00_ContentPlaceHolder1_hidCardNo').val());
+            });
+
+            $("#ctl00_ContentPlaceHolder1_txtCardNo").change(function () {
+                $('#ctl00_ContentPlaceHolder1_hidCardNo').val($("#ctl00_ContentPlaceHolder1_txtCardNo").val());
+                var str = $("#ctl00_ContentPlaceHolder1_txtCardNo").val();
+                str = str.replace(/\d(?=\d{4})/g, "*");
+                $("#ctl00_ContentPlaceHolder1_txtCardNo").val(str);
+                $('#ctl00_ContentPlaceHolder1_hdnCardType').val($("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class'));
+            });
+
+            if ($("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val() != "") {
+                $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text($("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val());
             }
 
-            $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").change(function () {
-                $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val() + '&smtp=1&format=1', function (data) {
-                    var element = $("#ctl00_ContentPlaceHolder1_txtRecieptEmail")[0];
-                    if (data.mx_found == false || data.mx_found == null) {
-                        element.setCustomValidity("Not a valid email address.");
-                    }
-                    else {
-                        element.setCustomValidity("");
-                    }
-                });
-            });
+            if ($("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val() != "Upsale") {
+                if ($("#ctl00_ContentPlaceHolder1_txtDOT").val() != "") {
+                    $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text("PC" + $("#ctl00_ContentPlaceHolder1_txtDOT").val() + randomIntFromInterval(10, 99));
+                }
+            }
+            else {
+                $("#ctl00_ContentPlaceHolder1_lblMCSaleNo").text($("#ctl00_ContentPlaceHolder1_hidSaleNo").val());
+            }
+
+            var str = $("#ctl00_ContentPlaceHolder1_txtCardNo").val();
+            str = str.replace(/\d(?=\d{4})/g, "*");
+            $("#ctl00_ContentPlaceHolder1_txtCardNo").val(str);
+
+            if ($('#ctl00_ContentPlaceHolder1_hdnCardType').val() != "") {
+                $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', $('#ctl00_ContentPlaceHolder1_hdnCardType').val());
+            }
         }
 
         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(autoscroll);

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PurcellComplianceServices.PurcellService" CodeBehind="PurcellService.svc.cs" %>

@@ -1,0 +1,83 @@
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\obj\Debug\PurcellComplianceServices.csproj.App.config
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\obj\Debug\PurcellComplianceServices.csprojResolveAssemblyReference.cache
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PurcellComplianceServices.dll.config
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PurcellComplianceServices.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PurcellComplianceServices.pdb
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\DataLayer.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\Newtonsoft.Json.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Amazon.Adm.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Android.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Apple.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Blackberry.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Core.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.FirefoxOS.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Google.Chrome.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Windows.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.WindowsPhone.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.IO.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.Extensions.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.Primitives.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.WebRequest.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Runtime.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Threading.Tasks.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\EntityFramework.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\EntityLayer.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\DataLayer.pdb
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\Newtonsoft.Json.xml
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.IO.xml
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.xml
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.Extensions.xml
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.Primitives.xml
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.WebRequest.xml
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Runtime.xml
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\System.Threading.Tasks.xml
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\EntityFramework.xml
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\bin\EntityLayer.pdb
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\obj\Debug\PurcellComplianceServices.dll
+E:\Live Projects\Purcell Compliance\PurcellCompliance\PurcellComplianceServices\obj\Debug\PurcellComplianceServices.pdb
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PurcellComplianceServices.dll.config
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PurcellComplianceServices.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PurcellComplianceServices.pdb
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\DataLayer.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\EntityLayer.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\Newtonsoft.Json.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Amazon.Adm.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Android.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Apple.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Blackberry.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Core.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.FirefoxOS.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Google.Chrome.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.Windows.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\PushSharp.WindowsPhone.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.IO.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.Extensions.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.Primitives.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.WebRequest.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Runtime.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Threading.Tasks.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\EntityFramework.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\DataLayer.pdb
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\DataLayer.dll.config
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\EntityLayer.pdb
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\Newtonsoft.Json.xml
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.IO.xml
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.xml
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.Extensions.xml
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.Primitives.xml
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Net.Http.WebRequest.xml
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Runtime.xml
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\System.Threading.Tasks.xml
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\bin\EntityFramework.xml
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\obj\Debug\PurcellComplianceServices.csproj.App.config
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\obj\Debug\PurcellComplianceServices.csprojAssemblyReference.cache
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\obj\Debug\PurcellComplianceServices.csproj.CoreCompileInputs.cache
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\obj\Debug\PurcellComplianceServices.csproj.CopyComplete
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\obj\Debug\PurcellComplianceServices.dll
+D:\anurag\services\PurcellCompliance\PurcellComplianceServices\obj\Debug\PurcellComplianceServices.pdb
+E:\PurcCode\PurcCompanies\Services\obj\Debug\PurcellComplianceServices.csproj.App.config
+E:\PurcCode\PurcCompanies\Services\obj\Debug\PurcellComplianceServices.csprojResolveAssemblyReference.cache
+E:\PurcCode\PurcCompanies\Services\obj\Debug\PurcellComplianceServices.dll
+E:\PurcCode\PurcCompanies\Services\obj\Debug\PurcellComplianceServices.pdb

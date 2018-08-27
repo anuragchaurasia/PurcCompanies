@@ -124,7 +124,7 @@ namespace PrivateICO
                 mcData.PhysicalAddress = txtPhysicalAddress.Text;
                 mcData.serviceSaleData = saleServiceEntity;
                 mcData.saleType = SaleType.Saved;
-                mcData.CardNo = txtCardNo.Text;
+                mcData.CardNo = hidCardNo.Value;
                 mcData.SalesPersonID = Convert.ToInt32(Request.Cookies["UserID"].Value);
                 mcData.ExpirationDate = txtExpirationDate.Text;
                 mcData.CVC = txtCVC.Text;
@@ -168,12 +168,15 @@ namespace PrivateICO
             mcData.serviceSaleData = saleServiceEntity;
             mcData.saleType = SaleType.Submitted;
             mcData.SalesPersonID = Convert.ToInt32(Request.Cookies["UserID"].Value);
-            mcData.CardNo = txtCardNo.Text;
+            mcData.CardNo = hidCardNo.Value;
             mcData.ExpirationDate = txtExpirationDate.Text;
             mcData.CVC = txtCVC.Text;
             mcData.MCSaleNo = hidSaleNo.Value;
             mcData.CardType = ulcardtype.Attributes["class"];
             mcData.PhoneNo = txtPhoneNo.Text;
+            mcData.LegalName = txtLegalName.Text;
+            mcData.DBA = txtDBA.Text;
+            mcData.DotPin = txtDOTPin.Text;
             mcSalesHelper.AddMCSales(mcData);
             Session["services"] = null;
             EmailHelper emailHelper = new EmailHelper();
@@ -192,6 +195,15 @@ namespace PrivateICO
             txtAddressOnCard.Text = "";
             txtPhysicalAddress.Text = "";
             chkSameAddress.Checked = false;
+            txtCardNo.Text = "";
+            hidCardNo.Value = "";
+            txtExpirationDate.Text = "";
+            txtCVC.Text = "";
+            hidSaleNo.Value = "";
+            txtPhoneNo.Text = "";
+            txtLegalName.Text = "";
+            txtDBA.Text = "";
+            txtDOTPin.Text = "";
         }
 
         protected void lstServicesPurchased_ItemCommand(object sender, ListViewCommandEventArgs e)

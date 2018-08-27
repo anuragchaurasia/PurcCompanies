@@ -535,5 +535,77 @@ namespace DataLayer.DataHelper
 
             return isDriverProfileDeleted;
         }
+
+        public DriverSaleEntity GetSalesByOrderID(bool isSubmitted, string dotno)
+        {
+            DriverSaleEntity driverSale = new DriverSaleEntity();
+            using (uow = new UnitOfWork.UnitOfWork())
+            {
+                driverSale.orderForm = uow.OrderFormRepository.Get().Select(of => new OrderFormEntity
+                {
+                    BillingAddress = of.BillingAddress,
+                    CA = of.CA,
+                    CompanyType = of.CompanyType,
+                    ComplianceSupervisor = of.ComplianceSupervisor,
+                    DateTime = of.DateTime,
+                    DBA = of.DBA,
+                    DriverPhone = of.DriverPhone,
+                    Email = of.Email,
+                    LegalName = of.LegalName,
+                    IsSubmitted = of.IsSubmitted,
+                    Name = of.Name,
+                    NameOnCard = of.NameOnCard,
+                    OrderFormID = of.OrderFormID,
+                    PhysicalAddress = of.PhysicalAddress,
+                    USDot = of.USDot,
+                    DOTPinNo = of.DOTPinNo,
+                    ComplianceUserID = of.ComplianceUserID,
+                    SaleID = of.SaleID
+                }).Where(x => x.IsSubmitted == isSubmitted && x.USDot == dotno).FirstOrDefault();
+
+                driverSale.profileCard = uow.ProfileCardRepository.Get().Select(pc => new ProfileCardEntity
+                {
+                    CardType = pc.CardType,
+                    CorDC = pc.CorDC,
+                    CVC = pc.CVC,
+                    Expiration = pc.Expiration,
+                    IsSubmitted = pc.IsSubmitted,
+                    OrderFormID = pc.OrderFormID,
+                    ProfileCardInfo = pc.ProfileCardInfo
+                }).Where(x => x.IsSubmitted == isSubmitted && x.OrderFormID == driverSale.orderForm.OrderFormID).FirstOrDefault();
+
+                driverSale.driverServices = uow.DriverServiceRepository.Get().Join(uow.DocumentMasterRepository.Get(), msd => msd.ServiceID, dms => dms.DocumentID, (msd, dms) => new { msd, dms })
+                        .Select(p => new DriverServiceEntity { DriverServiceID = p.msd.DriverServiceID, ServiceID = (int)p.msd.ServiceID, DriverInterviewProfileID = p.msd.DriverInterviewProfileID, ServiceName = p.dms.DocumentName, ServicePrice = p.dms.Description })
+                        .Where(x => x.DriverInterviewProfileID == driverSale.orderForm.OrderFormID).ToList();
+
+                driverSale.driverInterviewProfiles = uow.DriverInterviewProfileRepository.Get().Select(dv => new DriverInterviewProfileEntity
+                {
+                    CDLNonCDL = dv.CDLNonCDL,
+                    Class = dv.Class,
+                    IsSubmitted = isSubmitted,
+                    Date = dv.Date,
+                    DOB = dv.DOB,
+                    OrderFormID = dv.OrderFormID,
+                    DriverInterviewID = dv.DriverInterviewID,
+                    DriverName = dv.DriverName,
+                    EIN = dv.EIN,
+                    Email = dv.Email,
+                    ExpirationDate = dv.ExpirationDate,
+                    LegalName = dv.LegalName,
+                    LicenseNo = dv.LicenseNo,
+                    Notes = dv.Notes,
+                    Phone = dv.Phone,
+                    SSN = dv.SSN,
+                    StatusIssued = dv.StatusIssued,
+                    Supervisor = dv.Supervisor,
+                    USDOT = dv.USDOT,
+                    DriverCargos = uow.DriverVehicleCargoRepository.Get().Where(x => x.DriverVehicleID == dv.DriverInterviewID).Select(p => new DriverVehicleCargoEntity { CargoCarriedName = p.CargoCarriedName, DriverVehicleID = p.DriverVehicleID, VehicleCargoID = p.VehicleCargoID }).ToList(),
+
+                    DriverVehicle = uow.DriverVehicleRepository.Get().Where(x => x.DriverVehicleInfo == dv.DriverInterviewID).Select(p => new DriverVehicleEntity { DriverVehicleInfo = p.DriverVehicleInfo, GVW = p.GVW, Make = p.Make, Model = p.Model, OrderFormID = p.OrderFormID, Year = p.Year }).FirstOrDefault(),
+                    listDriverVehicle = uow.DriverVehicleRepository.Get().Where(x => x.DriverVehicleInfo == dv.DriverInterviewID).Select(p => new DriverVehicleEntity { DriverVehicleInfo = p.DriverVehicleInfo, GVW = p.GVW, Make = p.Make, Model = p.Model, OrderFormID = p.OrderFormID, Year = p.Year }).ToList(),
+                }).Where(x => x.OrderFormID == driverSale.orderForm.OrderFormID && x.IsSubmitted == isSubmitted).ToList();
+            }
+            return driverSale;
+        }
     }
 }

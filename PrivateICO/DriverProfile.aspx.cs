@@ -1009,6 +1009,21 @@ namespace PrivateICO
             }
 
             int driverInterviewProfileID = driverProfileHelper.AddDriverProfile(profileCard, orderForm, driverInterviewProfiles, saleServiceEntity);
+            UserDAL userDAL = new UserDAL();
+            UsersEL userEL = new UsersEL();
+            userEL.Name = txtName.Text;
+            userEL.Active = true;
+            userEL.Address = txtMailingAddress.Text;
+            userEL.Country = "US";
+            userEL.State = DropDownListState.SelectedItem.Text;
+            userEL.CreatedDate = DateTime.Now;
+            userEL.Email = txtEmailAddress.Text;
+            userEL.PhoneNo = txtAdditionalPhoneNo.Text;
+            userEL.Username = txtUSDOT.Text;
+            userEL.Zipcode = "";
+            userEL.RoleID = "2";
+            userDAL.RegisterUser(userEL);
+
             ClearSessions();
             EmailHelper emailHelper = new EmailHelper();
             emailHelper.SendPlainEmail("New Sales Order", "A new sales order is been closed by " + Request.Cookies["Name"].Value + " (" + Request.Cookies["Email"].Value + "). Please login into admin panel to view orders.", "");
@@ -1029,6 +1044,8 @@ namespace PrivateICO
         public static string GetUSDOTDetails(string usdotno)
         {
             string dropid = "";
+            DriverProfileHelper driverProfile = new DriverProfileHelper();
+
             DailyLeadsHelper leadHelper = new DailyLeadsHelper();
             DailyLeadEntity LeadsData = leadHelper.GetLeadRecordsByDOTNo(usdotno);
             var json = new JavaScriptSerializer().Serialize(LeadsData);

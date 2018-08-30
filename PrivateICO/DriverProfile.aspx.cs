@@ -187,6 +187,8 @@ namespace PrivateICO
             orderForm.Email = txtEmailAddress.Text;
             orderForm.DateTime = txtDateTime.Text;
             orderForm.DriverPhone = txtAdditionalPhoneNo.Text;
+            orderForm.AdditionalPhoneNo = txtOtherPhoneNo.Text;
+            orderForm.AdditionalPhoneType = drpPhoneType.SelectedItem.Text;
             orderForm.BillingAddress = txtBillingAddress.Text;
             orderForm.ComplianceSupervisor = drpComplianceSupervisor.SelectedItem.Value.ToString();
             orderForm.CompanyType = chkCompanyType.SelectedItem.Text;
@@ -803,6 +805,8 @@ namespace PrivateICO
             orderForm.Email = txtEmailAddress.Text;
             orderForm.DateTime = txtDateTime.Text;
             orderForm.DriverPhone = txtAdditionalPhoneNo.Text;
+            orderForm.AdditionalPhoneNo = txtOtherPhoneNo.Text;
+            orderForm.AdditionalPhoneType = drpPhoneType.SelectedItem.Text;
             orderForm.BillingAddress = txtBillingAddress.Text;
             orderForm.ComplianceSupervisor = drpComplianceSupervisor.SelectedItem.Value.ToString();
             orderForm.CompanyType = chkCompanyType.SelectedItem.Text;

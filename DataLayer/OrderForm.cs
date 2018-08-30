@@ -32,5 +32,7 @@ namespace DataLayer
         public string SaleID { get; set; }
         public Nullable<int> ComplianceUserID { get; set; }
         public string DOTPinNo { get; set; }
+        public string AdditionalPhoneType { get; set; }
+        public string AdditionalPhoneNo { get; set; }
     }
 }

@@ -414,6 +414,8 @@
     <Property Name="SaleID" Type="nvarchar" MaxLength="50" />
     <Property Name="ComplianceUserID" Type="int" />
     <Property Name="DOTPinNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdditionalPhoneType" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdditionalPhoneNo" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="ProfileCard">
     <Key>

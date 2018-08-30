@@ -65,6 +65,10 @@ namespace PrivateICO
             txtDateTime.Text = DateTime.Now.ToString();
             txtAdditionalPhoneNo.Text = order.DriverPhone;
             lblAdditionalPhoneNo.Text = order.DriverPhone;
+
+            txtOtherPhoneNo.Text=order.AdditionalPhoneNo;
+            drpPhoneType.Items.FindByValue(order.AdditionalPhoneType).Selected = true;
+
             drpComplianceSupervisor.ClearSelection();
             drpComplianceSupervisor.Items.FindByValue(order.ComplianceSupervisor).Selected = true;
             lblPCSaleNo.Text = order.SaleID;
@@ -300,7 +304,8 @@ namespace PrivateICO
             orderForm.Email = txtEmailAddress.Text;
             orderForm.DateTime = txtDateTime.Text;
             orderForm.DriverPhone = txtAdditionalPhoneNo.Text;
-
+            orderForm.AdditionalPhoneNo = txtOtherPhoneNo.Text;
+            orderForm.AdditionalPhoneType = drpPhoneType.SelectedItem.Text;
             orderForm.BillingAddress = txtBillingAddress.Text;
             orderForm.ComplianceSupervisor = drpComplianceSupervisor.SelectedItem.Value.ToString();
             orderForm.CompanyType = chkCompanyType.SelectedItem.Text;
@@ -1081,6 +1086,8 @@ namespace PrivateICO
             orderForm.Email = txtEmailAddress.Text;
             orderForm.DateTime = txtDateTime.Text;
             orderForm.DriverPhone = txtAdditionalPhoneNo.Text;
+            orderForm.AdditionalPhoneNo = txtOtherPhoneNo.Text;
+            orderForm.AdditionalPhoneType = drpPhoneType.SelectedItem.Text;
             orderForm.BillingAddress = txtBillingAddress.Text;
             orderForm.ComplianceSupervisor = drpComplianceSupervisor.SelectedItem.Value.ToString();
             orderForm.CompanyType = chkCompanyType.SelectedItem.Text;

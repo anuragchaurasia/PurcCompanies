@@ -27,5 +27,7 @@ namespace EntityLayer
         public string DOTPinNo { get; set; }
         public string SubmissionTime { get; set; }
         public string SubmittedBy { get; set; }
+        public string AdditionalPhoneType { get; set; }
+        public string AdditionalPhoneNo { get; set; }
     }
 }

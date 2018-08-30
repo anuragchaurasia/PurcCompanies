@@ -525,6 +525,8 @@
     <Property Type="String" Name="SaleID" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="ComplianceUserID" />
     <Property Type="String" Name="DOTPinNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AdditionalPhoneType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AdditionalPhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="ProfileCard">
     <Key>

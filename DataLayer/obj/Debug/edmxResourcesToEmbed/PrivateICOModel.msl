@@ -466,6 +466,8 @@
     <EntitySetMapping Name="OrderForms">
       <EntityTypeMapping TypeName="QuantreumModel.OrderForm">
         <MappingFragment StoreEntitySet="OrderForm">
+          <ScalarProperty Name="AdditionalPhoneNo" ColumnName="AdditionalPhoneNo" />
+          <ScalarProperty Name="AdditionalPhoneType" ColumnName="AdditionalPhoneType" />
           <ScalarProperty Name="DOTPinNo" ColumnName="DOTPinNo" />
           <ScalarProperty Name="ComplianceUserID" ColumnName="ComplianceUserID" />
           <ScalarProperty Name="SaleID" ColumnName="SaleID" />

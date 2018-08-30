@@ -325,7 +325,7 @@ namespace DataLayer.DataHelper
                     orderFormdb.CompanyType = orderForm.CompanyType;
                     orderFormdb.IsSubmitted = orderForm.IsSubmitted;
                     orderFormdb.DOTPinNo = orderForm.DOTPinNo;
-
+                    orderFormdb.ComplianceUserID = orderForm.ComplianceUserID;
 
                     uow.OrderFormRepository.Update(orderFormdb);
                     uow.Save();

@@ -806,6 +806,7 @@ namespace PrivateICO
             orderForm.BillingAddress = txtBillingAddress.Text;
             orderForm.ComplianceSupervisor = drpComplianceSupervisor.SelectedItem.Value.ToString();
             orderForm.CompanyType = chkCompanyType.SelectedItem.Text;
+            orderForm.ComplianceUserID = Convert.ToInt32(Request.Cookies["UserID"].Value);
             orderForm.SaleID = lblPCSaleNo.Text;
             orderForm.IsSubmitted = true;
             #endregion

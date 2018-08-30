@@ -64,6 +64,7 @@ namespace PrivateICO
             txtEmailAddress.Text = order.Email;
             txtDateTime.Text = DateTime.Now.ToString();
             txtAdditionalPhoneNo.Text = order.DriverPhone;
+            lblAdditionalPhoneNo.Text = order.DriverPhone;
             drpComplianceSupervisor.Items.FindByValue(order.ComplianceSupervisor).Selected = true;
             lblPCSaleNo.Text = order.SaleID;
             try

@@ -81,7 +81,12 @@
                                     </div>
                                 </div>
                             </div>
-
+                             <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Extension No.</label>
+                                    <asp:TextBox runat="server" title="Extension No for Ring Central" ID="txtExtensionNo" CssClass="form-control" placeholder="Ring Central Extension No"></asp:TextBox>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label></label>
                                 <div class="form-group">

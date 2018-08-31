@@ -15,5 +15,6 @@ namespace EntityLayer
         public string UserType { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public string CreationTime { get; set; }
+        public string ExtensionNo { get; set; }
     }
 }

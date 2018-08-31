@@ -55,6 +55,7 @@
     <EntitySetMapping Name="ComplianceUsers">
       <EntityTypeMapping TypeName="IsTypeOf(QuantreumModel.ComplianceUser)">
         <MappingFragment StoreEntitySet="ComplianceUsers">
+          <ScalarProperty Name="ExtensionNo" ColumnName="ExtensionNo" />
           <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Name" ColumnName="Name" />

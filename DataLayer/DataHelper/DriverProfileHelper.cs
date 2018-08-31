@@ -38,7 +38,8 @@ namespace DataLayer.DataHelper
                     orderFormdb.ComplianceUserID = orderForm.ComplianceUserID;
                     orderFormdb.SaleID = orderForm.SaleID;
                     orderFormdb.DOTPinNo = orderForm.DOTPinNo;
-
+                    orderFormdb.AdditionalPhoneNo = orderForm.AdditionalPhoneNo;
+                    orderFormdb.AdditionalPhoneType = orderForm.AdditionalPhoneType;
                     uow.OrderFormRepository.Insert(orderFormdb);
                     uow.Save();
 
@@ -146,7 +147,9 @@ namespace DataLayer.DataHelper
                     USDot = of.USDot,
                     DOTPinNo = of.DOTPinNo,
                     ComplianceUserID = of.ComplianceUserID,
-                    SaleID = of.SaleID
+                    SaleID = of.SaleID,
+                    AdditionalPhoneNo = of.AdditionalPhoneNo,
+                    AdditionalPhoneType = of.AdditionalPhoneType
                 }).Where(x => x.IsSubmitted == isSubmitted && x.OrderFormID == orderid).FirstOrDefault();
 
                 driverSale.profileCard = uow.ProfileCardRepository.Get().Select(pc => new ProfileCardEntity
@@ -219,6 +222,8 @@ namespace DataLayer.DataHelper
                     DOTPinNo = of.DOTPinNo,
                     ComplianceUserID = of.ComplianceUserID,
                     SaleID = of.SaleID,
+                    AdditionalPhoneNo = of.AdditionalPhoneNo,
+                    AdditionalPhoneType = of.AdditionalPhoneType,
                     SubmittedBy = of.ComplianceUserID != null ? userHelper.GetComplianceUserByID(Convert.ToInt32(of.ComplianceUserID)).Email : "N/A",
                 }).Where(x => x.IsSubmitted == isSubmitted).OrderByDescending(p => p.OrderFormID).ToList();
 
@@ -326,7 +331,8 @@ namespace DataLayer.DataHelper
                     orderFormdb.IsSubmitted = orderForm.IsSubmitted;
                     orderFormdb.DOTPinNo = orderForm.DOTPinNo;
                     orderFormdb.ComplianceUserID = orderForm.ComplianceUserID;
-
+                    orderFormdb.AdditionalPhoneNo = orderForm.AdditionalPhoneNo;
+                    orderFormdb.AdditionalPhoneType = orderForm.AdditionalPhoneType;
                     uow.OrderFormRepository.Update(orderFormdb);
                     uow.Save();
 
@@ -468,6 +474,7 @@ namespace DataLayer.DataHelper
                     StatusIssued = dv.StatusIssued,
                     Supervisor = dv.Supervisor,
                     USDOT = dv.USDOT,
+
                     DriverCargos = uow.DriverVehicleCargoRepository.Get().Where(x => x.DriverVehicleID == interviewprofileid).Select(p => new DriverVehicleCargoEntity { CargoCarriedName = p.CargoCarriedName, DriverVehicleID = p.DriverVehicleID, VehicleCargoID = p.VehicleCargoID }).ToList(),
                     DriverServices = uow.DriverServiceRepository.Get().Join(uow.DocumentMasterRepository.Get(), msd => msd.ServiceID, dms => dms.DocumentID, (msd, dms) => new { msd, dms })
                         .Select(p => new DriverServiceEntity { DriverServiceID = p.msd.DriverServiceID, ServiceID = (int)p.msd.ServiceID, DriverInterviewProfileID = p.msd.DriverInterviewProfileID, ServiceName = p.dms.DocumentName, ServicePrice = p.dms.Description })
@@ -560,7 +567,9 @@ namespace DataLayer.DataHelper
                     USDot = of.USDot,
                     DOTPinNo = of.DOTPinNo,
                     ComplianceUserID = of.ComplianceUserID,
-                    SaleID = of.SaleID
+                    SaleID = of.SaleID,
+                    AdditionalPhoneNo = of.AdditionalPhoneNo,
+                    AdditionalPhoneType = of.AdditionalPhoneType
                 }).Where(x => x.IsSubmitted == isSubmitted && x.USDot == dotno).FirstOrDefault();
 
                 driverSale.profileCard = uow.ProfileCardRepository.Get().Select(pc => new ProfileCardEntity

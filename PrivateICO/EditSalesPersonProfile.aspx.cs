@@ -23,6 +23,7 @@ namespace PrivateICO
             txtEmail.Text = user.Email;
             txtFirstName.Text = user.Name;
             ChkIsContractor.Checked = (bool)user.IsContractor;
+            txtExtensionNo.Text = user.ExtensionNo;
         }
 
         protected void btnEditUser_Click(object sender, EventArgs e)
@@ -43,6 +44,7 @@ namespace PrivateICO
                 user.Password = null;
             }
             user.IsContractor = ChkIsContractor.Checked;
+            user.ExtensionNo = txtExtensionNo.Text;
             bool isEdited = userHelper.EditSalesUser(user);
             if (isEdited)
             {

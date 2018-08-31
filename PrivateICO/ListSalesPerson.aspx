@@ -70,6 +70,7 @@
                     &nbsp;<asp:LinkButton runat="server" ID="lnkViewSales" CssClass="fa fa-fw fa-dollar" CommandArgument='<%# Eval("UserID") %>' ToolTip="View Sales" CommandName="ViewSale"></asp:LinkButton>
                     &nbsp;<asp:LinkButton runat="server" ID="lnkViewLeads" CssClass="fa fa-fw fa-users" CommandArgument='<%# Eval("UserID") %>' ToolTip="View Lead Status" CommandName="ViewLeads"></asp:LinkButton>
                     &nbsp;<asp:LinkButton runat="server" ID="lnkOpportunityLeads" CssClass="fa fa-fw fa-user-plus" CommandArgument='<%# Eval("UserID") %>' ToolTip="View Opportunity Lead" CommandName="ViewOpportunityLeads"></asp:LinkButton>
+                    &nbsp;<asp:LinkButton runat="server" ID="lnkRingCentral" CssClass="fa fa-fw fa-registered" CommandArgument='<%# Eval("ExtensionNo") %>' ToolTip="View Ring Central Details" CommandName="ViewRingCentralDetails"></asp:LinkButton>
                     &nbsp;<asp:LinkButton runat="server" ID="lnkDeleteSalesUser" CssClass="fa fa-fw fa-trash" OnClientClick="javascript:return confirm('Are you sure you want to delete this Sales Person ?');" CommandArgument='<%# Eval("UserID") %>' ToolTip="Delete Sales User" CommandName="DeleteSale"></asp:LinkButton>
                 </td>
             </tr>

@@ -99,6 +99,7 @@
     <Property Type="Boolean" Name="IsActive" />
     <Property Type="String" Name="CreationTime" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Type="Boolean" Name="IsArchive" />
+    <Property Type="String" Name="ExtensionNo" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Lead">
     <Key>

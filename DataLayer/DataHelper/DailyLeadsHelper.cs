@@ -131,6 +131,44 @@ namespace DataLayer.DataHelper
             return dailyLeadRecords;
         }
 
+        public List<DailyLeadEntity> GetAllLeads()
+        {
+            List<DailyLeadEntity> dailyLeadRecords = new List<DailyLeadEntity>();
+            using (uow = new UnitOfWork.UnitOfWork())
+            {
+                try
+                {
+                    dailyLeadRecords = uow.DailyLeadRepository.Get().Where(x => Convert.ToDateTime(x.SavedOn) >= DateTime.Now.AddDays(-1) && Convert.ToDateTime(x.SavedOn) < DateTime.Now)
+                        .Select(po => new DailyLeadEntity
+                        {
+                            AuthForHire = po.AuthForHire,
+                            DailyLeadID = po.DailyLeadID,
+                            DateFiled = po.DateFiled,
+                            DOTNumber = po.DOTNumber,
+                            Drivers = po.Drivers,
+                            Interstate = po.Interstate,
+                            LeadDocID = po.LeadDocID,
+                            LegalName = po.LegalName,
+                            MailingAddress = po.MailingAddress,
+                            OperatingStatus = po.OperatingStatus,
+                            PhoneNo = po.PhoneNo,
+                            PhysicalAddress = po.PhysicalAddress,
+                            PowerUnits = po.PowerUnits,
+                            Status = po.Status,
+                            TimeZone = po.TimeZone,
+                            ZipCode = po.ZipCode,
+                            SavedOn = po.SavedOn
+                        }).OrderByDescending(x => Convert.ToDateTime(x.SavedOn)).ToList();
+                    //}).ToList();
+                }
+                catch
+                {
+
+                }
+            }
+            return dailyLeadRecords;
+        }
+
         public bool UpdateLeadStatus(int leadid, string status)
         {
             bool isSalesUpdated = false;

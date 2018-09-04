@@ -298,9 +298,12 @@
 
             $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").change(function () {
                 $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val() + '&smtp=1&format=1', function (data) {
-                    if (data.mx_found == false) {
-                        var element = $("#ctl00_ContentPlaceHolder1_txtRecieptEmail")[0];
+                    var element = $("#ctl00_ContentPlaceHolder1_txtRecieptEmail")[0];
+                    if (data.mx_found == false || data.mx_found == null) {
                         element.setCustomValidity("Not a valid email address.");
+                    }
+                    else {
+                        element.setCustomValidity("");
                     }
                 });
             });
@@ -343,9 +346,12 @@
 
             $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").change(function () {
                 $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val() + '&smtp=1&format=1', function (data) {
-                    if (data.mx_found == false) {
-                        var element = $("#ctl00_ContentPlaceHolder1_txtRecieptEmail")[0];
+                    var element = $("#ctl00_ContentPlaceHolder1_txtRecieptEmail")[0];
+                    if (data.mx_found == false || data.mx_found == null) {
                         element.setCustomValidity("Not a valid email address.");
+                    }
+                    else {
+                        element.setCustomValidity("");
                     }
                 });
             });

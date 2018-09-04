@@ -55,6 +55,7 @@ namespace DataLayer.DataHelper
                     userdb.UserType = user.UserType;
                     userdb.Name = user.Name;
                     userdb.IsArchive = false;
+                    userdb.ExtensionNo = user.ExtensionNo;
                     uow.ComplianceUserRepository.Insert(userdb);
                     uow.Save();
                     isRegsitered = true;
@@ -84,7 +85,8 @@ namespace DataLayer.DataHelper
                         IsContractor = usd.IsContractor,
                         Password = usd.Password,
                         UserID = usd.UserID,
-                        UserType = usd.UserType
+                        UserType = usd.UserType,
+                        ExtensionNo=usd.ExtensionNo
                     }).FirstOrDefault();
                 }
                 catch
@@ -109,7 +111,8 @@ namespace DataLayer.DataHelper
                     IsActive = usd.IsActive,
                     IsContractor = usd.IsContractor,
                     Password = usd.Password,
-                    UserID = usd.UserID
+                    UserID = usd.UserID,
+                    ExtensionNo = usd.ExtensionNo
                 }).FirstOrDefault();
 
             }
@@ -134,6 +137,7 @@ namespace DataLayer.DataHelper
                     userdb.IsContractor = user.IsContractor;
                     userdb.UserType = user.UserType;
                     userdb.Name = user.Name;
+                    userdb.ExtensionNo = user.ExtensionNo;
                     uow.ComplianceUserRepository.Update(userdb);
                     uow.Save();
                     isEdited = true;
@@ -210,7 +214,8 @@ namespace DataLayer.DataHelper
                         Password = usd.Password,
                         UserID = usd.UserID,
                         Name = usd.Name,
-                        UserType = usd.UserType
+                        UserType = usd.UserType,
+                        ExtensionNo=usd.ExtensionNo
                     }).ToList();
                 }
                 catch

@@ -55,8 +55,6 @@ E:\PurcCode\PurcCompanies\PrivateICO\bin\DataLayer.pdb
 E:\PurcCode\PurcCompanies\PrivateICO\bin\EntityLayer.pdb
 E:\PurcCode\PurcCompanies\PrivateICO\bin\crypto.pdb
 E:\PurcCode\PurcCompanies\PrivateICO\bin\crypto.xml
-E:\PurcCode\PurcCompanies\PrivateICO\bin\CTCT.pdb
-E:\PurcCode\PurcCompanies\PrivateICO\bin\CTCT.xml
 E:\PurcCode\PurcCompanies\PrivateICO\bin\Flurl.xml
 E:\PurcCode\PurcCompanies\PrivateICO\bin\Newtonsoft.Json.xml
 E:\PurcCode\PurcCompanies\PrivateICO\bin\EntityFramework.xml

@@ -47,14 +47,19 @@ namespace PrivateICO
                         {
                             Response.Redirect("DisplayLeads.aspx?UserID=" + e.CommandArgument);
                         }
-                    else
-                        if (e.CommandName == "DeleteSale")
-                        {
-                            if (userHelper.ArchiveSalesUser(Convert.ToInt32(e.CommandArgument)))
+                        else
+                            if (e.CommandName == "DeleteSale")
                             {
-                                this.BindSalesUsers();
+                                if (userHelper.ArchiveSalesUser(Convert.ToInt32(e.CommandArgument)))
+                                {
+                                    this.BindSalesUsers();
+                                }
                             }
-                        }
+                            else
+                                if (e.CommandName == "ViewRingCentralDetails")
+                                {
+                                    Response.Redirect("RingCentralStats.aspx?ExtensionNo=" + e.CommandArgument);
+                                }
         }
 
         protected void btnAddUser_Click(object sender, EventArgs e)

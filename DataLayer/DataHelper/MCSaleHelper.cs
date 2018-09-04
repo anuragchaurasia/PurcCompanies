@@ -410,6 +410,45 @@ namespace DataLayer.DataHelper
             return MCSale;
         }
 
+        public MCSaleEntity GetMCSaleUSDotNo(string USDotNo)
+        {
+            MCSaleEntity MCSale = new MCSaleEntity();
+            using (uow = new UnitOfWork.UnitOfWork())
+            {
+                try
+                {
+                    MCSale = uow.MCSaleRepository.Get().Select(sale => new MCSaleEntity
+                    {
+                        AddressOnCard = sale.AddressOnCard,
+                        DotNo = sale.DotNo,
+                        Email = sale.Email,
+                        MCID = sale.MCID,
+                        MCNo = sale.MCNo,
+                        CardNo = sale.CardNo,
+                        PhoneNo = sale.PhoneNo,
+                        NameOnCard = sale.NameOnCard,
+                        PhysicalAddress = sale.PhysicalAddress,
+                        ExpirationDate = sale.ExpirationDate,
+                        CardType = sale.CardType,
+                        CVC = sale.CVC,
+                        MCSaleNo = sale.MCSaleNo,
+                        DBA = sale.DBA,
+                        LegalName = sale.LegalName,
+                        SalesPersonID = sale.SalesPersonID,
+                        DotPin = sale.DotPin,
+                        serviceSaleData = uow.MCServiceSaleRepository.Get().Join(uow.DocumentMasterRepository.Get(), msd => msd.ServiceID, dms => dms.DocumentID, (msd, dms) => new { msd, dms })
+                        .Select(p => new MCServiceSaleEntity { MCSaleID = p.msd.MCSaleID, MCServiceID = p.msd.MCServiceID, ServiceID = p.msd.ServiceID, ServiceName = p.dms.DocumentName, ServicePrice = p.dms.Description })
+                        .Where(x => x.MCSaleID == sale.MCID).ToList()
+                    }).Where(p => p.DotNo == USDotNo).FirstOrDefault();
+                }
+                catch
+                {
+
+                }
+            }
+            return MCSale;
+        }
+
         public bool DeleteTempSale(int MCID)
         {
             bool isDeleted = false;

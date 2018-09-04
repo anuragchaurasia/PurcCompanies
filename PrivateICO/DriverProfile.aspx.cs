@@ -2,6 +2,7 @@
 using DataLayer.DAL;
 using DataLayer.DataHelper;
 using EntityLayer;
+using RingCentral;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,11 @@ namespace PrivateICO
         List<DriverVehicleEntity> driverVehicleEntity = new List<DriverVehicleEntity>();
         List<DocumentEL> completeDocumentList = new List<DocumentEL>();
         Random rand = new Random();
-        protected void Page_Load(object sender, EventArgs e)
+        RestClient rc = new RestClient("9ggNhhKMQzydWCI7iRU_qQ", "43bUqIQ7QWiYMI9tUZvRBw8oDl2ziYQrK5_f0i0O9hdw", true);
+        protected async void Page_Load(object sender, EventArgs e)
         {
+            
+
             if (!Page.IsPostBack)
             {
                 ClearSessions();
@@ -46,6 +50,14 @@ namespace PrivateICO
                 LoadServices();
                 lblPCSaleNo.Text = "PC" + txtUSDOT.Text + rand.Next(10, 99).ToString();
                 lblPCSalePersonName.Text = userHelper.GetComplianceUserByID(Convert.ToInt32(Request.Cookies["UserID"].Value)).Name;
+                try
+                {
+                    await rc.Authorize("+12086390799", "101", "Welcome2018");
+                }
+                catch 
+                {
+                    
+                }
 
             }
             //LoadTempDrivers();
@@ -107,16 +119,17 @@ namespace PrivateICO
             txtDOB.Text = "";
             txtDriverName.Text = "";
             txtDriverEIN.Text = "";
+            txtDriverVIN.Text = "";
             txtDriverEmailAddress.Text = "";
             txtExpirationDate.Text = "";
-            txtDriverLegalName.Text = "";
+            //txtDriverLegalName.Text = "";
             txtDriverLicense.Text = "";
             txtNotesCommentsObservation.Text = "";
             txtDriverPhone.Text = "";
             txtDriverSSN.Text = "";
             DropDownListState.SelectedIndex = 1;
             txtSupervisor.Text = "";
-            txtDriverUSDOT.Text = "";
+            //txtDriverUSDOT.Text = "";
             txtYear.Text = "";
             txtMake.Text = "";
             txtModel.Text = "";
@@ -186,6 +199,8 @@ namespace PrivateICO
             orderForm.Email = txtEmailAddress.Text;
             orderForm.DateTime = txtDateTime.Text;
             orderForm.DriverPhone = txtAdditionalPhoneNo.Text;
+            orderForm.AdditionalPhoneNo = txtOtherPhoneNo.Text;
+            orderForm.AdditionalPhoneType = drpPhoneType.SelectedItem.Text;
             orderForm.BillingAddress = txtBillingAddress.Text;
             orderForm.ComplianceSupervisor = drpComplianceSupervisor.SelectedItem.Value.ToString();
             orderForm.CompanyType = chkCompanyType.SelectedItem.Text;
@@ -629,6 +644,7 @@ namespace PrivateICO
                 driverInterviewProfile.DOB = txtDOB.Text;
                 driverInterviewProfile.DriverName = txtDriverName.Text;
                 driverInterviewProfile.EIN = txtDriverEIN.Text;
+                driverInterviewProfile.VIN = txtDriverVIN.Text;
                 driverInterviewProfile.Email = txtDriverEmailAddress.Text;
                 driverInterviewProfile.ExpirationDate = txtExpirationDate.Text;
                 driverInterviewProfile.LegalName = txtDriverLegalName.Text;
@@ -655,6 +671,7 @@ namespace PrivateICO
                 driverInterviewProfile.DOB = txtDOB.Text;
                 driverInterviewProfile.DriverName = txtDriverName.Text;
                 driverInterviewProfile.EIN = txtDriverEIN.Text;
+                driverInterviewProfile.VIN = txtDriverVIN.Text;
                 driverInterviewProfile.Email = txtDriverEmailAddress.Text;
                 driverInterviewProfile.ExpirationDate = txtExpirationDate.Text;
                 driverInterviewProfile.LegalName = txtDriverLegalName.Text;
@@ -770,7 +787,7 @@ namespace PrivateICO
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "servicescroll()", true);
         }
 
-        protected void btnSubmitDetails_Click(object sender, EventArgs e)
+        protected async void btnSubmitDetails_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(txtGVW.Text) || !String.IsNullOrEmpty(txtMake.Text) || !String.IsNullOrEmpty(txtYear.Text) || !String.IsNullOrEmpty(txtModel.Text))
             {
@@ -800,9 +817,12 @@ namespace PrivateICO
             orderForm.Email = txtEmailAddress.Text;
             orderForm.DateTime = txtDateTime.Text;
             orderForm.DriverPhone = txtAdditionalPhoneNo.Text;
+            orderForm.AdditionalPhoneNo = txtOtherPhoneNo.Text;
+            orderForm.AdditionalPhoneType = drpPhoneType.SelectedItem.Text;
             orderForm.BillingAddress = txtBillingAddress.Text;
             orderForm.ComplianceSupervisor = drpComplianceSupervisor.SelectedItem.Value.ToString();
             orderForm.CompanyType = chkCompanyType.SelectedItem.Text;
+            orderForm.ComplianceUserID = Convert.ToInt32(Request.Cookies["UserID"].Value);
             orderForm.SaleID = lblPCSaleNo.Text;
             orderForm.IsSubmitted = true;
             #endregion
@@ -1006,6 +1026,49 @@ namespace PrivateICO
             }
 
             int driverInterviewProfileID = driverProfileHelper.AddDriverProfile(profileCard, orderForm, driverInterviewProfiles, saleServiceEntity);
+            UserDAL userDAL = new UserDAL();
+            UsersEL userEL = new UsersEL();
+            userEL.Name = txtName.Text;
+            userEL.Active = true;
+            userEL.Address = txtMailingAddress.Text;
+            userEL.Country = "US";
+            userEL.State = DropDownListState.SelectedItem.Text;
+            userEL.CreatedDate = DateTime.Now;
+            userEL.Email = txtEmailAddress.Text;
+            userEL.PhoneNo = txtAdditionalPhoneNo.Text;
+            userEL.Username = txtUSDOT.Text;
+            userEL.Zipcode = "";
+            userEL.RoleID = "2";
+            userDAL.RegisterUser(userEL);
+
+            try
+            {
+                await rc.Authorize("+12086390799", "101", "Welcome2018");
+                PersonalContactResource RingCentralContact = new PersonalContactResource();
+                RingCentralContact.firstName = txtLegalName.Text;
+                RingCentralContact.businessPhone = txtAdditionalPhoneNo.Text;
+                RingCentralContact.callbackPhone = txtAdditionalPhoneNo.Text;
+                RingCentralContact.businessPhone2 = txtOtherPhoneNo.Text;
+                RingCentralContact.companyPhone = txtAdditionalPhoneNo.Text;
+                RingCentralContact.email = txtEmailAddress.Text;
+                RingCentralContact.email2 = txtDriverEmailAddress.Text;
+                RingCentralContact.assistantPhone = txtOtherPhoneNo.Text;
+                RingCentralContact.availability = "Alive";
+                ContactAddressInfo contactInfo = new ContactAddressInfo();
+                contactInfo.country = "US";
+                contactInfo.state = DropDownListState.SelectedItem.Text;
+
+                RingCentralContact.businessAddress = contactInfo;
+                RingCentralContact.company = txtLegalName.Text;
+                RingCentralContact.otherPhone = txtOtherPhoneNo.Text;
+                RingCentralContact.mobilePhone = txtAdditionalPhoneNo.Text;
+
+                var contact =  rc.Restapi().Account().Extension().AddressBook().Contact().Post(RingCentralContact);
+            }
+            catch 
+            {
+                
+            }
             ClearSessions();
             EmailHelper emailHelper = new EmailHelper();
             emailHelper.SendPlainEmail("New Sales Order", "A new sales order is been closed by " + Request.Cookies["Name"].Value + " (" + Request.Cookies["Email"].Value + "). Please login into admin panel to view orders.", "");
@@ -1026,6 +1089,8 @@ namespace PrivateICO
         public static string GetUSDOTDetails(string usdotno)
         {
             string dropid = "";
+            DriverProfileHelper driverProfile = new DriverProfileHelper();
+
             DailyLeadsHelper leadHelper = new DailyLeadsHelper();
             DailyLeadEntity LeadsData = leadHelper.GetLeadRecordsByDOTNo(usdotno);
             var json = new JavaScriptSerializer().Serialize(LeadsData);

@@ -218,15 +218,36 @@
                                 <!-- /.form-group -->
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-md-4">
 
                                 <div class="form-group">
-                                    <label>Phone #</label>
-                                    <asp:TextBox runat="server" ID="txtAdditionalPhoneNo" CssClass="form-control" placeholder="Enter Additional Driver Phone#"></asp:TextBox>
+                                    <label>Phone #(<asp:Label ID="lblAdditionalPhoneNo" runat="server" Text=""></asp:Label>)</label>
+                                    <asp:TextBox runat="server" ID="txtAdditionalPhoneNo" CssClass="form-control" placeholder="Enter Driver Phone#"></asp:TextBox>
                                 </div>
                                 <!-- /.form-group -->
                             </div>
 
+                            <div class="col-md-4">
+
+                                <div class="form-group">
+                                    <label>Additional Phone Type </label>
+                                    <asp:DropDownList ID="drpPhoneType" runat="server" CssClass="form-control">
+                                        <asp:ListItem>Cell</asp:ListItem>
+                                        <asp:ListItem>Landline</asp:ListItem>
+                                        <asp:ListItem>Office</asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <!-- /.form-group -->
+                            </div>
+
+                             <div class="col-md-4">
+
+                                <div class="form-group">
+                                    <label>Additional Phone # </label>
+                                    <asp:TextBox runat="server" ID="txtOtherPhoneNo" CssClass="form-control" placeholder="Enter Additional Driver Phone#"></asp:TextBox>
+                                </div>
+                                <!-- /.form-group -->
+                            </div>
 
 
                             <div class="col-md-12">
@@ -555,6 +576,15 @@
                                 <!-- /.form-group -->
                             </div>
 
+                             <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>VIN# ( Admin) </label>
+                                    <asp:TextBox runat="server" ID="txtDriverVIN" CssClass="form-control" placeholder="Enter VIN#"></asp:TextBox>
+                                </div>
+                                <!-- /.form-group -->
+                            </div>
+
                             <div class="col-md-12">
 
                                 <div class="form-group">
@@ -796,18 +826,26 @@
 
            $("#ctl00_ContentPlaceHolder1_txtEmailAddress").change(function () {
                $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtEmailAddress").val() + '&smtp=1&format=1', function (data) {
+
+                   var element = $("#ctl00_ContentPlaceHolder1_txtEmailAddress")[0];
                    if (data.mx_found == false || data.mx_found == null) {
-                       var element = $("#ctl00_ContentPlaceHolder1_txtEmailAddress")[0];
                        element.setCustomValidity("Not a valid email address.");
                    }
+                   else {
+                       element.setCustomValidity("");
+                   }
+
                });
            });
 
            $("#ctl00_ContentPlaceHolder1_txtDriverEmailAddress").change(function () {
                $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtDriverEmailAddress").val() + '&smtp=1&format=1', function (data) {
+                   var element = $("#ctl00_ContentPlaceHolder1_txtDriverEmailAddress")[0];
                    if (data.mx_found == false || data.mx_found == null) {
-                       var element = $("#ctl00_ContentPlaceHolder1_txtDriverEmailAddress")[0];
                        element.setCustomValidity("Not a valid email address.");
+                   }
+                   else {
+                       element.setCustomValidity("");
                    }
                });
            });
@@ -883,18 +921,26 @@
 
            $("#ctl00_ContentPlaceHolder1_txtEmailAddress").change(function () {
                $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtEmailAddress").val() + '&smtp=1&format=1', function (data) {
+
+                   var element = $("#ctl00_ContentPlaceHolder1_txtEmailAddress")[0];
                    if (data.mx_found == false || data.mx_found == null) {
-                       var element = $("#ctl00_ContentPlaceHolder1_txtEmailAddress")[0];
                        element.setCustomValidity("Not a valid email address.");
                    }
+                   else {
+                       element.setCustomValidity("");
+                   }
+
                });
            });
 
            $("#ctl00_ContentPlaceHolder1_txtDriverEmailAddress").change(function () {
                $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtDriverEmailAddress").val() + '&smtp=1&format=1', function (data) {
+                   var element = $("#ctl00_ContentPlaceHolder1_txtDriverEmailAddress")[0];
                    if (data.mx_found == false || data.mx_found == null) {
-                       var element = $("#ctl00_ContentPlaceHolder1_txtDriverEmailAddress")[0];
                        element.setCustomValidity("Not a valid email address.");
+                   }
+                   else {
+                       element.setCustomValidity("");
                    }
                });
            });

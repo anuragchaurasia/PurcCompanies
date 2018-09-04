@@ -30,6 +30,7 @@ namespace PrivateICO
             user.Password = txtPassword.Text;
             user.UserType = ddlUserType.SelectedItem.Text;
             user.IsContractor = ChkIsContractor.Checked;
+            user.ExtensionNo = txtExtensionNo.Text;
             bool isRegistered = userHelper.RegisterSalesUser(user);
             if (isRegistered)
             {

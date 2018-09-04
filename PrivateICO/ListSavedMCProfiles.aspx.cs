@@ -46,5 +46,12 @@ namespace PrivateICO
             Response.Redirect("MCDriverProfile.aspx");
         }
 
+        protected void drpPageSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataPager dtp = (DataPager)lstMCProfiles.FindControl("DataPager1");
+            dtp.PageSize = Convert.ToInt32(drpPageSize.SelectedItem.Text);
+            this.BindSavedMCSales();
+        }
+
     }
 }

@@ -220,6 +220,15 @@ namespace PrivateICO {
         protected global::System.Web.UI.WebControls.TextBox txtDateTime;
         
         /// <summary>
+        /// lblAdditionalPhoneNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAdditionalPhoneNo;
+        
+        /// <summary>
         /// txtAdditionalPhoneNo control.
         /// </summary>
         /// <remarks>
@@ -227,6 +236,24 @@ namespace PrivateICO {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAdditionalPhoneNo;
+        
+        /// <summary>
+        /// drpPhoneType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpPhoneType;
+        
+        /// <summary>
+        /// txtOtherPhoneNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOtherPhoneNo;
         
         /// <summary>
         /// drpComplianceSupervisor control.
@@ -668,6 +695,15 @@ namespace PrivateICO {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDriverEIN;
+        
+        /// <summary>
+        /// txtDriverVIN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDriverVIN;
         
         /// <summary>
         /// txtNotesCommentsObservation control.

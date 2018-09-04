@@ -20,12 +20,12 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>Add User
+                <h1>Add Sales Person
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-                    <li><a href="#">User</a></li>
-                    <li class="active">Add User</li>
+                    <li><a href="#">Sales Person</a></li>
+                    <li class="active">Add Sales Person</li>
                 </ol>
             </section>
 
@@ -35,7 +35,7 @@
                 <!-- SELECT2 EXAMPLE -->
                 <div class="box box-default">
                     <div class="box-header with-border">
-                        <h3 class="box-title">User Info</h3>
+                        <h3 class="box-title">Sales Person Info</h3>
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -92,6 +92,12 @@
                                             <asp:ListItem>Admin</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Extension No.</label>
+                                    <asp:TextBox runat="server" title="Extension No for Ring Central" ID="txtExtensionNo" CssClass="form-control" placeholder="Ring Central Extension No"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-6">

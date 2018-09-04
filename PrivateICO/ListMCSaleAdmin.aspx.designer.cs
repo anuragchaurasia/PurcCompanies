@@ -13,6 +13,15 @@ namespace PrivateICO {
     public partial class ListMCSaleAdmin {
         
         /// <summary>
+        /// drpPageSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpPageSize;
+        
+        /// <summary>
         /// lstMCProfiles control.
         /// </summary>
         /// <remarks>

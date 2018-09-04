@@ -160,6 +160,7 @@
     <Property Name="Email" Type="nvarchar(max)" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
     <Property Name="IsContractor" Type="bit" />
+    <Property Name="ExtensionNo" Type="nvarchar" MaxLength="50" />
     <Property Name="UserType" Type="nvarchar" MaxLength="50" />
     <Property Name="IsActive" Type="bit" />
     <Property Name="CreationTime" Type="nvarchar" MaxLength="150" />
@@ -249,6 +250,7 @@
     <Property Name="DOB" Type="nvarchar" MaxLength="50" />
     <Property Name="SSN" Type="nvarchar" MaxLength="50" />
     <Property Name="EIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="VIN" Type="nvarchar" MaxLength="50" />
     <Property Name="Notes" Type="nvarchar(max)" />
     <Property Name="OrderFormID" Type="int" />
     <Property Name="CDLNonCDL" Type="nvarchar" MaxLength="500" />
@@ -413,6 +415,8 @@
     <Property Name="SaleID" Type="nvarchar" MaxLength="50" />
     <Property Name="ComplianceUserID" Type="int" />
     <Property Name="DOTPinNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdditionalPhoneType" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdditionalPhoneNo" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="ProfileCard">
     <Key>

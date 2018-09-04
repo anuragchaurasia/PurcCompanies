@@ -19,7 +19,7 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>Add MC# Profile
+                <h1>Edit MC# Profile
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
@@ -312,9 +312,12 @@
 
             $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").change(function () {
                 $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val() + '&smtp=1&format=1', function (data) {
-                    if (data.mx_found == false) {
-                        var element = $("#ctl00_ContentPlaceHolder1_txtRecieptEmail")[0];
+                    var element = $("#ctl00_ContentPlaceHolder1_txtRecieptEmail")[0];
+                    if (data.mx_found == false || data.mx_found == null) {
                         element.setCustomValidity("Not a valid email address.");
+                    }
+                    else {
+                        element.setCustomValidity("");
                     }
                 });
             });
@@ -345,9 +348,12 @@
 
             $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").change(function () {
                 $.getJSON('https://apilayer.net/api/check?access_key=546aa8dd08e7c1363883e28154fecaef&email=' + $("#ctl00_ContentPlaceHolder1_txtRecieptEmail").val() + '&smtp=1&format=1', function (data) {
-                    if (data.mx_found == false) {
-                        var element = $("#ctl00_ContentPlaceHolder1_txtRecieptEmail")[0];
+                    var element = $("#ctl00_ContentPlaceHolder1_txtRecieptEmail")[0];
+                    if (data.mx_found == false || data.mx_found == null) {
                         element.setCustomValidity("Not a valid email address.");
+                    }
+                    else {
+                        element.setCustomValidity("");
                     }
                 });
             });

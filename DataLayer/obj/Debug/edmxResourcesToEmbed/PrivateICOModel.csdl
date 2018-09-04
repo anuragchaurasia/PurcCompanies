@@ -99,6 +99,7 @@
     <Property Type="Boolean" Name="IsActive" />
     <Property Type="String" Name="CreationTime" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Type="Boolean" Name="IsArchive" />
+    <Property Type="String" Name="ExtensionNo" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Lead">
     <Key>
@@ -485,6 +486,7 @@
     <Property Type="Int32" Name="OrderFormID" />
     <Property Type="String" Name="CDLNonCDL" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Type="Boolean" Name="IsSubmitted" />
+    <Property Type="String" Name="VIN" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="DriverService">
     <Key>
@@ -524,6 +526,8 @@
     <Property Type="String" Name="SaleID" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="ComplianceUserID" />
     <Property Type="String" Name="DOTPinNo" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AdditionalPhoneType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AdditionalPhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="ProfileCard">
     <Key>

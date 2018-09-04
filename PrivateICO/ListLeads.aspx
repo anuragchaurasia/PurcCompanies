@@ -235,6 +235,7 @@
                         <asp:ListItem>Left Voicemail</asp:ListItem>
                         <asp:ListItem>No Answer</asp:ListItem>
                         <asp:ListItem>Do Not Call</asp:ListItem>
+                        <asp:ListItem>Closing Statement</asp:ListItem>
                     </asp:DropDownList>
                     <asp:HiddenField ID="HiddenStatus" runat="server" Value='<%# Eval("Status") %>' />
                     <asp:HiddenField ID="HiddenID" runat="server" Value='<%# Eval("DailyLeadID") %>' />

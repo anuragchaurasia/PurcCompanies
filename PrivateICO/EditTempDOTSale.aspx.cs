@@ -64,6 +64,14 @@ namespace PrivateICO
             txtEmailAddress.Text = order.Email;
             txtDateTime.Text = DateTime.Now.ToString();
             txtAdditionalPhoneNo.Text = order.DriverPhone;
+            lblAdditionalPhoneNo.Text = order.DriverPhone;
+
+            txtOtherPhoneNo.Text = order.AdditionalPhoneNo;
+            //if (!String.IsNullOrEmpty(order.AdditionalPhoneType))
+            //{
+            //    drpPhoneType.Items.FindByValue(order.AdditionalPhoneType).Selected = true;
+            //}
+
             drpComplianceSupervisor.ClearSelection();
             drpComplianceSupervisor.Items.FindByValue(order.ComplianceSupervisor).Selected = true;
             lblPCSaleNo.Text = order.SaleID;
@@ -100,6 +108,7 @@ namespace PrivateICO
                     txtDriverSSN.Text = driverInterviewProfile.SSN;
                     hidSSNNo.Value = driverInterviewProfile.SSN;
                     txtDriverEIN.Text = driverInterviewProfile.EIN;
+                    txtDriverVIN.Text = driverInterviewProfile.VIN;
                     txtNotesCommentsObservation.Text = driverInterviewProfile.Notes;
                     hidCurrentDriverInterviewID.Value = driverInterviewProfile.DriverInterviewID.ToString();
                 }
@@ -298,11 +307,14 @@ namespace PrivateICO
             orderForm.Email = txtEmailAddress.Text;
             orderForm.DateTime = txtDateTime.Text;
             orderForm.DriverPhone = txtAdditionalPhoneNo.Text;
+            orderForm.AdditionalPhoneNo = txtOtherPhoneNo.Text;
+            orderForm.AdditionalPhoneType = drpPhoneType.SelectedItem.Text;
             orderForm.BillingAddress = txtBillingAddress.Text;
             orderForm.ComplianceSupervisor = drpComplianceSupervisor.SelectedItem.Value.ToString();
             orderForm.CompanyType = chkCompanyType.SelectedItem.Text;
             orderForm.DOTPinNo = txtUSDOT.Text;
             orderForm.SaleID = lblPCSaleNo.Text;
+            orderForm.ComplianceUserID = Convert.ToInt32(Request.Cookies["UserID"].Value);
             orderForm.IsSubmitted = false;
             #endregion
 
@@ -339,9 +351,10 @@ namespace PrivateICO
             txtDOB.Text = "";
             txtDriverName.Text = "";
             txtDriverEIN.Text = "";
+            txtDriverVIN.Text = "";
             txtDriverEmailAddress.Text = "";
             txtExpirationDate.Text = "";
-            txtDriverLegalName.Text = "";
+            //txtDriverLegalName.Text = "";
             txtDriverLicense.Text = "";
             txtNotesCommentsObservation.Text = "";
             txtDriverPhone.Text = "";
@@ -349,7 +362,7 @@ namespace PrivateICO
             hidSSNNo.Value = "";
             DropDownListState.SelectedIndex = 1;
             txtSupervisor.Text = "";
-            txtDriverUSDOT.Text = "";
+            //txtDriverUSDOT.Text = "";
             txtYear.Text = "";
             txtMake.Text = "";
             txtModel.Text = "";
@@ -447,6 +460,7 @@ namespace PrivateICO
                     hidSSNNo.Value = driverInterviewProfile.SSN;
                     txtDriverSSN.Text = driverInterviewProfile.SSN;
                     txtDriverEIN.Text = driverInterviewProfile.EIN;
+                    txtDriverVIN.Text = driverInterviewProfile.VIN;
                     txtNotesCommentsObservation.Text = driverInterviewProfile.Notes;
                 }
 
@@ -979,6 +993,7 @@ namespace PrivateICO
                 driverInterviewProfile.DOB = txtDOB.Text;
                 driverInterviewProfile.DriverName = txtDriverName.Text;
                 driverInterviewProfile.EIN = txtDriverEIN.Text;
+                driverInterviewProfile.VIN = txtDriverVIN.Text;
                 driverInterviewProfile.Email = txtDriverEmailAddress.Text;
                 driverInterviewProfile.ExpirationDate = txtExpirationDate.Text;
                 driverInterviewProfile.LegalName = txtDriverLegalName.Text;
@@ -1005,6 +1020,7 @@ namespace PrivateICO
                 driverInterviewProfile.DOB = txtDOB.Text;
                 driverInterviewProfile.DriverName = txtDriverName.Text;
                 driverInterviewProfile.EIN = txtDriverEIN.Text;
+                driverInterviewProfile.VIN = txtDriverVIN.Text;
                 driverInterviewProfile.Email = txtDriverEmailAddress.Text;
                 driverInterviewProfile.ExpirationDate = txtExpirationDate.Text;
                 driverInterviewProfile.LegalName = txtDriverLegalName.Text;
@@ -1032,6 +1048,7 @@ namespace PrivateICO
             txtDOB.Text = "";
             txtDriverName.Text = "";
             txtDriverEIN.Text = "";
+            txtDriverVIN.Text = "";
             txtDriverEmailAddress.Text = "";
             txtExpirationDate.Text = "";
             txtDriverLegalName.Text = "";
@@ -1072,9 +1089,12 @@ namespace PrivateICO
             orderForm.Email = txtEmailAddress.Text;
             orderForm.DateTime = txtDateTime.Text;
             orderForm.DriverPhone = txtAdditionalPhoneNo.Text;
+            orderForm.AdditionalPhoneNo = txtOtherPhoneNo.Text;
+            orderForm.AdditionalPhoneType = drpPhoneType.SelectedItem.Text;
             orderForm.BillingAddress = txtBillingAddress.Text;
             orderForm.ComplianceSupervisor = drpComplianceSupervisor.SelectedItem.Value.ToString();
             orderForm.CompanyType = chkCompanyType.SelectedItem.Text;
+            orderForm.ComplianceUserID = Convert.ToInt32(Request.Cookies["UserID"].Value);
             orderForm.IsSubmitted = true;
             #endregion
 
@@ -1319,6 +1339,7 @@ namespace PrivateICO
                     driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().DOB = txtDOB.Text;
                     driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().DriverName = txtDriverName.Text;
                     driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().EIN = txtDriverEIN.Text;
+                    driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().VIN = txtDriverVIN.Text;
                     driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().Email = txtDriverEmailAddress.Text;
                     driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().ExpirationDate = txtExpirationDate.Text;
                     driverInterviewProfiles.Where(x => x.DriverInterviewID == Convert.ToInt32(hidCurrentDriverInterviewID.Value)).First().LegalName = txtDriverLegalName.Text;

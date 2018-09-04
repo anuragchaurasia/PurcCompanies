@@ -55,6 +55,7 @@
     <EntitySetMapping Name="ComplianceUsers">
       <EntityTypeMapping TypeName="IsTypeOf(QuantreumModel.ComplianceUser)">
         <MappingFragment StoreEntitySet="ComplianceUsers">
+          <ScalarProperty Name="ExtensionNo" ColumnName="ExtensionNo" />
           <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -422,6 +423,7 @@
     <EntitySetMapping Name="DriverInterviewProfiles">
       <EntityTypeMapping TypeName="QuantreumModel.DriverInterviewProfile">
         <MappingFragment StoreEntitySet="DriverInterviewProfile">
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
           <ScalarProperty Name="IsSubmitted" ColumnName="IsSubmitted" />
           <ScalarProperty Name="CDLNonCDL" ColumnName="CDLNonCDL" />
           <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />
@@ -465,6 +467,8 @@
     <EntitySetMapping Name="OrderForms">
       <EntityTypeMapping TypeName="QuantreumModel.OrderForm">
         <MappingFragment StoreEntitySet="OrderForm">
+          <ScalarProperty Name="AdditionalPhoneNo" ColumnName="AdditionalPhoneNo" />
+          <ScalarProperty Name="AdditionalPhoneType" ColumnName="AdditionalPhoneType" />
           <ScalarProperty Name="DOTPinNo" ColumnName="DOTPinNo" />
           <ScalarProperty Name="ComplianceUserID" ColumnName="ComplianceUserID" />
           <ScalarProperty Name="SaleID" ColumnName="SaleID" />

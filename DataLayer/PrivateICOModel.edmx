@@ -165,6 +165,7 @@
           <Property Name="Email" Type="nvarchar(max)" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="IsContractor" Type="bit" />
+          <Property Name="ExtensionNo" Type="nvarchar" MaxLength="50" />
           <Property Name="UserType" Type="nvarchar" MaxLength="50" />
           <Property Name="IsActive" Type="bit" />
           <Property Name="CreationTime" Type="nvarchar" MaxLength="150" />
@@ -254,6 +255,7 @@
           <Property Name="DOB" Type="nvarchar" MaxLength="50" />
           <Property Name="SSN" Type="nvarchar" MaxLength="50" />
           <Property Name="EIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="VIN" Type="nvarchar" MaxLength="50" />
           <Property Name="Notes" Type="nvarchar(max)" />
           <Property Name="OrderFormID" Type="int" />
           <Property Name="CDLNonCDL" Type="nvarchar" MaxLength="500" />
@@ -418,6 +420,8 @@
           <Property Name="SaleID" Type="nvarchar" MaxLength="50" />
           <Property Name="ComplianceUserID" Type="int" />
           <Property Name="DOTPinNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdditionalPhoneType" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdditionalPhoneNo" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="ProfileCard">
           <Key>
@@ -652,6 +656,7 @@
           <Property Type="Boolean" Name="IsActive" />
           <Property Type="String" Name="CreationTime" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="IsArchive" />
+          <Property Type="String" Name="ExtensionNo" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Lead">
           <Key>
@@ -1038,6 +1043,7 @@
           <Property Type="Int32" Name="OrderFormID" />
           <Property Type="String" Name="CDLNonCDL" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="IsSubmitted" />
+          <Property Type="String" Name="VIN" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DriverService">
           <Key>
@@ -1077,6 +1083,8 @@
           <Property Type="String" Name="SaleID" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="ComplianceUserID" />
           <Property Type="String" Name="DOTPinNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AdditionalPhoneType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AdditionalPhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ProfileCard">
           <Key>
@@ -1161,7 +1169,8 @@
     <EntitySetMapping Name="ComplianceUsers">
       <EntityTypeMapping TypeName="IsTypeOf(QuantreumModel.ComplianceUser)">
         <MappingFragment StoreEntitySet="ComplianceUsers">
-          <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
+          <ScalarProperty Name="ExtensionNo" ColumnName="ExtensionNo" />
+                <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -1528,6 +1537,7 @@
           <EntitySetMapping Name="DriverInterviewProfiles">
             <EntityTypeMapping TypeName="QuantreumModel.DriverInterviewProfile">
               <MappingFragment StoreEntitySet="DriverInterviewProfile">
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
                 <ScalarProperty Name="IsSubmitted" ColumnName="IsSubmitted" />
                 <ScalarProperty Name="CDLNonCDL" ColumnName="CDLNonCDL" />
                 <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />
@@ -1571,6 +1581,8 @@
           <EntitySetMapping Name="OrderForms">
             <EntityTypeMapping TypeName="QuantreumModel.OrderForm">
               <MappingFragment StoreEntitySet="OrderForm">
+                <ScalarProperty Name="AdditionalPhoneNo" ColumnName="AdditionalPhoneNo" />
+                <ScalarProperty Name="AdditionalPhoneType" ColumnName="AdditionalPhoneType" />
                 <ScalarProperty Name="DOTPinNo" ColumnName="DOTPinNo" />
                 <ScalarProperty Name="ComplianceUserID" ColumnName="ComplianceUserID" />
                 <ScalarProperty Name="SaleID" ColumnName="SaleID" />

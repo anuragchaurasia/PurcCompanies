@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ComplianceMaster.Master" AutoEventWireup="true" CodeBehind="MCDriverProfile.aspx.cs" Inherits="PrivateICO.MCDriverProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ComplianceMaster.Master" AutoEventWireup="true" ValidateRequest="false" CodeBehind="MCDriverProfile.aspx.cs" Inherits="PrivateICO.MCDriverProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -194,6 +194,54 @@
                                 </div>
                             </div>
 
+                            <asp:Panel ID="pnlUpSales" runat="server" Style="display: none;">
+                                <asp:HiddenField ID="hidUpSaleHtml" runat="server" />
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <section class="content">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="box">
+                                                        <div class="box-header">
+                                                            <h3 class="box-title">Upsale Services</h3>
+                                                        </div>
+                                                        <!-- /.box-header -->
+                                                        <div class="box-body">
+                                                            <table  id="upsaletable" class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Service Name</th>
+                                                                        <th>Prices</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="upsaletbody">
+                                                                </tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td align="right">Sub Total : 
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:Label ID="lblUpSaleTotal" runat="server" Text="$0.00"></asp:Label>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+                                                        <!-- /.box-body -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </asp:Panel>
+
+
                             <asp:Panel ID="pnlServiceList" runat="server">
                                 <div class="col-md-12">
 
@@ -336,6 +384,9 @@
                                 $('#ctl00_ContentPlaceHolder1_hidCardNo').val('');
                                 $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("Not an Upsale");
                                 $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("Not an Upsale");
+                                debugger;
+                                $('#ctl00_ContentPlaceHolder1_hidUpSaleHtml').val("");
+                                $('#ctl00_ContentPlaceHolder1_pnlUpSales').hide();
                             }
                             else {
                                 $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DotNo);
@@ -362,6 +413,12 @@
                                 $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(obj.MCSaleNo);
                                 $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("Upsale");
                                 $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("Upsale");
+                                $('#ctl00_ContentPlaceHolder1_pnlUpSales').show();
+                                $("#upsaletbody").html('');
+                                var totalprice = 0;
+                                $.each(obj.serviceSaleData, function (a, b) { $("#upsaletbody").append('<td style="padding:8px;">' + b.ServiceName + '</td><td style="padding:8px;">' + b.ServicePrice + '</td>'); totalprice = parseFloat(totalprice) + parseFloat((b.ServicePrice).replace("$", "")) });
+                                $('#ctl00_ContentPlaceHolder1_lblUpSaleTotal').text("$" + totalprice);
+                                $('#ctl00_ContentPlaceHolder1_hidUpSaleHtml').val($("#upsaletable").html());
                             }
                         }
                         else {
@@ -384,6 +441,9 @@
                             $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
                             $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("");
                             $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("");
+                            $('#ctl00_ContentPlaceHolder1_pnlUpSales').hide();
+                            debugger;
+                            $('#ctl00_ContentPlaceHolder1_hidUpSaleHtml').val("");
                         }
                     }
                 });
@@ -422,6 +482,11 @@
 
             if ($('#ctl00_ContentPlaceHolder1_hdnCardType').val() != "") {
                 $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', $('#ctl00_ContentPlaceHolder1_hdnCardType').val());
+            }
+
+            if ($('#ctl00_ContentPlaceHolder1_hidUpSaleHtml').val() != "") {
+                $('#ctl00_ContentPlaceHolder1_pnlUpSales').show();
+                $("#upsaletable").html($('#ctl00_ContentPlaceHolder1_hidUpSaleHtml').val());
             }
 
         });
@@ -483,6 +548,9 @@
                                 $('#ctl00_ContentPlaceHolder1_hidCardNo').val('');
                                 $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("Not an Upsale");
                                 $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("Not an Upsale");
+                                debugger;
+                                $('#ctl00_ContentPlaceHolder1_hidUpSaleHtml').val("");
+                                $('#ctl00_ContentPlaceHolder1_pnlUpSales').hide();
                             }
                             else {
                                 $("#ctl00_ContentPlaceHolder1_txtDOT").val(obj.DotNo);
@@ -509,6 +577,12 @@
                                 $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(obj.MCSaleNo);
                                 $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("Upsale");
                                 $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("Upsale");
+                                $('#ctl00_ContentPlaceHolder1_pnlUpSales').show();
+                                $("#upsaletbody").html('');
+                                var totalprice = 0;
+                                $.each(obj.serviceSaleData, function (a, b) { $("#upsaletbody").append('<td style="padding:8px;">' + b.ServiceName + '</td><td style="padding:8px;">' + b.ServicePrice + '</td>'); totalprice = parseFloat(totalprice) + parseFloat((b.ServicePrice).replace("$", "")) });
+                                $('#ctl00_ContentPlaceHolder1_lblUpSaleTotal').text("$" + totalprice);
+                                $('#ctl00_ContentPlaceHolder1_hidUpSaleHtml').val($("#upsaletbody").html());
                             }
                         }
                         else {
@@ -531,6 +605,9 @@
                             $("#ctl00_ContentPlaceHolder1_hidSaleNo").val(usDOTNo);
                             $("#ctl00_ContentPlaceHolder1_lblUpSaleStatus").text("");
                             $("#ctl00_ContentPlaceHolder1_hidUpSaleStatus").val("");
+                            $('#ctl00_ContentPlaceHolder1_pnlUpSales').hide();
+                            debugger;
+                            $('#ctl00_ContentPlaceHolder1_hidUpSaleHtml').val("");
                         }
                     }
                 });
@@ -569,6 +646,11 @@
 
             if ($('#ctl00_ContentPlaceHolder1_hdnCardType').val() != "") {
                 $("#ctl00_ContentPlaceHolder1_ulcardtype").attr('class', $('#ctl00_ContentPlaceHolder1_hdnCardType').val());
+            }
+
+            if ($('#ctl00_ContentPlaceHolder1_hidUpSaleHtml').val() != "") {
+                $('#ctl00_ContentPlaceHolder1_pnlUpSales').show();
+                $("#upsaletable").html($('#ctl00_ContentPlaceHolder1_hidUpSaleHtml').val());
             }
         }
 

@@ -93,9 +93,9 @@ namespace PrivateICO
                     Session["Email"] = userEL.Email;
                     Session["Usertype"] = "Customer";
 
-                    Response.Cookies["UserID"].Value = user.UserID.ToString();
-                    Response.Cookies["Name"].Value = user.Name;
-                    Response.Cookies["Email"].Value = user.Email;
+                    Response.Cookies["UserID"].Value = userEL.UserID.ToString();
+                    Response.Cookies["Name"].Value = userEL.Name;
+                    Response.Cookies["Email"].Value = userEL.Email;
                     Response.Cookies["Usertype"].Value = "Customer";
 
                     Response.Cookies["UserID"].Expires = DateTime.Now.AddDays(30);

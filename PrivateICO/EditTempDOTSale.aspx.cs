@@ -354,7 +354,7 @@ namespace PrivateICO
             txtDriverVIN.Text = "";
             txtDriverEmailAddress.Text = "";
             txtExpirationDate.Text = "";
-            txtDriverLegalName.Text = "";
+            //txtDriverLegalName.Text = "";
             txtDriverLicense.Text = "";
             txtNotesCommentsObservation.Text = "";
             txtDriverPhone.Text = "";
@@ -362,7 +362,7 @@ namespace PrivateICO
             hidSSNNo.Value = "";
             DropDownListState.SelectedIndex = 1;
             txtSupervisor.Text = "";
-            txtDriverUSDOT.Text = "";
+            //txtDriverUSDOT.Text = "";
             txtYear.Text = "";
             txtMake.Text = "";
             txtModel.Text = "";

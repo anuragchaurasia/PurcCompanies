@@ -34,6 +34,8 @@
                                             <th>Address on Card</th>
                                             <th>Physical Address</th>
                                             <th>Email</th>
+                                            <th>Submitted By</th>
+                                            <th>Submitted At</th>
                                             <th>View</th>
                                         </tr>
                                     </thead>
@@ -68,6 +70,8 @@
                                 <td><%# Eval("BillingAddress") %></td>
                                 <td><%# Eval("PhysicalAddress") %></td>
                                 <td><%# Eval("Email") %></td>
+                                <td><%# Eval("SubmittedBy") %></td>
+                                <td><%# Eval("DateTime") %></td>
                                 <td>
                                     <asp:LinkButton runat="server" ID="lnkEditDetails" CssClass="fa fa-fw fa-edit" CommandArgument='<%# Eval("OrderFormID") %>' ToolTip="View Sale" CommandName="ViewSale"></asp:LinkButton>
                                 </td>

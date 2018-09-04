@@ -40,5 +40,12 @@ namespace PrivateICO
                 Response.Redirect("ViewDOTSale.aspx?USDotSaleID=" + e.CommandArgument);
             }
         }
+
+        protected void drpPageSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataPager dtp = (DataPager)lstUSDOTProfiles.FindControl("DataPager1");
+            dtp.PageSize = Convert.ToInt32(drpPageSize.SelectedItem.Text);
+            this.LoadDriverProfiles();
+        }
     }
 }

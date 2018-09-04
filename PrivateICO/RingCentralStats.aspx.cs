@@ -105,7 +105,8 @@ namespace PrivateICO
 
                     try
                     {
-                        var contactStatus = await rc.Restapi().Account("~").Extension(extensionNo).Presence().List();
+                        RestClient rc1 = new RestClient("540zdnTnTL64KBoAT73s1Q", "2XUkif7WSaWqg23JjDknCwcenZ3T6kQye_Rezocxz1QA", true);
+                        var contactStatus = await rc1.Restapi().Account("~").Extension(extensionNo).Presence().List();
                         lblUserStatus.Text = contactStatus.records.Select(x => x.presenceStatus).First().ToString();
                     }
                     catch

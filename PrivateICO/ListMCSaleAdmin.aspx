@@ -16,7 +16,6 @@
                                 <asp:ListItem>50</asp:ListItem>
                                 <asp:ListItem>100</asp:ListItem>
                             </asp:DropDownList>
-                            <%--<asp:Button runat="server" ID="btnAddUSDOTSale" Text="Add USDOT Sale Profile" CssClass="btn btn-block btn-success" OnClick="btnAddMCSale_Click" />--%>
                         </div>
                     </div>
 

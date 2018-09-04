@@ -28,6 +28,7 @@ namespace PrivateICO
             txtFirstName.Text = user.Name;
             ChkIsContractor.Checked = (bool)user.IsContractor;
             chkIsActive.Checked = (bool)user.IsActive;
+            txtExtensionNo.Text = user.ExtensionNo;
             ddlUserType.Items.FindByText(user.UserType).Selected = true;
         }
 
@@ -42,6 +43,7 @@ namespace PrivateICO
             user.IsContractor = ChkIsContractor.Checked;
             user.UserID = salesUserID;
             user.UserType = ddlUserType.SelectedItem.Text;
+            user.ExtensionNo = txtExtensionNo.Text;
             bool isEdited = userHelper.EditSalesUser(user);
             if (isEdited)
             {

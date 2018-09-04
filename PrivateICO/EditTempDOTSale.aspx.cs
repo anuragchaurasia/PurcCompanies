@@ -67,7 +67,10 @@ namespace PrivateICO
             lblAdditionalPhoneNo.Text = order.DriverPhone;
 
             txtOtherPhoneNo.Text = order.AdditionalPhoneNo;
-            drpPhoneType.Items.FindByValue(order.AdditionalPhoneType).Selected = true;
+            //if (!String.IsNullOrEmpty(order.AdditionalPhoneType))
+            //{
+            //    drpPhoneType.Items.FindByValue(order.AdditionalPhoneType).Selected = true;
+            //}
 
             drpComplianceSupervisor.ClearSelection();
             drpComplianceSupervisor.Items.FindByValue(order.ComplianceSupervisor).Selected = true;

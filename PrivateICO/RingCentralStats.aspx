@@ -35,6 +35,39 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><b>Total Contacts</b></label>
+                                    
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>
+                                        <asp:Label ID="lblTotalContacts" runat="server" Text=""></asp:Label></label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><b>User Status</b></label>
+                                    
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>
+                                        <asp:Label ID="lblUserStatus" runat="server" Text=""></asp:Label></label>
+                                </div>
+                            </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label><b>Total Calls</b></label>
@@ -114,7 +147,72 @@
                                         <asp:Label ID="lblCallAverage" runat="server" Text=""></asp:Label></label>
                                 </div>
                             </div>
+
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><b>Total Closed Sales</b></label>
+                                    
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>
+                                        <asp:Label ID="lblClosedSales" runat="server" Text=""></asp:Label></label>
+                                </div>
+                            </div>
                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><b>Total Do Not Call Sales</b></label>
+                                    
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>
+                                        <asp:Label ID="lblDoNotCall" runat="server" Text=""></asp:Label></label>
+                                </div>
+                            </div>
+
+                             <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><b>Total Closing Statements</b></label>
+                                    
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>
+                                        <asp:Label ID="lblClosingStatement" runat="server" Text=""></asp:Label></label>
+                                </div>
+                            </div>
+
+                             <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><b>Total Follow-Up Sales</b></label>
+                                    
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>
+                                        <asp:Label ID="lblFollowUps" runat="server" Text=""></asp:Label></label>
+                                </div>
+                            </div>
+
                         </div>
                         <!-- /.row -->
                     </div>

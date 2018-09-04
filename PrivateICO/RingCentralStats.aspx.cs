@@ -5,16 +5,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using RingCentral;
+using DataLayer.DataHelper;
+using EntityLayer;
 
 
 namespace PrivateICO
 {
     public partial class RingCentralStats : System.Web.UI.Page
     {
+        DailyLeadsHelper leadHelper = new DailyLeadsHelper();
         protected async void Page_Load(object sender, EventArgs e)
         {
             RestClient rc = new RestClient("9ggNhhKMQzydWCI7iRU_qQ", "43bUqIQ7QWiYMI9tUZvRBw8oDl2ziYQrK5_f0i0O9hdw", true);
             string extensionNo = Request.QueryString["ExtensionNo"].ToString();
+
             if (String.IsNullOrEmpty(extensionNo))
             {
                 Response.Write("<script>alert('Please update extension no for this sales person.');</script>");
@@ -30,11 +34,86 @@ namespace PrivateICO
                 if (!String.IsNullOrEmpty(extensionNo))
                 {
                     ExtensionCallLogResponse callLog = await rc.Restapi().Account("~").CallLog().List(new { extensionNumber = extensionNo, view = "Detailed" });
-                    lblTotalCalls.Text = callLog.records.Count().ToString();
-                    lblInBoundCalls.Text = callLog.records.Where(x => x.direction == "Inbound").Count().ToString();
-                    lblTotalTime.Text = GetFormattedTime(callLog.records.Sum(x => x.duration).Value.ToString());
-                    lblVoiceMails.Text = callLog.records.Where(x => x.result == "Voicemail").Count().ToString();
-                    lblCallAverage.Text = GetFormattedTime((Convert.ToDouble(callLog.records.Sum(x => x.duration).Value.ToString()) / Convert.ToDouble(lblTotalCalls.Text)).ToString());
+                    try
+                    {
+                        lblTotalCalls.Text = callLog.records.Count().ToString();
+                    }
+                    catch
+                    {
+                        lblTotalCalls.Text = "0";
+                    }
+                    try
+                    {
+                        lblInBoundCalls.Text = callLog.records.Where(x => x.direction == "Inbound").Count().ToString();
+                    }
+                    catch
+                    {
+                        lblInBoundCalls.Text = "0";
+                    }
+                    try
+                    {
+                        lblTotalTime.Text = GetFormattedTime(callLog.records.Sum(x => x.duration).Value.ToString());
+                    }
+                    catch
+                    {
+                        lblTotalTime.Text = "0";
+                    }
+                    try
+                    {
+                        lblVoiceMails.Text = callLog.records.Where(x => x.result == "Voicemail").Count().ToString();
+                    }
+                    catch
+                    {
+                        lblVoiceMails.Text = "0";
+                    }
+                    try
+                    {
+                        lblCallAverage.Text = GetFormattedTime((Convert.ToDouble(callLog.records.Sum(x => x.duration).Value.ToString()) / Convert.ToDouble(lblTotalCalls.Text)).ToString());
+                    }
+                    catch
+                    {
+                        lblCallAverage.Text = "0";
+                    }
+                    try
+                    {
+                        List<DailyLeadEntity> lstLeads = leadHelper.GetAllLeads();
+                        if (lstLeads != null)
+                        {
+                            lblClosedSales.Text = lstLeads.Where(x => x.Status == "Closed").Count().ToString();
+                            lblDoNotCall.Text = lstLeads.Where(x => x.Status == "Do Not Call").Count().ToString();
+                            lblFollowUps.Text = lstLeads.Where(x => x.Status == "Follow up").Count().ToString();
+                            lblClosingStatement.Text = lstLeads.Where(x => x.Status == "Closing Statement").Count().ToString();
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+
+                    
+                    try
+                    {
+                        var contactsCount = await rc.Restapi().Account("~").Extension("~").AddressBook().Contact().List();
+                        lblTotalContacts.Text = contactsCount.records.Count().ToString();
+                    }
+                    catch
+                    {
+                        lblTotalContacts.Text = "0";
+                    }
+
+                    
+
+                    try
+                    {
+                        var contactStatus = await rc.Restapi().Account("~").Extension(extensionNo).Presence().List();
+                        lblUserStatus.Text = contactStatus.records.Select(x => x.presenceStatus).First().ToString();
+                    }
+                    catch
+                    {
+                        lblUserStatus.Text = "N/A";
+                    }
+
+
                 }
             }
             catch

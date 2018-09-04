@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ComplianceMaster.Master" AutoEventWireup="true" CodeBehind="DriverProfile.aspx.cs" Inherits="PrivateICO.DriverProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ComplianceMaster.Master" Async="true" AutoEventWireup="true" CodeBehind="DriverProfile.aspx.cs" Inherits="PrivateICO.DriverProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

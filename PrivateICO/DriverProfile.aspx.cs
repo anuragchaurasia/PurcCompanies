@@ -2,6 +2,7 @@
 using DataLayer.DAL;
 using DataLayer.DataHelper;
 using EntityLayer;
+using RingCentral;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,11 @@ namespace PrivateICO
         List<DriverVehicleEntity> driverVehicleEntity = new List<DriverVehicleEntity>();
         List<DocumentEL> completeDocumentList = new List<DocumentEL>();
         Random rand = new Random();
-        protected void Page_Load(object sender, EventArgs e)
+        RestClient rc = new RestClient("9ggNhhKMQzydWCI7iRU_qQ", "43bUqIQ7QWiYMI9tUZvRBw8oDl2ziYQrK5_f0i0O9hdw", true);
+        protected async void Page_Load(object sender, EventArgs e)
         {
+            
+
             if (!Page.IsPostBack)
             {
                 ClearSessions();
@@ -46,6 +50,14 @@ namespace PrivateICO
                 LoadServices();
                 lblPCSaleNo.Text = "PC" + txtUSDOT.Text + rand.Next(10, 99).ToString();
                 lblPCSalePersonName.Text = userHelper.GetComplianceUserByID(Convert.ToInt32(Request.Cookies["UserID"].Value)).Name;
+                try
+                {
+                    await rc.Authorize("+12086390799", "101", "Welcome2018");
+                }
+                catch 
+                {
+                    
+                }
 
             }
             //LoadTempDrivers();
@@ -775,7 +787,7 @@ namespace PrivateICO
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "servicescroll()", true);
         }
 
-        protected void btnSubmitDetails_Click(object sender, EventArgs e)
+        protected async void btnSubmitDetails_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(txtGVW.Text) || !String.IsNullOrEmpty(txtMake.Text) || !String.IsNullOrEmpty(txtYear.Text) || !String.IsNullOrEmpty(txtModel.Text))
             {
@@ -1029,6 +1041,34 @@ namespace PrivateICO
             userEL.RoleID = "2";
             userDAL.RegisterUser(userEL);
 
+            try
+            {
+                await rc.Authorize("+12086390799", "101", "Welcome2018");
+                PersonalContactResource RingCentralContact = new PersonalContactResource();
+                RingCentralContact.firstName = txtLegalName.Text;
+                RingCentralContact.businessPhone = txtAdditionalPhoneNo.Text;
+                RingCentralContact.callbackPhone = txtAdditionalPhoneNo.Text;
+                RingCentralContact.businessPhone2 = txtOtherPhoneNo.Text;
+                RingCentralContact.companyPhone = txtAdditionalPhoneNo.Text;
+                RingCentralContact.email = txtEmailAddress.Text;
+                RingCentralContact.email2 = txtDriverEmailAddress.Text;
+                RingCentralContact.assistantPhone = txtOtherPhoneNo.Text;
+                RingCentralContact.availability = "Alive";
+                ContactAddressInfo contactInfo = new ContactAddressInfo();
+                contactInfo.country = "US";
+                contactInfo.state = DropDownListState.SelectedItem.Text;
+
+                RingCentralContact.businessAddress = contactInfo;
+                RingCentralContact.company = txtLegalName.Text;
+                RingCentralContact.otherPhone = txtOtherPhoneNo.Text;
+                RingCentralContact.mobilePhone = txtAdditionalPhoneNo.Text;
+
+                var contact =  rc.Restapi().Account().Extension().AddressBook().Contact().Post(RingCentralContact);
+            }
+            catch 
+            {
+                
+            }
             ClearSessions();
             EmailHelper emailHelper = new EmailHelper();
             emailHelper.SendPlainEmail("New Sales Order", "A new sales order is been closed by " + Request.Cookies["Name"].Value + " (" + Request.Cookies["Email"].Value + "). Please login into admin panel to view orders.", "");

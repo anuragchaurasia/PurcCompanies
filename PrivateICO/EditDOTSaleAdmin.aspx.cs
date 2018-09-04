@@ -32,7 +32,7 @@ namespace PrivateICO
                 LoadComplianceSupervisors();
                 LoadServices();
                 LoadDriverProfile();
-                
+
             }
         }
 
@@ -66,14 +66,18 @@ namespace PrivateICO
             txtAdditionalPhoneNo.Text = order.DriverPhone;
             lblAdditionalPhoneNo.Text = order.DriverPhone;
             txtOtherPhoneNo.Text = order.AdditionalPhoneNo;
-            drpPhoneType.Items.FindByValue(order.AdditionalPhoneType).Selected = true;
+            //if (!String.IsNullOrEmpty(order.AdditionalPhoneType))
+            //{
+            //    drpPhoneType.Items.FindByValue(order.AdditionalPhoneType).Selected = true;
+            //}
             drpComplianceSupervisor.Items.FindByValue(order.ComplianceSupervisor).Selected = true;
+
             lblPCSaleNo.Text = order.SaleID;
             try
             {
                 lblPCSalePersonName.Text = userHelper.GetComplianceUserByID(Convert.ToInt32(order.ComplianceUserID)).Name;
             }
-            catch 
+            catch
             {
                 lblPCSalePersonName.Text = "N/A";
             }
@@ -90,8 +94,8 @@ namespace PrivateICO
                 lstDrivers.DataSource = driverInterviewProfiles;
                 lstDrivers.DataBind();
 
-                
-                
+
+
                 if (driverInterviewProfile != null)
                 {
                     txtDate.Text = DateTime.Now.ToShortDateString();
@@ -637,7 +641,7 @@ namespace PrivateICO
                     serviceListData = (List<DocumentEL>)Session["services"];
                     DocumentEL docEL = serviceListData.Where(x => x.DocumentID == Convert.ToInt32(e.CommandArgument)).FirstOrDefault();
                     serviceListData.Remove(docEL);
-                   
+
                     Session["services"] = serviceListData;
                     #region DriverServices
                     serviceListData = (List<DocumentEL>)Session["services"];

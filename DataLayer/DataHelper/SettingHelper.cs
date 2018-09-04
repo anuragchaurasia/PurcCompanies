@@ -24,6 +24,8 @@ namespace DataLayer.DataHelper
                     settingdb.ProcessedEmails = setting.ProcessedEmails;
                     settingdb.VoidedEmails = setting.VoidedEmails;
                     settingdb.RefundEmails = setting.RefundEmails;
+                    settingdb.Mob_login_text1 = setting.Mob_login_text1;
+                    settingdb.Mob_login_text2 = setting.Mob_login_text2;
 
                     uow.SettingRepository.Update(settingdb);
                     uow.Save();
@@ -52,7 +54,9 @@ namespace DataLayer.DataHelper
                         AdminEmails = usd.AdminEmails,
                         ProcessedEmails = usd.ProcessedEmails,
                         RefundEmails = usd.RefundEmails,
-                        VoidedEmails = usd.VoidedEmails
+                        VoidedEmails = usd.VoidedEmails,
+                        Mob_login_text1 = usd.Mob_login_text1,
+                        Mob_login_text2 = usd.Mob_login_text2
                     }).FirstOrDefault();
                 }
                 catch

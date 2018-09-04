@@ -237,5 +237,58 @@ namespace DataLayer.DAL
             }
             return lstDocumentEL;
         }
+
+        public bool AddDocumentUpload(DocumentUploadEL docUploads)
+        {
+            bool isInserted = false;
+            using (TransactionScope transactionScope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted }))
+            {
+                try
+                {
+                    if (docUploads != null)
+                    {
+                        using (uow = new UnitOfWork.UnitOfWork())
+                        {
+                            #region Create Document Upload
+                            DocumentUpload docUpload = new DocumentUpload();
+                            docUpload.UserId = docUploads.UserId;
+                            docUpload.doc_id = docUploads.doc_id;
+                            docUpload.doctypename = docUploads.doctypename;
+                            docUpload.filepath = docUploads.filepath;
+                            uow.DocumentUploadRepository.Insert(docUpload);
+                            uow.Save();
+                            isInserted = true;
+                            #endregion
+                            transactionScope.Complete();
+
+                          //  EmailHelper emailHelper = new EmailHelper();
+                            //  emailHelper.SendHtmlFormattedEmail("New account created", newUser, RandomPassword);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    transactionScope.Dispose();
+                }
+            }
+            return isInserted;
+        }
+
+        public string  GetOrderByUSDOT(string USDOT)
+        {
+            string saleid = null;
+            try
+            {
+                using (uow = new UnitOfWork.UnitOfWork())
+                {
+                    OrderForm doc = uow.OrderFormRepository.Get().Where(x => x.USDot == USDOT).FirstOrDefault();
+                    saleid = doc.SaleID;
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return saleid;
+        }
     }
 }

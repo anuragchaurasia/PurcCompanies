@@ -31,6 +31,7 @@ namespace PrivateICO
             userEL.Username = txtUsername.Text;
             userEL.Zipcode = txtZipCode.Text;
             userEL.RoleID = "2";
+            userEL.UsDot = txtUsDot .Text;
             userDAL.RegisterUser(userEL);
         }
     }

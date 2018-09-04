@@ -22,6 +22,7 @@
                                             <th>Email</th>
                                             <th>Phone No.</th>
                                             <th>Address</th>
+                                            <th>USDot</th>
                                             <th>Created Date</th>
                                             <th>Status</th>
                                             <th>Actions</th>
@@ -63,10 +64,11 @@
             <td><%# Eval("Email") %></td>
             <td><%# Eval("PhoneNo") %></td>
             <td><%# Eval("Address") %></td>
+            <td><%# Eval("USDot") %></td>
             <td><%# Eval("CreatedDate") %></td>
             <td><%# Eval("Active") %></td>
             <td>
-                <asp:LinkButton runat="server" ID="lnkEdit" CssClass="fa fa-fw fa-edit" CommandArgument='<%# Eval("UserID") %>' CommandName="Edit"></asp:LinkButton>&nbsp;<asp:LinkButton runat="server" ID="lnkDocs" CssClass="fa fa-fw fa-files-o" CommandArgument='<%# Eval("UserID") %>' CommandName="Document"></asp:LinkButton>
+                <asp:LinkButton runat="server" ID="lnkEdit" CssClass="fa fa-fw fa-edit" CommandArgument='<%# Eval("UserID") %>' CommandName="Edit"></asp:LinkButton>&nbsp;<asp:LinkButton runat="server" ID="lnkDocs" CssClass="fa fa-fw fa-files-o" CommandArgument='<%# Eval("UserID") %>' CommandName="Document" ></asp:LinkButton>
             </td>
                 </tr>
         </ItemTemplate>

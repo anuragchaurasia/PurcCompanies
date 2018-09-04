@@ -70,8 +70,28 @@
                                     <asp:TextBox runat="server" ID="txtRefundEmail" CssClass="form-control"  placeholder="Comma Separated Emails"></asp:TextBox>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Mobile Login Text 1</label>
+                                    <asp:TextBox runat="server" ID="txtMobLog1" CssClass="form-control"  placeholder="Mobile Login Text 1"></asp:TextBox>
+                                </div>
                             </div>
-                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Mobile Login Text 2</label>
+                                    <asp:TextBox runat="server" ID="txtMobLog2" CssClass="form-control"  placeholder="Mobile Login Text 2"></asp:TextBox>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label></label>
+                                <div class="form-group">
+                                    <label></label>
+                                    <asp:Button runat="server" ID="btnUpdateSetting" Text="Update Setting" OnClick="btnUpdateSetting_Click" CssClass="btn btn-block btn-success" />
+                                </div>
+                            </div>
+                            </div>
+                        <%--<div class="row">
                             <div class="col-md-6">
                                 <label></label>
                                 <div class="form-group">
@@ -83,7 +103,7 @@
 
                         
 
-                        </div>
+                        
                     </div>
                 </div>
             </section>

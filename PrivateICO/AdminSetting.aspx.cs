@@ -28,6 +28,8 @@ namespace PrivateICO
             txtProcEmail.Text = setting.ProcessedEmails;
             txtVoidedEmail.Text = setting.VoidedEmails;
             txtRefundEmail.Text = setting.RefundEmails;
+            txtMobLog1.Text = setting.Mob_login_text1;
+            txtMobLog2.Text = setting.Mob_login_text2;
         }
 
         protected void btnUpdateSetting_Click(object sender, EventArgs e)
@@ -38,6 +40,8 @@ namespace PrivateICO
             setting.ProcessedEmails = txtProcEmail.Text;
             setting.VoidedEmails = txtVoidedEmail.Text;
             setting.RefundEmails = txtRefundEmail.Text;
+            setting.Mob_login_text1 = txtMobLog1.Text;
+            setting.Mob_login_text2 = txtMobLog2.Text;
             bool isEdited = settingHelper.AddTarget(setting);
             if (isEdited)
             {

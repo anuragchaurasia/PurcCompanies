@@ -13,5 +13,7 @@ namespace EntityLayer
         public string ProcessedEmails { get; set; }
         public string VoidedEmails { get; set; }
         public string RefundEmails { get; set; }
+        public string Mob_login_text1 { get; set; }
+        public string Mob_login_text2 { get; set; }
     }
 }

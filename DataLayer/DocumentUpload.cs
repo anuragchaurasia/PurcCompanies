@@ -12,15 +12,14 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Setting
+    public partial class DocumentUpload
     {
-        public int SettingID { get; set; }
-        public string MaxTarget { get; set; }
-        public string AdminEmails { get; set; }
-        public string ProcessedEmails { get; set; }
-        public string VoidedEmails { get; set; }
-        public string RefundEmails { get; set; }
-        public string Mob_login_text1 { get; set; }
-        public string Mob_login_text2 { get; set; }
+        public int docUpload_id { get; set; }
+        public int UserId { get; set; }
+        public int doc_id { get; set; }
+        public string doctypename { get; set; }
+        public string filepath { get; set; }
+    
+        public virtual User User { get; set; }
     }
 }

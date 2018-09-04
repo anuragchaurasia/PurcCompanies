@@ -37,6 +37,7 @@ namespace DataLayer.UnitOfWork
         QuantumRepository<MCSaleTemp> mCSaleTempRepository;
         QuantumRepository<MCServiceSale> mCServiceSaleRepository;
         QuantumRepository<MCServiceSaleTemp> mCServiceSaleTempRepository;
+        QuantumRepository<DocumentUpload> docUploadRepository;
 
         public QuantumRepository<DriverVehicleCargo> DriverVehicleCargoRepository
         {
@@ -309,7 +310,16 @@ namespace DataLayer.UnitOfWork
                 return transactionRepository;
             }
         }
-       
+
+        public QuantumRepository<DocumentUpload> DocumentUploadRepository
+        {
+            get
+            {
+                if (this.docUploadRepository == null)
+                    this.docUploadRepository = new QuantumRepository<DocumentUpload>(context);
+                return docUploadRepository;
+            }
+        }
 
         public void Save()
         {

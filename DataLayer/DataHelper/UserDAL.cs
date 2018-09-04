@@ -40,6 +40,7 @@ namespace DataLayer.DAL
                             newUser.Active = true;
                             newUser.CreatedDate = System.DateTime.UtcNow;
                             newUser.UserRoleID = Convert.ToInt32(users.RoleID);
+                            newUser.USDot = users.UsDot;
                             uow.UserRepository.Insert(newUser);
                             uow.Save();
 
@@ -47,7 +48,7 @@ namespace DataLayer.DAL
                             transactionScope.Complete();
 
                             EmailHelper emailHelper = new EmailHelper();
-                            emailHelper.SendHtmlFormattedEmail("New account created", newUser, RandomPassword);
+                          //  emailHelper.SendHtmlFormattedEmail("New account created", newUser, RandomPassword);
                         }
                     }
                 }
@@ -256,6 +257,7 @@ namespace DataLayer.DAL
                         userEl.Zipcode = user.Zipcode;
                         userEl.Username = user.Username;
                         userEl.UserID = user.UserID;
+                        userEl.UsDot  = user.USDot ;
                         lstUsersEL.Add(userEl);
                     }
                 }
@@ -356,5 +358,7 @@ namespace DataLayer.DAL
             }
             return lstDocumentsEL;
         }
+
+        
     }
 }

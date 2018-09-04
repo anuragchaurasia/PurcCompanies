@@ -13,7 +13,7 @@ namespace PrivateICO
     public partial class ListCustomers : System.Web.UI.Page
     {
         UserDAL userdal = new UserDAL();
-
+        List<UsersEL> lstUsers;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -24,7 +24,8 @@ namespace PrivateICO
 
         private void BindCustomers()
         {
-            List<UsersEL> lstUsers = userdal.GetAllCustomers();
+            lstUsers = userdal.GetAllCustomers();
+            ViewState["lstUsers"] = lstUsers;
             lstCustomers.DataSource = lstUsers;
             lstCustomers.DataBind();
         }
@@ -38,7 +39,11 @@ namespace PrivateICO
             else
                 if (e.CommandName == "Document")
                 {
-                    Response.Redirect("DocumentUpload.aspx?id=" + e.CommandArgument);
+                lstUsers = (List<UsersEL>)ViewState["lstUsers"];
+                var UsDotStr = lstUsers.Where(x => x.UserID == Convert.ToInt32(e.CommandArgument)).SingleOrDefault();
+                string usDotStrName = UsDotStr.UsDot;
+                   
+                    Response.Redirect("DocumentUpload.aspx?id=" + e.CommandArgument + "&UsDot="+usDotStrName);
                 }
         }
 

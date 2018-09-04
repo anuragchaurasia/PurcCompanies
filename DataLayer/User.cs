@@ -17,6 +17,7 @@ namespace DataLayer
         public User()
         {
             this.AuthenticationTokens = new HashSet<AuthenticationToken>();
+            this.DocumentUploads = new HashSet<DocumentUpload>();
         }
     
         public int UserID { get; set; }
@@ -35,8 +36,10 @@ namespace DataLayer
         public Nullable<int> UserRoleID { get; set; }
         public string PushToken { get; set; }
         public string DeviceType { get; set; }
+        public string USDot { get; set; }
     
         public virtual ICollection<AuthenticationToken> AuthenticationTokens { get; set; }
         public virtual UserRole UserRole { get; set; }
+        public virtual ICollection<DocumentUpload> DocumentUploads { get; set; }
     }
 }

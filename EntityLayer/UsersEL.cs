@@ -5,6 +5,7 @@ using System.Text;
 
 namespace EntityLayer
 {
+    [Serializable]
     public class UsersEL
     {
         public int UserID { get; set; }
@@ -24,5 +25,7 @@ namespace EntityLayer
         public string ProfilePic { get; set; }
         public string PushToken { get; set; }
         public string DeviceType { get; set; }
+        public string UsDot { get; set; }
+        
     }
 }

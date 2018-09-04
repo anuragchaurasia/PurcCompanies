@@ -58,6 +58,24 @@ namespace PrivateICO {
         protected global::System.Web.UI.WebControls.TextBox txtRefundEmail;
         
         /// <summary>
+        /// txtMobLog1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMobLog1;
+        
+        /// <summary>
+        /// txtMobLog2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMobLog2;
+        
+        /// <summary>
         /// btnUpdateSetting control.
         /// </summary>
         /// <remarks>

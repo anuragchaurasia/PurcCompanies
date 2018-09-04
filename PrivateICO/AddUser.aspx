@@ -82,6 +82,14 @@
                                 </div>
                                 <!-- /.form-group -->
                             </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>USDot</label>
+                                    <asp:TextBox runat="server" ID="txtUsDot" CssClass="form-control" placeholder="Enter Name"></asp:TextBox>
+                                </div>
+                                
+                            </div>
                             <!-- /.col -->
                             <div class="col-md-6" style="display:none;">
                                 <div class="form-group">
